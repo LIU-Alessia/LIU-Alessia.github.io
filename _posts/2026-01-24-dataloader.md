@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      tensorflow dataloader
+title:      dataloader
 subtitle:   
 date:       2026-01-24
 author:     Henri Jambo

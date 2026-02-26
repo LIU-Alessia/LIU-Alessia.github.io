@@ -986,6 +986,12 @@ img::-moz-selection {
   height: auto;
   margin: 1.5em auto 1.6em auto;
 }
+figcaption {
+  text-align: center;
+  color: #808080;
+  font-size: 14px;
+  margin-top: 6px;
+}
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {

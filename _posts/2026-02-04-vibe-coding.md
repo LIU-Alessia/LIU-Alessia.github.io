@@ -36,3 +36,5 @@ vibe coding必须要做的：
 5. 根据AI的表现现给予反馈，修改rule和plan。（可以问AI：我给你什么指令，你能更快的解决那个问题？）
 6. 版本和文件管理（多commit和手动梳理，不能偷懒）
 
+![alt text](image.png)
+

@@ -3,7 +3,7 @@ layout:     post
 title:      tensorflow
 subtitle:   
 date:       2026-01-24
-author:     Henri Jambo
+author:     Alessia
 header-img: img/post-bg-cook.jpg
 catalog: true
 tags:

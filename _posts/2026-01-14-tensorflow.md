@@ -7,7 +7,7 @@ author:     Alessia
 header-img: img/post-bg-cook.jpg
 catalog: true
 tags:
-    - tensorflow
+    - 技术随笔
 ---
 
 # tf1 极简教程

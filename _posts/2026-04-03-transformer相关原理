@@ -1,0 +1,61 @@
+---
+layout:     post
+title:      transformer精读
+subtitle:   
+date:       2026-04-03
+author:     Alessia
+header-img: img/post-bg-miui6.jpg
+catalog: 	  true
+tags:
+    - 学习资料
+---
+
+## 背景
+参考[基于transformers的自然语言处理(NLP)入门](https://github.com/datawhalechina/learn-nlp-with-transformers.git)
+### 常见的NLP任务
+NLP任务通常划分为4个大类：1、文本分类， 2、序列标注，3、问答任务——抽取式问答和多选问答，4、生成任务——语言模型、机器翻译和摘要生成。
+
+* 文本分类：对单个、两个或者多段文本进行分类。举例：“这个教程真棒！”这段文本的情感倾向是正向的，“我在学习transformer”和“如何学习transformer”这两段文本是相似的。
+* 序列标注：对文本序列中的token、字或者词进行分类。举例：“我在**国家图书馆**学transformer。”这段文本中的**国家图书馆**是一个**地点**，可以被标注出来方便机器对文本的理解。
+* 问答任务——抽取式问答和多选问答：1、抽取式问答根据**问题**从一段给定的文本中找到**答案**，答案必须是给定文本的一小段文字。举例：问题“小学要读多久?”和一段文本“小学教育一般是六年制。”，则答案是“六年”。2、多选式问答，从多个选项中选出一个正确答案。举例：“以下哪个模型结构在问答中效果最好？“和4个选项”A、MLP，B、cnn，C、lstm，D、transformer“，则答案选项是D。
+* 生成任务——语言模型、机器翻译和摘要生成：根据已有的一段文字生成（generate）一个字通常叫做语言模型，根据一大段文字生成一小段总结性文字通常叫做摘要生成，将源语言比如中文句子翻译成目标语言比如英语通常叫做机器翻译。
+
+虽然各种基于transformer的深度学习模型已经在多个人工构建的NLP任务中表现出色，但由于人类语言博大精深，深度学习模型依然有很长的路要走。
+
+### Transformer的兴起
+
+2017年，[Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)论文首次提出了**Transformer**模型结构并在机器翻译任务上取得了The State of the Art(SOTA, 最好)的效果。2018年，[BERT: Pre-training of Deep Bidirectional Transformers for
+Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)使用Transformer模型结构进行大规模语言模型（language model）预训练（Pre-train），再在多个NLP下游（downstream）任务中进行微调（Finetune），一举刷新了各大NLP任务的榜单最高分，轰动一时。2019年-2021年，研究人员将Transformer这种模型结构和预训练+微调这种训练方式相结合，提出了一系列Transformer模型结构、训练方式的改进（比如transformer-xl，XLnet，Roberta等等）。如下图所示，各类Transformer的改进不断涌现。
+
+![alt text](/img-post/transformer/X-formers-mindmap.png)图：各类Transformer改进，来源：[A Survey of Transformers](https://arxiv.org/pdf/2106.04554.pdf)
+
+另外，由于Transformer优异的模型结构，使得其参数量可以非常庞大从而容纳更多的信息，因此Transformer模型的能力随着预训练不断提升，随着近几年计算能力的提升，越来越大的预训练模型以及效果越来越好的Transformers不断涌现，简单的统计可以从下图看出：
+
+![alt text](/img-post/transformer/model-parameter-change.png) 图：预训练模型参数不断变大,来源[Huggingface](https://huggingface.co/course/chapter1/4?fw=pt)
+
+
+尽管各类Transformer的研究非常多，总体上经典和流行的Transformer模型都可以通过[HuggingFace/Transformers, 48.9k Star](https://github.com/huggingface/transformers)获得和免费使用，为初学者、研究人员提供了巨大的帮助。
+
+本教程也将基于[HuggingFace/Transformers, 48.9k Star](https://github.com/huggingface/transformers)进行具体的编程和任务解决方案实现。
+
+
+## 图解attention
+参考[jay alammar的Mechanics of Seq2seq Models With Attention](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+1. 什么是seq2seq模型？
+2. 基于RNN的seq2seq模型如何处理文本/长文本序列？
+3. seq2seq模型处理长文本序列时遇到了什么问题？
+4. 基于RNN的seq2seq模型如何结合attention来改善模型效果？
+
+### seq2seq
+![alt text](/img-post/transformer/1-3-encoder-decoder.gif)
+seq2seq模型由编码器（Encoder）和解码器（Decoder）组成。绿色的编码器会处理输入序列中的每个元素并获得输入信息，这些信息会被转换成为一个黄色的向量（称为context向量）。当我们处理完整个输入序列后，编码器把 context向量 发送给紫色的解码器，解码器通过context向量中的信息，逐个元素输出新的序列。
+
+
+
+
+
+
+
+
+
+

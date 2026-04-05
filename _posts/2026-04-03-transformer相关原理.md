@@ -73,7 +73,25 @@ RNN是如何具体地处理输入序列的呢？
 面对以上问题，Bahdanau等2014发布的[Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473) 和 Luong等2015年发布的[Effective Approaches to Attention-based Neural Machine Translation
 ](https://arxiv.org/abs/1508.04025)两篇论文中，提出了一种叫做注意力**attetion**的技术。通过attention技术，seq2seq模型极大地提高了机器翻译的质量。归其原因是：attention注意力机制，使得seq2seq模型可以有区分度、有重点地关注输入序列。
 
+一个注意力模型与经典的seq2seq模型主要有2点不同：
 
+
+- A. 首先，编码器会把更多的数据传递给解码器。编码器把所有时间步的 hidden state（隐藏层状态）传递给解码器，而不是只传递最后一个 hidden state（隐藏层状态），如下面的动态图所示:
+![attention-seq2seq](/img-post/transformer/1-6-mt-1.gif)
+动态图: 更多的信息传递给decoder
+
+- B. 注意力模型的解码器在产生输出之前，做了一个额外的attention处理。如下图所示，具体为：
+
+  * 1. 由于编码器中每个 hidden state（隐藏层状态）都对应到输入句子中一个单词，那么解码器要查看所有接收到的编码器的 hidden state（隐藏层状态）。
+  - 2. 给每个 hidden state（隐藏层状态）计算出一个分数（我们先忽略这个分数的计算过程）。
+  - 3. 所有hidden state（隐藏层状态）的分数经过softmax进行归一化。
+  - 4. 将每个 hidden state（隐藏层状态）乘以所对应的分数，从而能够让高分对应的  hidden state（隐藏层状态）会被放大，而低分对应的  hidden state（隐藏层状态）会被缩小。
+  - 5. 将所有hidden state根据对应分数进行加权求和，得到对应时间步的context向量。
+  
+  ![](/img-post/transformer/1-7-attention-dec.gif) 
+  动态图：编码器结合attention得到context向量的5个步骤。
+
+所以，attention可以简单理解为：一种有效的**加权求和技术**，其艺术在于如何获得权重。
 
 
 

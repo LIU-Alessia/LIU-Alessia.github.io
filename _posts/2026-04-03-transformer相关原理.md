@@ -4,7 +4,7 @@ title:      transformer相关原理
 subtitle:   
 date:       2026-04-03
 author:     Alessia
-header-img: img-post/transformer/cover.png
+header-img: img/transformer/transformer-cover.png
 catalog: 	  true
 tags:
     - 学习资料

@@ -4,12 +4,12 @@ title:      transformer相关原理
 subtitle:   
 date:       2026-04-03
 author:     Alessia
-header-img: img/transformer/transformer-cover.png
+header-img: img/post-bg-attention.png
 catalog: 	  true
 tags:
     - 学习资料
 ---
- vb
+
 ## 背景
 参考[基于transformers的自然语言处理(NLP)入门](https://github.com/datawhalechina/learn-nlp-with-transformers.git)
 ### 常见的NLP任务

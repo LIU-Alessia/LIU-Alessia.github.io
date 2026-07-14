@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Hexo generated files
+public/
+.deploy_git/
+
+# Hexo database
+db.json
+
+# Logs
+*.log
+debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

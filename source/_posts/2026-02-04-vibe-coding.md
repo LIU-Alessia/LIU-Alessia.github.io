@@ -1,0 +1,41 @@
+---
+title: vibe coding
+subtitle: claude code, codex, ai
+date: 2026-02-04T00:00:00.000Z
+author: Alessia
+tags:
+  - 技术随笔
+categories: []
+cover: img/the-first.png
+---
+
+
+
+## claude code
+
+安装 Claude Code CLI(command line interface)，进入claude ai homepage按命令安装即可。
+
+安装完成后命令行运行claude，按步骤登录并完成基础设置。（直接运行vscode里的插件似乎不行，虽然也有登录的提示但是会报api错误: 
+`Invalid API key · Please run /login`
+
+安装完后输入`claude`，按步骤登录并完成基础设置。
+
+可以Claude订阅账号登录，
+Claude Pro - 个人专业版，约150人民币一个月
+Claude Max - 最高级别订阅，约900一个月
+Claude Teams - 团队版
+Claude Enterprise - 企业版
+
+也可以Claude Console账号（API 访问账号），但目前看不适合，太贵了，一次深度coding就花费约5磅，token消耗量太大了
+
+## 方法
+vibe coding必须要做的：
+1. 建git仓库：确定现在要做的项目（不能太大，大项目要拆分成小项目），针对项目建git仓库
+2. 建plan.md：有思路就写好思路，分阶段分点，每一步都清楚。
+3. 建rule.md：没有思路就建立一个rule.md放prompt，把数据说明和需求写清楚，越细节越好
+4. 读取plan/rule.md：每次AI生成都让AI先读一遍rule和plan，避免因太长的上下文而遗忘
+5. 根据AI的表现现给予反馈，修改rule和plan。（可以问AI：我给你什么指令，你能更快的解决那个问题？）
+6. 版本和文件管理（多commit和手动梳理，不能偷懒）
+
+![alt text](/images/posts/vibe_coding/prompt_engineer.png)
+

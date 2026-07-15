@@ -27,7 +27,7 @@
 <meta property="og:description" content="从单神经元的相关性到更复杂的群体编码 相关相关不意味着因果，但是可以缩小范围后续做光遗传实验 Identify cell type一、GLM  计算神经元对多个regressor的响应强度beta 对单条鱼、单个regressor，提取beta大于阈值的神经元  用collocalization验证分类结果是否有跨被试的一致性，找出空间上特定的神经环路  二、shuffle GLMGeneral">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-15T00:40:25.980Z">
+<meta property="article:modified_time" content="2026-07-15T01:27:58.042Z">
 <meta property="article:author" content="Alessia">
 <meta property="article:tag" content="学习资料">
 <meta name="twitter:card" content="summary_large_image">
@@ -825,5 +825,20 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

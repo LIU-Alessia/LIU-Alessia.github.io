@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 2026-07-13-LLM知识体系搭建 </category>
+          <category> LLM知识体系搭建 </category>
           
       </categories>
       
@@ -38,7 +38,7 @@
       
       <categories>
           
-          <category> 2026-07-13-LLM知识体系搭建 </category>
+          <category> LLM知识体系搭建 </category>
           
       </categories>
       
@@ -63,7 +63,7 @@
       
       <categories>
           
-          <category> 2026-07-13-找工项目 </category>
+          <category> 找工项目 </category>
           
       </categories>
       
@@ -88,7 +88,7 @@
       
       <categories>
           
-          <category> 2026-06-19-面试手撕准备 </category>
+          <category> 面试手撕准备 </category>
           
       </categories>
       
@@ -113,7 +113,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -138,7 +138,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -163,7 +163,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -188,7 +188,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -213,7 +213,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -238,7 +238,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -263,7 +263,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -286,6 +286,12 @@
         <content type="html"><![CDATA[<h2 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h2><p>CRT，光栅扫描；LCD(liquid crystal display)技术也用到了光栅扫描</p><p>矢量显示系统，节省空间；character generator, screen buffer, </p><p>光笔，人机交互新方式</p><p>位图，bmp(bit map pictures), frame buffer, </p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       
       
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -304,6 +310,12 @@
       
         <content type="html"><![CDATA[]]></content>
       
+      
+      <categories>
+          
+          <category> LLM知识体系搭建 </category>
+          
+      </categories>
       
       
         <tags>
@@ -326,7 +338,7 @@
       
       <categories>
           
-          <category> 2026-07-13-LLM知识体系搭建 </category>
+          <category> LLM知识体系搭建 </category>
           
       </categories>
       
@@ -351,7 +363,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -374,6 +386,12 @@
         <content type="html"><![CDATA[<p>q</p><h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><img src="/images/posts/LLM_QuickStart/midterm-question.png" alt="alt text"><br>5题答对4题，3题分析正确</p><p><strong>GPTs</strong>: 打造AI应有只要一瞬间</p><p>我立刻10min创建了一个zebrafish expert<br><img src="/images/posts/LLM_QuickStart/zebrafish-expert.png" alt="alt text"></p><ul><li>“chatGPT真正做的事-文字接龙”</li></ul><p><strong>Token</strong><br>计价方式；开发者先设定好的，可通过对应平台查询，例如<a href="https://platform.openai.com/tokenizer">openAI tokenizer平台</a></p><h3 id="GPT的发展史"><a href="#GPT的发展史" class="headerlink" title="GPT的发展史"></a>GPT的发展史</h3><p>GPT: Generative Pre-trained Transformer</p><ul><li>GPT-1(2018) 117M, 1GB data</li><li>GPT-2(2019) 1542M, 20GB data，可以回答问题<br><img src="/images/posts/LLM_QuickStart/gpt2-Q&A.png" alt="alt text"></li><li>GPT-3(2020) 175B, 580GB（哈利波特全集约100,0000 words, 以UTF-8编码，一个英文字母一个字节，估算共6e6 Byte；则580e9&#x2F;6e6约100,000遍，远超一个人100年全部时间所能阅读的文字量）</li></ul><h3 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h3><p>Pre-train -&gt; Supervised training -&gt; Reforcement learning&#x2F;RLHF</p><p><img src="/images/posts/LLM_QuickStart/GPT2chatGPT.png" alt="alt text"></p><p><img src="/images/posts/LLM_QuickStart/SupervisedLearning2RL.png" alt="alt text"></p><p>监督式学习的重要性：<br><img src="/images/posts/LLM_QuickStart/instructGPT.png" alt="alt text"></p><p>有预训练后，监督式学习不用大量资料<br><img src="/images/posts/LLM_QuickStart/pretrain-effect.png" alt="alt text"></p><h3 id="PROMPT"><a href="#PROMPT" class="headerlink" title="PROMPT"></a>PROMPT</h3><ol><li>把需求写清楚</li><li>提供资讯给ChatGPT</li><li>提供范例</li><li>鼓励GPT想一想(chain of thought)</li><li>神奇咒语</li><li>上传档案</li><li>ChatGPT可以使用其他工具</li><li>拆解任务</li><li>自主进行规划</li><li>会反省</li><li>跟真实环境互动</li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> LLM知识体系搭建 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -395,7 +413,7 @@
       
       <categories>
           
-          <category> 2026-03-2-力扣刷题日记 </category>
+          <category> 力扣刷题日记 </category>
           
       </categories>
       
@@ -418,6 +436,12 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 计算神经科学 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -436,6 +460,12 @@
       
         <content type="html"><![CDATA[<p>Google Colab 是一个基于云端的 Jupyter Notebook 环境，可以免费使用 GPU&#x2F;TPU，非常适合深度学习和科研原型开发。</p><p>但很多初学者一开始都会踩一些坑，本文总结常见问题和入门方法。</p><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>1、理解 Colab 的本质</p><p>Colab ≠ 本地电脑，它本质上是Google 提供的临时云端 Linux 虚拟机。当你运行 notebook 时，其实是在远程服务器执行代码。</p><p>2、为什么路径是 &#x2F;content？</p><p>很多人会疑惑：我的文件在 OneDrive，本地明明有，为什么 Colab 里是 &#x2F;content？原因是：&#x2F;content 是 Colab 虚拟机的工作目录，你的本地文件默认不会自动同步，每次重启 runtime，&#x2F;content 会被清空。可以用：<br><code>!pwd</code> 或 <code>!ls</code>查看当前目录。</p><p>3、!cd 为什么不生效？</p><p>! 调用的是 shell 子进程，每一行都是独立 shell，所以 cd 不会被保留。正确做法是<code>%cd annotated-transformer</code><br>或<code>!cd annotated-transformer &amp;&amp; pip install -r requirements.txt</code></p><p>4、如何访问本地文件？</p><p>Colab 访问本地文件有三种方式。</p><p>方法 1：手动上传</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-built_in">from</span> google.colab import <span class="hljs-built_in">files</span><br><span class="hljs-built_in">files</span>.upload()<br></code></pre></td></tr></table></figure><p>适合小文件。</p><p>方法 2：挂载 Google Drive</p><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clean"><span class="hljs-keyword">from</span> google.colab <span class="hljs-keyword">import</span> drive<br>drive.mount(<span class="hljs-string">&#x27;/content/drive&#x27;</span>)<br></code></pre></td></tr></table></figure><p>然后：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">!<span class="hljs-built_in">ls</span> /content/drive/MyDrive<br></code></pre></td></tr></table></figure><p><strong>适合科研数据。</strong></p><p>方法 3：从 GitHub 拉取</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">!git <span class="hljs-built_in">clone</span> https://github.com/your_repo.git<br>%<span class="hljs-built_in">cd</span> your_repo<br>!pip install -r requirements.txt<br></code></pre></td></tr></table></figure><p>科研项目推荐这种方式。</p><h2 id="入门方法"><a href="#入门方法" class="headerlink" title="入门方法"></a>入门方法</h2><p>由于Colab 的生命周期有以下重要特性：</p><ul><li>运行时间有限（空闲会断开）</li><li>重启后 &#x2F;content 清空</li><li>GPU 资源共享</li></ul><p>因此建议：</p><ul><li>代码放 GitHub</li><li>数据放 Google Drive</li><li>不要依赖 &#x2F;content</li></ul><p>推荐的科研使用结构</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">GitHub (代码)<br>        ↓<br>Colab <span class="hljs-keyword">clone</span><br>        <span class="hljs-title">↓</span><br><span class="hljs-title">Google</span> Drive (数据)<br></code></pre></td></tr></table></figure><p>典型初始化模板：</p><ol><li><p>挂载 Drive<br>from google.colab import drive<br>drive.mount(‘&#x2F;content&#x2F;drive’)</p></li><li><p>克隆代码<br>!git clone <a href="https://github.com/xxx/project.git">https://github.com/xxx/project.git</a><br>%cd project</p></li><li><p>安装依赖<br>!pip install -r requirements.txt</p></li></ol>]]></content>
       
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
       
       
         <tags>
@@ -456,6 +486,12 @@
         <content type="html"><![CDATA[<p><img src="/images/posts/attentionPaper/Attention_paper_title.png" alt="alt text"></p>]]></content>
       
       
+      <categories>
+          
+          <category> LLM知识体系搭建 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -474,6 +510,12 @@
       
         <content type="html"><![CDATA[<h2 id="知识图谱"><a href="#知识图谱" class="headerlink" title="知识图谱"></a>知识图谱</h2><h2 id="虚假共识效应"><a href="#虚假共识效应" class="headerlink" title="虚假共识效应"></a>虚假共识效应</h2><p>指社会生活中的人们受到统一的教育或舆论影响，误认为大家拥有某个共识，误认为大家都是这样的。但是事实上，人和人之间的感受和认知相差非常大。</p><p>很多时候事情不是我们所认为的那样，问题或许不是问题，至少不是你认为的那个问题。</p><p>本科期间困扰我最大的问题就是自己到底喜欢什么，擅长什么。现在我知道，我朝哪个方向努力，我就擅长什么，因为我的天赋不是某个特定的学科，而是是自省和高敏感。这让我有较强的适应能力和学习能力，以及对自我的严格要求，不断push我进步。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 随笔杂谈 </category>
+          
+      </categories>
       
       
         <tags>
@@ -494,6 +536,12 @@
         <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>ChatGPT Plus &#x3D; ChatGPT 里用 GPT<br>Copilot Plus&#x2F;Pro+ &#x3D; IDE 里用 Copilot<br>OpenAI API &#x3D; 自己写代码调模型，单独充值&#x2F;绑定付款<br>Claude Code &#x3D; 用 Claude，不吃 OpenAI API 额度</p><p>入门例子<br><a href="https://articles.zsxq.com/id_fqi4mrr6ztd5.html">Claude Code+Obsidian自动读论文教程</a></p><p>阅读”D:\迅雷下载\evil-read-arxiv-main\evil-read-arxiv-main\README.md”和evil-read-arxivquickstart.md，帮我在我的电脑上配置这个自动读论文的工具，把我未来的论文笔记写在”D:\Data\obisitian\paper-reading”路径下，我的研究方向是物理AI&#x2F;世界模型，我只关注这方面的论文。配置过程中要用到Semantic Scholar的api key，API是s2k-YO0PsOm5CuWw8FWD84V6oRHWsRYxdfSMALTdNNmk。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -512,6 +560,12 @@
       
         <content type="html"><![CDATA[<h2 id="claude-code"><a href="#claude-code" class="headerlink" title="claude code"></a>claude code</h2><p>安装 Claude Code CLI(command line interface)，进入claude ai homepage按命令安装即可。</p><p>安装完成后命令行运行claude，按步骤登录并完成基础设置。（直接运行vscode里的插件似乎不行，虽然也有登录的提示但是会报api错误:<br><code>Invalid API key · Please run /login</code></p><p>安装完后输入<code>claude</code>，按步骤登录并完成基础设置。</p><p>可以Claude订阅账号登录，<br>Claude Pro - 个人专业版，约150人民币一个月<br>Claude Max - 最高级别订阅，约900一个月<br>Claude Teams - 团队版<br>Claude Enterprise - 企业版</p><p>也可以Claude Console账号（API 访问账号），但目前看不适合，太贵了，一次深度coding就花费约5磅，token消耗量太大了</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>vibe coding必须要做的：</p><ol><li>建git仓库：确定现在要做的项目（不能太大，大项目要拆分成小项目），针对项目建git仓库</li><li>建plan.md：有思路就写好思路，分阶段分点，每一步都清楚。</li><li>建rule.md：没有思路就建立一个rule.md放prompt，把数据说明和需求写清楚，越细节越好</li><li>读取plan&#x2F;rule.md：每次AI生成都让AI先读一遍rule和plan，避免因太长的上下文而遗忘</li><li>根据AI的表现现给予反馈，修改rule和plan。（可以问AI：我给你什么指令，你能更快的解决那个问题？）</li><li>版本和文件管理（多commit和手动梳理，不能偷懒）</li></ol><p><img src="/images/posts/vibe_coding/prompt_engineer.png" alt="alt text"></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
       
       
         <tags>
@@ -532,6 +586,12 @@
         <content type="html"><![CDATA[<h2 id="杂谈-引子"><a href="#杂谈-引子" class="headerlink" title="杂谈&#x2F;引子"></a>杂谈&#x2F;引子</h2><p>在知乎上看到一张很有意思的图：</p><figure><img src="/images/posts/statistic/iceberge.png"><figcaption>统计学知识冰山</figcaption></figure><p>好奇为什么generalized linear model在冰川下这么深，凭我在数据分析中的使用，似乎并没有什么深奥的地方。</p><h3 id="Fisher"><a href="#Fisher" class="headerlink" title="Fisher"></a>Fisher</h3><p>如果要选一位对现代统计学影响最大的人，几乎无法绕开 Ronald A. Fisher。<br>极大似然估计、方差分析（ANOVA）、实验设计、充分统计量、F<br>分布……很多今天”默认存在”的工具，源头都可以追溯到他。<br><img src="/images/posts/statistic/Fisher.png" alt="alt text"></p><p>他奠定的是一个方法论体系：</p><ul><li>统计建模 &#x3D; 概率模型 + 参数推断</li><li>实验设计 &#x3D; 随机化 + 重复 + 局部控制</li><li>推断逻辑 &#x3D; 似然函数 + 信息量</li></ul><p>在这个体系下，线性模型和 GLM 才真正有统一的理论基础。</p><hr><h3 id="Linear-Model"><a href="#Linear-Model" class="headerlink" title="Linear Model"></a>Linear Model</h3><ol><li>Ordinary Linear Model</li></ol><p>最基本形式：</p><p>y &#x3D; Xβ + ε</p><p>假设：</p><ul><li>误差项 ε ~ N(0, σ²I)</li><li>条件期望 E[y|X] &#x3D; Xβ</li></ul><p>核心特征：</p><ul><li>响应变量是连续的</li><li>误差服从正态分布</li><li>用最小二乘（等价于正态下的 MLE）</li></ul><hr><ol start="2"><li>General Linear Model</li></ol><p>General Linear Model 是对普通线性模型的矩阵推广：</p><p>Y &#x3D; Xβ + ε</p><p>可以包含：</p><ul><li>ANOVA</li><li>ANCOVA</li><li>多元线性回归</li><li>对比编码设计</li></ul><p>但仍然假设误差为正态分布。</p><hr><p>2、Generalized Linear Model（GLM）</p><p>由 Nelder 和 Wedderburn 在 1972 年提出。</p><p>GLM 包含三部分：</p><p>(1) 随机成分</p><p>响应变量来自指数族分布：</p><ul><li>正态分布</li><li>二项分布</li><li>泊松分布</li><li>Gamma 分布</li></ul><p>(2) 系统成分</p><p>η &#x3D; Xβ</p><p>(3) 链接函数</p><p>g(μ) &#x3D; Xβ</p><p>其中 μ &#x3D; E[y|X]</p><p>即：不是直接建模 y，而是建模其期望的某个函数。</p><hr><p>3、General Linear vs Generalized Linear</p><p>  特征       General Linear Model   Generalized Linear Model</p><hr><p>  响应变量   连续                   连续 &#x2F; 二分类 &#x2F; 计数<br>  分布假设   正态                   指数族<br>  链接函数   恒等                   可选（logit &#x2F; log 等）<br>  估计方法   OLS                    MLE（迭代加权最小二乘）</p><hr><p>4、为什么名字看起来”反直觉”？</p><ul><li>General Linear Model：结构更一般，但仍然正态</li><li>Generalized Linear Model：在概率分布层面推广</li></ul><p>“Generalized”指的是对线性模型概率结构的推广，而不是简单”更 general”。</p><hr><p>5、Fisher 的统一视角</p><p>GLM 本质是：</p><p>最大化指数族分布下的似然函数。</p><p>普通线性回归只是正态分布下的特例。</p><p>从这个角度：</p><ul><li>OLS 是 MLE 的特殊情况</li><li>Logistic regression 是二项分布下的 MLE</li><li>Poisson regression 是计数数据的 MLE</li></ul><p>全部统一在：</p><p>指数族 + 链接函数 + 似然框架</p><hr><p>许多机器学习模型都可以写成 GLM 形式：</p><ul><li>Logistic regression</li><li>Softmax classifier</li><li>Poisson regression</li></ul><p>GLM 是统计学通向深度学习的桥梁。</p><h2 id="分析工具"><a href="#分析工具" class="headerlink" title="分析工具"></a>分析工具</h2><p><img src="/images/posts/statistic/pythonVsR.png" alt="alt text"></p><p>python是开源解释语言，不断更新版本，官网可查看其各种版本的维护状态,。<br><img src="/images/posts/statistic/python%20release.png" alt="alt text"><br>更通用，功能更多，下面都以python语言学习</p>]]></content>
       
       
+      <categories>
+          
+          <category> 数据分析 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -550,6 +610,12 @@
       
         <content type="html"><![CDATA[<h1 id="tf1-极简教程"><a href="#tf1-极简教程" class="headerlink" title="tf1 极简教程"></a>tf1 极简教程</h1><p>来源：<a href="https://gist.github.com/jisungk/6e3a111aff72f8e00ec0bb987bf258a4">dead simple tf1 tutorial:Training a feedforward neural network</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> absolute_import<br><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> division<br><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function<br><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf<br></code></pre></td></tr></table></figure><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>TensorFlow is a unique computation framework: it is used for defining<br><strong>computational graphs</strong> and running these graphs. TensorFlow was originally designed for constructing and manipulating deep neural networks.<br>TensorFlow is special in that it does not dynamically compute the values<br>of the outputs of operations. This is in contrast with standard Python which<br>dynamically computes the outputs of operations. In TensorFlow, we have to<br>instead  specify a static computational graph using tensors, and then explicitly<br>run the graph (through a <code>tf.Session()</code> object).</p><figure class="highlight plaintext"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs typical">x = 5<br>y = x + 5<br>print(y)  # prints 10<br></code></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs TensorFlow">import tensorflow as tf<br>x = tf.constant(5)  # a tensor<br>y = x + 5  # equivalent to tf.add(x, 5)<br>print(y)  # doesn&#x27;t print the actual value because graph has not been run<br>sess = tf.Session()<br>print(sess.run(y))  # prints 10<br></code></pre></td></tr></table></figure><p>In this tutorial, we define a simple feedforward neural network with TensorFlow.<br>This particular neural network takes in as input a placeholder tensor called<br>x_placeholder of shape (batch_size, dim_input) and outputs a tensor of<br>shape (batch_size, dim_output). The batch_size represents the number of<br>instances in a single batch of samples run through the graph. We often use<br>placeholders which represent empty tensors through which we can pass in<br>arbitrary data. Of course, the actual data fed in through the placeholders<br>must match the shape of the placeholders.<br>We then compute the mean squared error between the network outputs (estimated<br>target) and the true target values (which we feed in through the placeholder<br><code>y_placeholder</code>). We minimize this error to train the neural network; training<br>involves adjusting the tunable parameters within the neural network model<br>(here, specifically the weight and bias variables inside the <code>dense</code> layers)<br>using gradient descent. </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><code class="hljs python">dim_input = <span class="hljs-number">3</span>  <span class="hljs-comment"># arbitrarily chosen for this example script</span><br>dim_output = <span class="hljs-number">1</span><br><br><span class="hljs-comment"># define placeholders for inputs</span><br><span class="hljs-comment"># We specify the batch_size dimension as None which let&#x27;s it be variable even</span><br><span class="hljs-comment"># though the `dim_input` and `dim_output` dimensions are fixed.</span><br>x_placeholder = tf.placeholder(  <span class="hljs-comment"># input features placeholder</span><br>    <span class="hljs-string">&#x27;float&#x27;</span>, shape=[<span class="hljs-literal">None</span>, dim_input])<br>y_placeholder = tf.placeholder(  <span class="hljs-comment"># input true target placeholder</span><br>    <span class="hljs-string">&#x27;float&#x27;</span>, shape=[<span class="hljs-literal">None</span>, dim_output])<br><br><span class="hljs-comment"># Define the neural network which consists of two dense (fully connected)</span><br><span class="hljs-comment"># layers (which comprise simple matrix multiplication and addition operations).</span><br><span class="hljs-comment"># These &quot;layers&quot; are all TensorFlow operations which can be explicitly run.</span><br><br><span class="hljs-comment"># The input to the first layer is the input features (given via</span><br><span class="hljs-comment"># `x_placeholder`).</span><br>intermediate_layer = tf.layers.dense(x_placeholder, <span class="hljs-number">12</span>)  <span class="hljs-comment"># operation</span><br><span class="hljs-comment"># We pass the outputs of the first layer as inputs to the second, final layer</span><br><span class="hljs-comment"># which outputs the estimated target.</span><br>final_layer = tf.layers.dense(intermediate_layer, dim_output)  <span class="hljs-comment"># operation</span><br>estimated_targets = final_layer  <span class="hljs-comment"># just a different name for clarity</span><br><br><span class="hljs-comment"># We define the `loss` (error) function which we minimize to train our neural</span><br><span class="hljs-comment"># network. The following loss operation is equivalent to calling the helper</span><br><span class="hljs-comment"># `tf.losses.mean_squared_error(y_placeholder, estimated_targets)` which also</span><br><span class="hljs-comment"># returns an operation.</span><br>loss = tf.square(tf.subtract(y_placeholder, estimated_targets))  <span class="hljs-comment"># operation</span><br><br><span class="hljs-comment"># We use the Adam optimizer which is an object which provides functions</span><br><span class="hljs-comment"># to optimize (minimize) the loss using a variant of gradient descent.</span><br>optimizer = tf.train.AdamOptimizer()   <span class="hljs-comment"># object</span><br><br>train_op = optimizer.minimize(loss)  <span class="hljs-comment"># operation, from the AdamOptimizer object</span><br><br><span class="hljs-comment"># We also define the initialization operation which is needed to initialize</span><br><span class="hljs-comment"># the starting values of the variables in our computational graph.</span><br>init_op = tf.global_variables_initializer()  <span class="hljs-comment"># operation</span><br><br><br><span class="hljs-string">&quot;&quot;&quot;Now that we&#x27;ve defined our graph and various operations involving the graph, </span><br><span class="hljs-string">we are going to run the operations to train our neural network.&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># A Session is an abstract environment in which we run our graph and perform</span><br><span class="hljs-comment"># calculations. It provides a common function `run()` for running operations.</span><br>session = tf.Session()  <span class="hljs-comment"># abstract environment</span><br><br><span class="hljs-comment"># Run the initialization operation; no `feed_dict` needed as it has not</span><br><span class="hljs-comment"># dependencies (covered later). Generally needed for most TensorFlow scripts.</span><br>session.run(init_op)<br><br><span class="hljs-comment"># Repeatedly train the neural network for `num_epoch` times</span><br>num_epoch = <span class="hljs-number">2000</span><br>batch_size = <span class="hljs-number">500</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_epoch):<br>  <span class="hljs-comment"># Define input training data. `x_data` represents the training data features</span><br>  <span class="hljs-comment"># which are 0 or 1; these are the input data to the neural network.</span><br>  <span class="hljs-comment"># `y_data` represents the training data &quot;true&quot; targets; `y_data` is just</span><br>  <span class="hljs-comment"># the outputs of the function y = 5 * sum(x) applied to the data batch.</span><br>  <span class="hljs-comment"># We are trying to learn this function (mapping from x to y) with our</span><br>  <span class="hljs-comment"># neural network. Neural networks are general function estimators.</span><br><br>  <span class="hljs-comment"># generate random binary np.array with shape (batch_size, 3)</span><br>  x_data = np.random.randint(<span class="hljs-number">2</span>, size=(batch_size, dim_input))<br>  <span class="hljs-comment"># calculate targets from feature array</span><br>  y_data = <span class="hljs-number">5</span> * np.<span class="hljs-built_in">sum</span>(x_data, axis=-<span class="hljs-number">1</span>).reshape((-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))<br>  <span class="hljs-comment"># reshape to match `y_placeholder` shape which has a last dimension of 1</span><br>  y_data = y_data.reshape((-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))<br><br>  <span class="hljs-comment"># We specify what values we need to feed into our placeholders via `feed_dict`.</span><br>  <span class="hljs-comment"># We need to pass values into both `x_placeholder` and `y_placeholder` which</span><br>  <span class="hljs-comment"># are dependencies for the training op: 1) compute `estimated_targets` using</span><br>  <span class="hljs-comment"># `x_placeholder`, 2) compute the error `loss` compared to the true targets</span><br>  <span class="hljs-comment"># given by `y_placeholder`.</span><br>  feed_dict = &#123;<br>      x_placeholder: x_data,<br>      y_placeholder: y_data,<br>  &#125;<br><br>  <span class="hljs-comment"># Run the training operation defined earlier.</span><br>  session.run(train_op, feed_dict=feed_dict)<br><br><br><span class="hljs-string">&quot;&quot;&quot;After we finished training our neural network (NN), we are going to use it</span><br><span class="hljs-string">with new test data. &quot;Using&quot; the neural network is just running new values</span><br><span class="hljs-string">through the computational graph that the NN represents. Again, we keep in mind</span><br><span class="hljs-string">a neural network is just a function which transforms some inputs to outputs.&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># We get new test data, again using the random numpy generation function.</span><br>x_data_test = np.random.randint(<span class="hljs-number">2</span>, size=(<span class="hljs-number">5</span>, dim_input))<br><br><span class="hljs-comment"># To see what estimates we get for our test data, we only need to feed in</span><br><span class="hljs-comment"># values for `x_placeholder`, since the operation `estimated_targets` depends</span><br><span class="hljs-comment"># ONLY on `x_placeholder`, and not on `y_placeholder`. We remember that</span><br><span class="hljs-comment"># `y_placeholder` is only used to define the error/loss term and subsequently</span><br><span class="hljs-comment"># in training.</span><br>feed_dict = &#123;<br>    x_placeholder: x_data_test<br>&#125;<br>y_estimate_test = session.run(estimated_targets, feed_dict=feed_dict)<br><br><span class="hljs-comment"># Examine test data.</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x_data_test&#x27;</span>)<br><span class="hljs-built_in">print</span>(x_data_test)<br><span class="hljs-built_in">print</span>()<br><br><span class="hljs-comment"># Are the estimates of the target from the NN close to what we expected?</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;y_estimate_test&#x27;</span>)<br><span class="hljs-built_in">print</span>(y_estimate_test)<br><span class="hljs-built_in">print</span>()<br><br><span class="hljs-comment"># We could also measure the error for the test_data but we would have to specify</span><br><span class="hljs-comment"># the true target values for the test data and then pass it through `y_placeholder`</span><br><span class="hljs-comment"># in the `feed_dict`. We could run the `loss` operation to compute the</span><br><span class="hljs-comment"># test error.</span><br><br><span class="hljs-comment"># This is left empty as an exercise to the reader.</span><br></code></pre></td></tr></table></figure><h2 id="dataloader"><a href="#dataloader" class="headerlink" title="dataloader"></a>dataloader</h2><p>读取数量：reader.read_up_to(…, num_records&#x3D;64) 表示一次最多读取 $N$ 条数据（$N \le 64$）。<br>序列长度：seq_len &#x3D; 100。</p><p>以下是 tf.parse_example 解析后，各变量的具体 Tensor 形状：</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
       
       
         <tags>
@@ -570,6 +636,12 @@
         <content type="html"><![CDATA[<p>从单神经元的相关性到更复杂的群体编码</p><h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><p>相关不意味着因果，但是可以缩小范围后续做光遗传实验</p><h2 id="Identify-cell-type"><a href="#Identify-cell-type" class="headerlink" title="Identify cell type"></a>Identify cell type</h2><p>一、GLM</p><ol><li>计算神经元对多个regressor的响应强度beta</li><li>对单条鱼、单个regressor，提取beta大于阈值的神经元 </li><li>用collocalization验证分类结果是否有跨被试的一致性，找出空间上特定的神经环路</li></ol><p>二、shuffle</p><h3 id="GLM"><a href="#GLM" class="headerlink" title="GLM"></a>GLM</h3><p>General Linear Model</p><ol><li>定义“钙指示剂的脉冲响应” (IRF)</li></ol><p>• f, p0, irf, h: 这几行代码定义了一个数学函数，用于模拟 GCaMP6s 指示剂的典型响应曲线。<br>• h &#x3D; irf(xx): h 现在是一个短向量，代表当神经元瞬时激活一次后，荧光信号在接下来几秒内的“先上升再缓慢下降”的标准形状。这在功能磁共振（fMRI）中被称为血氧响应函数 (HRF)，在这里它就是钙响应函数 (CRF&#x2F;IRF)。</p><ol start="2"><li>卷积：从“事件”到“预测的信号”</li></ol><p>• X &#x3D; np.array([np.convolve(x, h, ‘full’)[:len(x)] for x in X.values()]).T<br>• 这是最关键的一步。np.convolve(x, h)（卷积）操作，就是将你的<strong>“事件”时间序列</strong>（x，比如一个0和1组成的序列，1代表事件发生）与上面计算出的<strong>“标准响应”</strong>（h）进行计算。<br>• 结果：X（注意，变量名被覆盖了）不再是原始的0&#x2F;1事件，而是变成了<strong>“预测的荧光信号”</strong>。它模拟了如果只有X中的事件发生，Y中的荧光信号随时间变化的完整曲线。</p><ol start="3"><li>构建“基线” (Baseline)</li></ol><ul><li>poly &#x3D; 0</li><li>B &#x3D; np.array([…]): 这部分代码用于去除数据中的缓慢漂移。<br>• 在实验中，荧光信号可能会因为光漂白（photobleaching）或设备不稳定而缓慢下降或上升。<br>• B（Baseline）就是用来捕捉这种与实验事件无关的缓慢变化。<br>• 因为 poly &#x3D; 0，这里 B 实际上只包含一个常数项（截距，intercept），用于模拟信号的平均基线。如果 poly 设为1或2，它还会加入线性和二次项来拟合更复杂的漂移。</li></ul><ol start="4"><li>组合：完整的“设计矩阵”</li></ol><p>• G &#x3D; np.c_[X, B]: 这一步将<strong>“预测的信号”（X）和“基线漂移”</strong>（B）并排放在一个矩阵G中。<br>• G 现在是你的完整模型（“Design Matrix”）。</p><ol start="5"><li>求解GLM</li></ol><p>• beta &#x3D; np.linalg.pinv(G) @ Y<br>• 这是GLM的核心求解步骤。它在寻找一组最佳权重（beta），使得 G 乘以 beta 的结果，能与<strong>“真实观测数据”</strong>（Y）尽可能地接近。<br>• np.linalg.pinv(G) 计算 G 的<a href="https://www.google.com/search?q=https://zh.wikipedia.org/wiki/%25E5%25A6%2582%25E9%2580%2586">伪逆</a>，这是在数学上求解线性方程组 $Y &#x3D; G\beta$ 的标准方法（最小二乘法）。</p><h3 id="预期神经元的特点"><a href="#预期神经元的特点" class="headerlink" title="预期神经元的特点"></a>预期神经元的特点</h3>]]></content>
       
       
+      <categories>
+          
+          <category> 计算神经科学 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -588,6 +660,12 @@
       
         <content type="html"><![CDATA[<h2 id="〇、总则"><a href="#〇、总则" class="headerlink" title="〇、总则"></a>〇、总则</h2><p>基于<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/2017-spring.php">李宏毅2017机器学习课程</a></p><h3 id="Multiple-layer-LSTM-Structure"><a href="#Multiple-layer-LSTM-Structure" class="headerlink" title="Multiple-layer LSTM Structure"></a>Multiple-layer LSTM Structure</h3><p>回顾RNN的结构</p><p><img src="/images/posts/LSTM_img/RNN.png" alt="alt text"></p><p>Long short-term memory结构如下：We can see that 同等数量units 参数量是RNN的4倍(一个很重要的点)</p><p><img src="/images/posts/LSTM_img/LSTM.png" alt="alt text"></p><p>LSTM网络则是将每一个<strong>隐藏层单元</strong>替换为一个LSTM unit。<br>多层LSTM网络结构如下：除了**输入序列$x^t$<strong>，</strong>隐藏层输出$h^{t-1}$**，使用Extension <strong>“peephole”，memory cell输出$c^{t-1}$</strong> 也作为下一时刻的输入</p><p><img src="/images/posts/LSTM_img/multiLayerLSTM.png" alt="alt text"></p><h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>BPTT(backpropagation through time)，考虑时间信息</p><p><img src="/images/posts/LSTM_img/BPTT.png" alt="alt text"></p><p>RNN traning比较困难，容易梯度爆炸：</p><p><img src="/images/posts/LSTM_img/gradient_explosion.png" alt="alt text"></p><p>避免梯度爆炸的technique：当梯度大于15时截断（发明人的方法）</p><p><br><br/></p><h2 id="一、实现"><a href="#一、实现" class="headerlink" title="一、实现"></a>一、实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure><h2 id="二、应用"><a href="#二、应用" class="headerlink" title="二、应用"></a>二、应用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">GridCellsRNNCell</span>(snt.RNNCore):<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,target_ensembles,nh_lstm,nh_bottleneck,nh_embed=<span class="hljs-literal">None</span>,...</span><br><span class="hljs-params">dropoutrates_bottleneck=<span class="hljs-literal">None</span></span>):<br><br><br></code></pre></td></tr></table></figure><h3 id="batch-size的影响"><a href="#batch-size的影响" class="headerlink" title="batch size的影响"></a>batch size的影响</h3><p>loss function is across entropy:</p><p>$$-\sum_i^{\mathrm{NPC}} P(y_i)\log P(\hat y_i)-\sum_j^{\mathrm{NHDC}} P(z_j)\log P(\hat z_j)$$</p><p>NPC&#x3D;256, NHDC&#x3D;32. This will cause loss pc </p>]]></content>
       
+      
+      <categories>
+          
+          <category> 计算神经科学 </category>
+          
+      </categories>
       
       
         <tags>

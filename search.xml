@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>transformer</title>
+      <link href="/2026/07/13/2026-07-14-day2-transformer/"/>
+      <url>/2026/07/13/2026-07-14-day2-transformer/</url>
+      
+        <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-07-13-LLM知识体系搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>self-attention</title>
+      <link href="/2026/07/12/2026-07-13-day1-self-attention%20copy/"/>
+      <url>/2026/07/12/2026-07-13-day1-self-attention%20copy/</url>
+      
+        <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>MHA&#x2F;MQA代码手撕</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> math<br><span class="hljs-comment"># 多头注意力     </span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MHA</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, num_head, dimension_k, dimension_v, d_k, d_v, d_o</span>):<br>        <span class="hljs-comment"># d_k表示head dimension，d_k * num_head 就是embedding的长度</span><br>        <span class="hljs-built_in">super</span>().__init__()<br>        <span class="hljs-variable language_">self</span>.num_head = num_head<br>        <span class="hljs-variable language_">self</span>.d_k = d_k<br>        <span class="hljs-variable language_">self</span>.d_v = d_v<br>        <span class="hljs-variable language_">self</span>.d_o = d_o<br>        <span class="hljs-variable language_">self</span>.fc_q = nn.Linear(dimension_k, num_head * d_k)<br>        <span class="hljs-variable language_">self</span>.fc_k = nn.Linear(dimension_k, num_head * d_k)<br>        <span class="hljs-variable language_">self</span>.fc_v = nn.Linear(dimension_v, num_head * d_v)<br>        <span class="hljs-variable language_">self</span>.fc_o = nn.Linear(num_head * d_v, d_o)<br>        <span class="hljs-variable language_">self</span>.softmax = nn.Softmax(dim=<span class="hljs-number">2</span>)<br>        <br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, q, k, v, mask</span>):<br>        <br>        batch, n_q, dimension_q = q.size()<br>        batch, n_k, dimension_k = k.size()<br>        batch, n_v, dimension_v = v.size()<br>          <br>        q = <span class="hljs-variable language_">self</span>.fc_q(q)<br>        k = <span class="hljs-variable language_">self</span>.fc_k(k)<br>        v = <span class="hljs-variable language_">self</span>.fc_v(v)<br>        q = q.view(batch, n_q, <span class="hljs-variable language_">self</span>.num_head, <span class="hljs-variable language_">self</span>.d_k).permute(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>).contiguous().view(-<span class="hljs-number">1</span>, n_q, <span class="hljs-variable language_">self</span>.d_k)<br>        k = k.view(batch, n_k, <span class="hljs-variable language_">self</span>.num_head, <span class="hljs-variable language_">self</span>.d_k).permute(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>).contiguous().view(-<span class="hljs-number">1</span>, n_k, <span class="hljs-variable language_">self</span>.d_k)<br>        v = v.view(batch, n_v, <span class="hljs-variable language_">self</span>.num_head, <span class="hljs-variable language_">self</span>.d_v).permute(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>).contiguous().view(-<span class="hljs-number">1</span>, n_v, <span class="hljs-variable language_">self</span>.d_v)<br>        <br>        attention = torch.matmul(q, k.transpose(-<span class="hljs-number">1</span>, -<span class="hljs-number">2</span>)) / math.sqrt(<span class="hljs-variable language_">self</span>.d_k)<br>        mask = mask.repeat(<span class="hljs-variable language_">self</span>.num_head, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        attention = attention + mask<br>        attention = <span class="hljs-variable language_">self</span>.softmax(attention)<br>        <br>        output = torch.matmul(attention, v)<br>        output = output.view(<span class="hljs-variable language_">self</span>.num_head, batch, n_q, <span class="hljs-variable language_">self</span>.d_v).permute(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>).contiguous().view(batch, n_q, -<span class="hljs-number">1</span>)<br>        output = <span class="hljs-variable language_">self</span>.fc_o(output)<br>        <span class="hljs-keyword">return</span> attention, output<br>        <br><span class="hljs-comment"># Multi query attention</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MQA</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, num_head, dimension_k, dimension_v, d_k, d_v, d_o</span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        <span class="hljs-variable language_">self</span>.num_head = num_head<br>        <span class="hljs-variable language_">self</span>.d_k = d_k<br>        <span class="hljs-variable language_">self</span>.d_v = d_v<br>        <span class="hljs-variable language_">self</span>.d_o = d_o<br>        <span class="hljs-variable language_">self</span>.fc_q = nn.Linear(dimension_k, num_head * d_k)<br>        <span class="hljs-variable language_">self</span>.fc_k = nn.Linear(dimension_k, d_k)<br>        <span class="hljs-variable language_">self</span>.fc_v = nn.Linear(dimension_v, d_v)<br>        <span class="hljs-variable language_">self</span>.fc_o = nn.Linear(num_head * d_v, d_o)<br>        <span class="hljs-variable language_">self</span>.softmax = nn.Softmax(dim=<span class="hljs-number">2</span>)<br>        <br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, q, k, v, mask</span>):<br>        <br>        batch, n_q, dimension_q = q.size()<br>        batch, n_k, dimension_k = k.size()<br>        batch, n_v, dimension_v = v.size()<br>          <br>        q = <span class="hljs-variable language_">self</span>.fc_q(q)<br>        k = <span class="hljs-variable language_">self</span>.fc_k(k)<br>        v = <span class="hljs-variable language_">self</span>.fc_v(v) <br>        q = q.view(batch, n_q, <span class="hljs-variable language_">self</span>.num_head, <span class="hljs-variable language_">self</span>.d_k).permute(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>).contiguous().view(-<span class="hljs-number">1</span>, n_q, <span class="hljs-variable language_">self</span>.d_k)       <br>        k = k.repeat(<span class="hljs-variable language_">self</span>.num_head, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        v = v.repeat(<span class="hljs-variable language_">self</span>.num_head, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        <br>        attention = torch.matmul(q, k.transpose(-<span class="hljs-number">1</span>, -<span class="hljs-number">2</span>)) / math.sqrt(<span class="hljs-variable language_">self</span>.d_k)<br>        mask = mask.repeat(<span class="hljs-variable language_">self</span>.num_head, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        attention = attention + mask<br>        attention = <span class="hljs-variable language_">self</span>.softmax(attention)<br>        <br>        output = torch.matmul(attention, v)<br>        output = output.view(<span class="hljs-variable language_">self</span>.num_head, batch, n_q, <span class="hljs-variable language_">self</span>.d_v).permute(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>).contiguous().view(batch, n_q, -<span class="hljs-number">1</span>)<br>        output = <span class="hljs-variable language_">self</span>.fc_o(output)<br>        <span class="hljs-keyword">return</span> attention, output<br><br>batch = <span class="hljs-number">10</span><br>num_head = <span class="hljs-number">8</span><br>n_q, n_k, n_v = <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span> <span class="hljs-comment"># sequence 长度</span><br>dimension_q, dimension_k, dimension_v = <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">64</span> <span class="hljs-comment"># embedding的长度</span><br>d_k, d_v, d_o = <span class="hljs-number">16</span>, <span class="hljs-number">16</span>, <span class="hljs-number">8</span><br>q = torch.randn(batch, n_q, dimension_q)<br>k = torch.randn(batch, n_k, dimension_k)<br>v = torch.randn(batch, n_v, dimension_v)<br>mask  = torch.full((batch, n_q, n_k), -np.inf)    <br>mask = torch.triu(mask,diagonal=<span class="hljs-number">1</span>)<br>mha = MHA(num_head, dimension_k, dimension_v, d_k, d_v, d_o)<br>attention, output = mha(q, k, v, mask)<br><span class="hljs-built_in">print</span>(attention.size(), output.size())<br><br>mqa = MQA(num_head, dimension_k, dimension_v, d_k, d_v, d_o)<br>attention, output = mqa(q, k, v, mask)<br><span class="hljs-built_in">print</span>(attention.size(), output.size())<br><br></code></pre></td></tr></table></figure><p>可参考博客</p><p><a href="https://hwcoder.top/Manual-Coding-1">https://hwcoder.top/Manual-Coding-1</a></p><p><a href="https://www.bilibili.com/video/BV19YbFeHETz/?spm_id_from=333.337.search-card.all.click&vd_source=1e761ed3a09f77601129e52e0099cad9">手写self-attention的四重境界</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-07-13-LLM知识体系搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>股票投资顾问Agent</title>
+      <link href="/2026/07/12/2026-07-13-%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E9%A1%BE%E9%97%AEAgent/"/>
+      <url>/2026/07/12/2026-07-13-%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E9%A1%BE%E9%97%AEAgent/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-07-13-找工项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> project </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字节跳动手撕准备</title>
+      <link href="/2026/06/18/2026-06-19-%E5%AD%97%E8%8A%82/"/>
+      <url>/2026/06/18/2026-06-19-%E5%AD%97%E8%8A%82/</url>
+      
+        <content type="html"><![CDATA[<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id="REAL805-小红的区间删除"><a href="#REAL805-小红的区间删除" class="headerlink" title="REAL805 小红的区间删除"></a>REAL805 小红的区间删除</h3><p>乍一看以为是求最长不重复数组，其实更简单。只需遍历，放入哈希表，遇到重复的计算可删除长度i-hashTable[x]-1，不用更新哈希表</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-06-19-面试手撕准备 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回溯</title>
+      <link href="/2026/05/14/2026-05-14-%E6%97%A5%E8%AE%B07-%E5%9B%9E%E6%BA%AF/"/>
+      <url>/2026/05/14/2026-05-14-%E6%97%A5%E8%AE%B07-%E5%9B%9E%E6%BA%AF/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="套路"><a href="#套路" class="headerlink" title="套路"></a>套路</h1><p>增量构建答案的过程，通常由递归实现</p><h2 id="回溯三问："><a href="#回溯三问：" class="headerlink" title="回溯三问："></a>回溯三问：</h2><ol><li>当前操作？枚举path[i]要填入的字母</li><li>子问题？</li><li>下一个子问题</li></ol><p>先写二叉树回溯,再做的通用回溯。二叉树型回溯和多叉树(通用型)回溯的区别就是 通用型要写for loop，而二叉树只有2个选择，所以没有for loop，直接执行dfs(node.left)和dfs(node.right).</p><p>从写代码的角度对比,几乎完全一样:</p><p>确定递归函数的意义：</p><p>1.1 def dfs(node):从上到下遍历树的每一个node<br>1.2 def dfs(i):从index 0开始构造这条路径</p><p>确定base case：</p><p>2.1 if node is None 所有该遍历的节点已经遍历完了(node是叶子节点的时候，就是最后一片要遍历的叶子）<br>2.2 if i &#x3D;&#x3D; n 这条路径已经被填满了(i&#x3D;n-1的时候，就是最后要处理的一个path格子)</p><p>确定单层递归的当前操作:</p><p>3.1 加入pathpath.append(str(node.val)) 且 进行下层递归dfs(node.left) dfs(node.right) 且恢复现场path.pop()<br>3.2 在for loop下加入path在for loop下: path.append(c) 且 进行下一层递归dfs(i + 1) 且恢复现场path.pop</p><h1 id="子集型回溯"><a href="#子集型回溯" class="headerlink" title="子集型回溯"></a>子集型回溯</h1><ol><li>当前操作？</li><li>子问题？</li><li>下一个子问题</li></ol><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动态规划</title>
+      <link href="/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <url>/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="思考方式"><a href="#思考方式" class="headerlink" title="思考方式"></a>思考方式</h1><p>萌新三步：思考回溯怎么写；改成记忆化搜索；1：1翻译成递推。</p><p>以下以打家劫舍为例，说明思考方式</p><ol><li><p>回溯：<br><img src="/images/posts/leetcode/8-dp/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="alt text"></p></li><li><p>把递归的计算结果保存下来，<br><img src="/images/posts/leetcode/8-dp/%E8%AE%B0%E5%BF%86%E5%8C%96%E5%AD%98%E5%82%A8.png" alt="alt text"></p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    cache=[-<span class="hljs-number">1</span>]*n<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">i</span>):<br>        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> cache[i]!=-<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> cache[i]<br>        res=<span class="hljs-built_in">max</span>(dfs(i-<span class="hljs-number">1</span>),dfs(i-<span class="hljs-number">2</span>)+nums[i])<br>        cache[i]=res<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-keyword">return</span> dfs(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><ol start="3"><li>改为递推<br>自底向上计算<br><img src="/images/posts/leetcode/8-dp/%E9%80%92%E6%8E%A8%E5%92%8C%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96.png" alt="alt text"></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    f=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">for</span> i,x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>        f[i+<span class="hljs-number">2</span>]=<span class="hljs-built_in">max</span>(f[i+<span class="hljs-number">1</span>],f[i]+x)<br></code></pre></td></tr></table></figure><p>空间优化：</p><h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><h2 id="一般问题"><a href="#一般问题" class="headerlink" title="一般问题"></a>一般问题</h2><p>我们有 $n$ 件物品和一个容量（capacity）为 $C$ 的背包，记第 $i$ 件物品的重量（weight）为 $w_i$，价值（value）为 $v_i$，求将哪些物品装入背包可使价值总和最大。</p><blockquote><h3 id="0-1-背包"><a href="#0-1-背包" class="headerlink" title="0-1 背包"></a>0-1 背包</h3><p>如果限定每件物品最多只能选取 $1$ 次（即 $0$ 或 $1$ 次），则问题称为 <strong>0-1 背包问题</strong>。</p></blockquote><blockquote><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>如果每件物品最多可以选取无限次，则问题称为 <strong>完全背包问题</strong>。</p></blockquote><p>假设放入背包中的物品 $i$ 的数目为 $k_i$，则上述背包问题在数学上可表达为：</p><p>$$<br>\max \sum_{i&#x3D;0}^{n-1} k_i \cdot v_i<br>$$</p><p>约束条件（subject to, s.t.）：</p><p>$$<br>\sum_{i&#x3D;0}^{n-1} k_i \cdot w_i \le C<br>$$</p><p>并且：</p><p>$$<br>\begin{cases}<br>k_i \in {0,1} &amp; \text{0-1 背包问题} \\<br>k_i \in {0,1,2,\dots,+\infty} &amp; \text{完全背包问题}<br>\end{cases}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>矩阵</title>
+      <link href="/2026/05/10/2026-05-11-%E6%97%A5%E8%AE%B06-%E7%9F%A9%E9%98%B5/"/>
+      <url>/2026/05/10/2026-05-11-%E6%97%A5%E8%AE%B06-%E7%9F%A9%E9%98%B5/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>m*n的矩阵不要新开一个一样大小的矩阵来储存结果，可以用用第一行或第一列储存(m+n)，或者新建表</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>链表</title>
+      <link href="/2026/05/09/2026-05-10-%E6%97%A5%E8%AE%B05-%E9%93%BE%E8%A1%A8/"/>
+      <url>/2026/05/09/2026-05-10-%E6%97%A5%E8%AE%B05-%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>slow + fast</p><h3 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h3><p><strong>题142</strong> 给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p><p>这道题纯粹考数学了哈哈。<strong>参考解答</strong> 作者：Krahets<br>链接：<a href="https://leetcode.cn/problems/linked-list-cycle-ii/solutions/12616/linked-list-cycle-ii-kuai-man-zhi-zhen-shuang-zhi-/">https://leetcode.cn/problems/linked-list-cycle-ii/solutions/12616/linked-list-cycle-ii-kuai-man-zhi-zhen-shuang-zhi-/</a></p><p>这类链表题目一般都是使用双指针法解决的，例如寻找距离尾部第 K 个节点、寻找环入口、寻找公共尾部入口等。</p><p>在本题的求解过程中，双指针会产生两次“相遇”。</p><p>双指针的第一次相遇：<br>设两指针 fast，slow 指向链表头部 head 。<br>令 fast 每轮走 2 步，slow 每轮走 1 步。<br>执行以上两步后，可能出现两种结果：</p><p>第一种结果： fast 指针走过链表末端，说明链表无环，此时直接返回 null。</p><p>如果链表存在环，则双指针一定会相遇。因为每走 1 轮，fast 与 slow 的间距 +1，fast 一定会追上 slow 。</p><p>第二种结果： 当fast &#x3D;&#x3D; slow时， 两指针在环中第一次相遇。下面分析此时 fast 与 slow 走过的步数关系：</p><p>设链表共有 a+b 个节点，其中 链表头部到链表入口 有 a 个节点（不计链表入口节点）， 链表环 有 b 个节点（这里需要注意，a 和 b 是未知数，例如图解上链表 a&#x3D;4 , b&#x3D;5）；设两指针分别走了 f，s 步，则有：</p><p>fast 走的步数是 slow 步数的 2 倍，即 f&#x3D;2s；（解析： fast 每轮走 2 步）<br>fast 比 slow 多走了 n 个环的长度，即 f&#x3D;s+nb；（ 解析： 双指针都走过 a 步，然后在环内绕圈直到重合，重合时 fast 比 slow 多走 环的长度整数倍 ）。<br>将以上两式相减得到 f&#x3D;2nb，s&#x3D;nb，即 fast 和 slow 指针分别走了 2n，n 个环的周长。</p><p>接下来该怎么做呢？</p><p>如果让指针从链表头部一直向前走并统计步数k，那么所有 走到链表入口节点时的步数 是：k&#x3D;a+nb ，即先走 a 步到入口节点，之后每绕 1 圈环（ b 步）都会再次到入口节点。而目前 slow 指针走了 nb 步。因此，我们只要想办法让 slow 再走 a 步停下来，就可以到环的入口。</p><p>但是我们不知道 a 的值，该怎么办？依然是使用双指针法。考虑构建一个指针，此指针需要有以下性质：此指针和 slow 一起向前走 a 步后，两者在入口节点重合。那么从哪里走到入口节点需要 a 步？答案是链表头节点head。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>binary tree</title>
+      <link href="/2026/05/08/2026-05-09-%E6%97%A5%E8%AE%B04-%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+      <url>/2026/05/08/2026-05-09-%E6%97%A5%E8%AE%B04-%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><ol><li>如何思考二叉树相关问题？</li></ol><ul><li>不要一开始就陷入细节，而是思考整棵树与其左右子树的关系。</li></ul><ol start="2"><li>为什么需要使用递归？</li></ol><ul><li>子问题和原问题是相似的，他们执行的代码也是相同的（类比循环），但是子问题需要把计算结果返回给上一级，这更适合用递归实现。</li></ul><ol start="3"><li>为什么这样写就一定能算出正确答案？</li></ol><ul><li>由于子问题的规模比原问题小，不断“递”下去，总会有个尽头，即递归的边界条件 ( base case )，直接返回它的答案“归”；</li><li>类似于数学归纳法（多米诺骨牌），n&#x3D;1时类似边界条件；n&#x3D;m时类似往后任意一个节点</li></ul><ol start="4"><li>计算机是怎么执行递归的？</li></ol><ul><li>当程序执行“递”动作时，计算机使用栈保存这个发出“递”动作的对象，程序不断“递”，计算机不断压栈，直到边界时，程序发生“归”动作，正好将执行的答案“归”给栈顶元素，随后程序不断“归”，计算机不断出栈，直到返回原问题的答案，栈空。</li></ul><p><img src="/../../images/posts/leetcode/4-tree/python%E6%89%A7%E8%A1%8C%E9%80%92%E5%BD%92%E8%BF%87%E7%A8%8B%E5%8F%AF%E8%A7%86%E5%8C%96.png" alt="alt text"></p><ol start="5"><li>另一种递归思路</li></ol><ul><li>维护全局变量，使用二叉树遍历函数，不断更新全局变量最大值。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python</title>
+      <link href="/2026/05/05/2026-05-06-%E6%97%A5%E8%AE%B03-stack/"/>
+      <url>/2026/05/05/2026-05-06-%E6%97%A5%E8%AE%B03-stack/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><h2 id="单调栈基础"><a href="#单调栈基础" class="headerlink" title="单调栈基础"></a>单调栈基础</h2><p>作者：Shawxing精讲算法<br>链接：<a href="https://leetcode.cn/discuss/post/L5ZpxA/">https://leetcode.cn/discuss/post/L5ZpxA/</a></p><p>在 O(n) 的时间复杂度内求出数组中各个元素右侧第一个更大的元素及其下标，然后一并得到其他信息。</p><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p><img src="/images/posts/leetcode/3-stack/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8E%9F%E7%90%861.jpeg" alt="alt text"></p><p><img src="/images/posts/leetcode/3-stack/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8E%9F%E7%90%862.jpeg" alt="alt text"></p><p><img src="/images/posts/leetcode/3-stack/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8E%9F%E7%90%863.jpeg" alt="alt text"></p><p><img src="/images/posts/leetcode/3-stack/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8E%9F%E7%90%864.jpeg" alt="alt text"></p><p>最终结果<br><img src="/images/posts/leetcode/3-stack/result.png" alt="alt text"></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">monotonicStack</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:<br>        n = <span class="hljs-built_in">len</span>(nums)<br>        ans = [<span class="hljs-number">0</span>] * n<br>        st = []<br><br>        <span class="hljs-keyword">for</span> i, v <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>            <span class="hljs-keyword">while</span> st <span class="hljs-keyword">and</span> v &gt; nums[st[-<span class="hljs-number">1</span>]]:<br>                prevI = st.pop()<br>                ans[prevI] = i<br>                <span class="hljs-comment"># 还可以针对 prevI, i, nums[prevI], nums[i] 做些其他的处理 </span><br>            st.append(i)<br>        <br>        <span class="hljs-keyword">return</span> ans<br><br></code></pre></td></tr></table></figure><p>总结与扩展<br>扩展并归纳一下，在 while 的执行条件中，将数组元素与栈顶元素比较时：</p><p>右侧第一个 更大（可相等） 元素对应 &gt;&#x3D;<br>右侧第一个 更大（不可相等） 元素对应 &gt;<br>右侧第一个 更小元素（可相等） 元素对应 &lt;&#x3D;<br>右侧第一个 更小元素（不可相等） 元素对应 &lt;<br>还可以镜像处理，逆向遍历数组并维护单调栈，得到各元素左侧相应的信息。</p><p>练习<br>可能涉及一些变形，但核心原理不变。</p><p>每日温度<br>下一个更大元素 I<br>下一个更大元素 II<br>柱状图中最大的矩形<br>接雨水及个人题解（这道题在面试中出现原题的几率较高，建议掌握最优的双指针解法即可）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python</title>
+      <link href="/2026/04/21/2026-04-22-%E6%97%A5%E8%AE%B02-python/"/>
+      <url>/2026/04/21/2026-04-22-%E6%97%A5%E8%AE%B02-python/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">len</span>()<br><span class="hljs-built_in">sorted</span>() <span class="hljs-comment">#返回的是字典</span><br><span class="hljs-built_in">tuple</span>()<br></code></pre></td></tr></table></figure><h2 id="有用"><a href="#有用" class="headerlink" title="有用"></a>有用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">Counter()<br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">属于 Python 标准库中的 collections 模块。在 LeetCode 环境中，List 和 Counter 通常已经被默认导入，所以你不需要手动写 from collections import Counter。</span><br><span class="hljs-string">主要的功能是：</span><br><span class="hljs-string">统计次数：接收一个可迭代对象（如字符串、列表），自动统计其中每个元素出现的次数。</span><br><span class="hljs-string">字典行为：它本质上是一个字典（dict）的子类，键（key）是元素，值（value）是次数。</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br></code></pre></td></tr></table></figure><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>列表&#x2F;动态数组 <code>list()</code>, <code>[]</code></p><p>从末尾添加或删除元素<br><code>self.nums.append()</code><br><code>self.nums.pop()</code></p><h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><p><code>&#123;&#125;</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">d = defaultdict(<span class="hljs-built_in">list</span>) <span class="hljs-comment"># 当遇到不存在的键时，请自动创建一个空列表 [] 作为它的值。</span><br></code></pre></td></tr></table></figure><h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">st = <span class="hljs-built_in">set</span>(nums)  <span class="hljs-comment"># 把 nums 转成哈希集合</span><br></code></pre></td></tr></table></figure><h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">root: <span class="hljs-type">Optional</span>[TreeNode] <br><span class="hljs-comment">#Python 的类型提示语法，意思是：这个参数 root 既可以是 TreeNode 类型的对象，也可以是 None</span><br><span class="hljs-comment">#如果输入的树是空的，那么 root 就是 None。如果不加 Optional，类型检查器会报错，因为它以为 root 必须是个节点对象</span><br></code></pre></td></tr></table></figure><h1 id="python-语法"><a href="#python-语法" class="headerlink" title="python 语法"></a>python 语法</h1><p>闭包与 LEGB 规则<br>在 Python 中，当一个函数内部定义了另一个函数时，内部函数可以访问外部函数的变量。这叫做闭包。<br>Python 查找变量时遵循 LEGB 规则：<br>Local：先在函数内部找（比如 node 变量）。<br>Enclosing：如果没找到，去外层嵌套函数找（这里就是 inorderTraversal 里的 ans）。<br>Global：再没找到，去全局找。<br>Built-in：最后去内置模块找。</p><h1 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h1><h2 id="O-1"><a href="#O-1" class="headerlink" title="O(1)"></a>O(1)</h2><p><code>.reverse()</code>：原地操作，内存效率最高。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机基础</title>
+      <link href="/2026/04/07/2026-04-08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <url>/2026/04/07/2026-04-08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h2><p>CRT，光栅扫描；LCD(liquid crystal display)技术也用到了光栅扫描</p><p>矢量显示系统，节省空间；character generator, screen buffer, </p><p>光笔，人机交互新方式</p><p>位图，bmp(bit map pictures), frame buffer, </p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 随笔杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>图解transformer</title>
+      <link href="/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/"/>
+      <url>/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>transformer相关原理</title>
+      <link href="/2026/04/02/2026-04-03-transformer%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/"/>
+      <url>/2026/04/02/2026-04-03-transformer%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>参考<a href="https://github.com/datawhalechina/learn-nlp-with-transformers.git">基于transformers的自然语言处理(NLP)入门</a></p><h3 id="常见的NLP任务"><a href="#常见的NLP任务" class="headerlink" title="常见的NLP任务"></a>常见的NLP任务</h3><p>NLP任务通常划分为4个大类：1、文本分类， 2、序列标注，3、问答任务——抽取式问答和多选问答，4、生成任务——语言模型、机器翻译和摘要生成。</p><ul><li>文本分类：对单个、两个或者多段文本进行分类。举例：“这个教程真棒！”这段文本的情感倾向是正向的，“我在学习transformer”和“如何学习transformer”这两段文本是相似的。</li><li>序列标注：对文本序列中的token、字或者词进行分类。举例：“我在 <em>国家图书馆</em> 学transformer。”这段文本中的 <em>国家图书馆</em> 是一个地点，可以被标注出来方便机器对文本的理解。</li><li>问答任务——抽取式问答和多选问答：1、抽取式问答根据 <em>问题</em> 从一段给定的文本中找到 <em>答案</em>，答案必须是给定文本的一小段文字。举例：问题“小学要读多久?”和一段文本“小学教育一般是六年制。”，则答案是“六年”。2、多选式问答，从多个选项中选出一个正确答案。举例：“以下哪个模型结构在问答中效果最好？“和4个选项”A、MLP，B、cnn，C、lstm，D、transformer“，则答案选项是D。</li><li>生成任务——语言模型、机器翻译和摘要生成：根据已有的一段文字生成（generate）一个字通常叫做语言模型，根据一大段文字生成一小段总结性文字通常叫做摘要生成，将源语言比如中文句子翻译成目标语言比如英语通常叫做机器翻译。</li></ul><h3 id="Transformer的兴起"><a href="#Transformer的兴起" class="headerlink" title="Transformer的兴起"></a>Transformer的兴起</h3><p>2017年，<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>论文首次提出了<strong>Transformer</strong>模型结构并在机器翻译任务上取得了The State of the Art(SOTA, 最好)的效果。2018年，<a href="https://arxiv.org/pdf/1810.04805.pdf">BERT: Pre-training of Deep Bidirectional Transformers for<br>Language Understanding</a>使用Transformer模型结构进行大规模语言模型（language model）预训练（Pre-train），再在多个NLP下游（downstream）任务中进行微调（Finetune），一举刷新了各大NLP任务的榜单最高分，轰动一时。2019年-2021年，研究人员将Transformer这种模型结构和预训练+微调这种训练方式相结合，提出了一系列Transformer模型结构、训练方式的改进（比如transformer-xl，XLnet，Roberta等等）。如下图所示，各类Transformer的改进不断涌现。</p><p><img src="/images/posts/transformer/X-formers-mindmap.png" alt="alt text">图：各类Transformer改进，来源：<a href="https://arxiv.org/pdf/2106.04554.pdf">A Survey of Transformers</a></p><p>另外，由于Transformer优异的模型结构，使得其参数量可以非常庞大从而容纳更多的信息，因此Transformer模型的能力随着预训练不断提升，随着近几年计算能力的提升，越来越大的预训练模型以及效果越来越好的Transformers不断涌现，简单的统计可以从下图看出：</p><p><img src="/images/posts/transformer/model-parameter-change.png" alt="alt text"> 图：预训练模型参数不断变大,来源<a href="https://huggingface.co/course/chapter1/4?fw=pt">Huggingface</a></p><p>尽管各类Transformer的研究非常多，总体上经典和流行的Transformer模型都可以通过<a href="https://github.com/huggingface/transformers">HuggingFace&#x2F;Transformers, 48.9k Star</a>获得和免费使用，为初学者、研究人员提供了巨大的帮助。</p><h2 id="图解attention"><a href="#图解attention" class="headerlink" title="图解attention"></a>图解attention</h2><p>参考<a href="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">jay alammar的Mechanics of Seq2seq Models With Attention</a></p><ol><li>什么是seq2seq模型？</li><li>基于RNN的seq2seq模型如何处理文本&#x2F;长文本序列？</li><li>seq2seq模型处理长文本序列时遇到了什么问题？</li><li>基于RNN的seq2seq模型如何结合attention来改善模型效果？</li></ol><h3 id="seq2seq"><a href="#seq2seq" class="headerlink" title="seq2seq"></a>seq2seq</h3><p><img src="/images/posts/transformer/1-3-encoder-decoder.gif" alt="alt text"><br>seq2seq模型由<span style="color: green">编码器</span>（Encoder）和解码器（Decoder）组成。<span style="color: green">编码器</span>会处理输入序列中的每个元素并获得输入信息，这些信息会被转换成为一个向量（称为<span style="color:orange">context向量</span>）。当我们处理完整个输入序列后，<span style="color: green">编码器</span>把 context向量 发送给<span style="color: purple">解码器</span>，解码器通过context向量中的信息，逐个元素输出新的序列。</p><p>RNN是如何具体地处理输入序列的呢？</p><ol><li><p>假设序列输入是一个句子，这个句子可以由$n$个词表示：$sentence &#x3D; {w_1, w_2,…,w_n}$。</p></li><li><p>RNN首先将句子中的每一个词映射成为一个向量得到一个向量序列：$X &#x3D; {x_1, x_2,…,x_n}$，每个单词映射得到的向量通常又叫做：<strong>word embedding</strong>。</p></li><li><p>然后在处理第$t \in [1,n]$个时间步的序列输入$x_t$时，RNN网络的输入和输出可以表示为：$h_{t} &#x3D; RNN(x_t, h_{t-1})$</p></li></ol><ul><li>输入：RNN在时间步$t$的输入之一为单词$w_t$经过映射得到 的向量$x_t$。</li><li>输入：RNN另一个输入为上一个时间步$t-1$得到的hidden state向量$h_{t-1}$，同样是一个向量。</li><li>输出：RNN在时间步$t$的输出为$h_t$ hidden state向量。</li></ul><p>动态图：<br><img src="/images/posts/transformer/1-6-seq2seq-decoder.gif" alt="RNN-seq2seq"></p><p>编码器逐步得到hidden state并传输最后一个hidden state给解码器。解码器在每个时间步也会得到 hidden state（隐藏层状态），而且也需要把 hidden state（隐藏层状态）从一个时间步传递到下一个时间步。</p><h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><p>基于RNN的seq2seq模型编码器所有信息都编码到了一个context向量中，便是这类模型的瓶颈。一方面单个向量很难包含所有文本序列的信息，另一方面RNN递归地编码文本序列使得模型在处理长文本时面临非常大的挑战（比如RNN处理到第500个单词的时候，很难再包含1-499个单词中的所有信息了）。</p><p>面对以上问题，Bahdanau等2014发布的<a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a> 和 Luong等2015年发布的<a href="https://arxiv.org/abs/1508.04025">Effective Approaches to Attention-based Neural Machine Translation</a>两篇论文中，提出了一种叫做注意力<strong>attetion</strong>的技术。通过attention技术，seq2seq模型极大地提高了机器翻译的质量。归其原因是：attention注意力机制，使得seq2seq模型可以有区分度、有重点地关注输入序列。</p><p>一个注意力模型与经典的seq2seq模型主要有2点不同：</p><ul><li><p>A. 首先，编码器会把更多的数据传递给解码器。编码器把所有时间步的 hidden state（隐藏层状态）传递给解码器，而不是只传递最后一个 hidden state（隐藏层状态），如下面的动态图所示:<br><img src="/images/posts/transformer/1-6-mt-1.gif" alt="attention-seq2seq"><br>动态图: 更多的信息传递给decoder</p></li><li><p>B. 注意力模型的解码器在产生输出之前，做了一个额外的attention处理。如下图所示，具体为：</p><ol><li>由于编码器中每个 hidden state（隐藏层状态）都对应到输入句子中一个单词，那么解码器要查看所有接收到的编码器的 hidden state（隐藏层状态）。</li><li>给每个 hidden state（隐藏层状态）计算出一个分数（我们先忽略这个分数的计算过程）。</li><li>所有hidden state（隐藏层状态）的分数经过softmax进行归一化。</li><li>将每个 hidden state（隐藏层状态）乘以所对应的分数，从而能够让高分对应的  hidden state（隐藏层状态）会被放大，而低分对应的  hidden state（隐藏层状态）会被缩小。</li><li>将所有hidden state根据对应分数进行加权求和，得到对应时间步的context向量。</li></ol><p><img src="/images/posts/transformer/1-7-attention-dec.gif"><br>动态图：编码器结合attention得到context向量的5个步骤。</p></li></ul><p>所以，attention可以简单理解为：一种有效的<strong>加权求和技术</strong>，其艺术在于如何获得权重。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-07-13-LLM知识体系搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Array &amp; string</title>
+      <link href="/2026/03/26/2026-03-27-%E6%97%A5%E8%AE%B01-%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <url>/2026/03/26/2026-03-27-%E6%97%A5%E8%AE%B01-%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><ol><li>善用指针。</li></ol><p>若需指针遍历整个数组，可用</p><figure class="highlight plaintext"><figcaption><span>x in nums:```，</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs for">```for i in range(1,len(nums))```, for i in range(len(nums)) 中的 i 的取值范围是从 0 到 len(nums) - 1。<br>```for i,jump in enumerate(nums):```<br><br>从后往前<br>```for i in range(n,-1,-1)```<br><br>成对遍历<br>`for x,y in pairwise(s):`<br><br>## 空间复杂度<br>关键的考量就是尽量不要用新的变量，能原地修改就原地修改<br><br>思路：<br>1. 边界条件，避免下标超出<br>2. 返回值。设置变量时考虑其与返回值的关系，最好有实际意义，用某个变量值作为返回值<br><br># 数组<br>## 数组切片<br>左闭右开，nums[:k]是前k个元素，nums[0],nums[1]...nums[k-1]<br><br>nums[:-k]是从第一个到倒数第k个（不包含）；nums[-k:]是最后k个<br><br>## 指针<br>### 快慢指针<br><br>例题26：删除有序数组中的重复项<br><br>自己做的步骤：<br>```python<br>class Solution:<br>    def removeDuplicates(self, nums: List[int]) -&gt; int:<br>        # double pointer<br>        i=1<br>        j=2<br>        if len(nums)&lt;=1:<br>            return len(nums)<br>        elif len(nums)==2:<br>            if nums[i]==nums[i-1]:<br>                return 1<br>            else:<br>                return 2<br>        else:<br>            while j&lt;len(nums):<br>                if nums[i]&gt;nums[i-1]:<br>                    i+=1        <br>                    j+=1<br>                else:<br>                    nums[i]=nums[j]<br>                    j+=1<br>                <br>            return i<br></code></pre></td></tr></table></figure><p>边界条件太多，指针作用不明确，没有充分利用有序的性质</p><p>fast指针边界条件以及一直+1的性质可用<code>for i in range(1, len(nums)):</code>来实现（左闭右开），即</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">removeDuplicates</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        slow = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> fast <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(nums)):<br>            <span class="hljs-keyword">if</span> nums[fast] != nums[fast-<span class="hljs-number">1</span>]:<br>                nums[slow] = nums[fast]<br>                slow += <span class="hljs-number">1</span><br>        <br>        <span class="hljs-keyword">return</span> slow<br></code></pre></td></tr></table></figure><h3 id="对撞指针"><a href="#对撞指针" class="headerlink" title="对撞指针"></a>对撞指针</h3><p>接雨水42</p><p>完全懂啦！双指针很容易解决</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">trap</span>(<span class="hljs-params">self, height: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(height)&lt;=<span class="hljs-number">2</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <br>        l,r=<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(height)-<span class="hljs-number">1</span><br>        cap=<span class="hljs-number">0</span> <span class="hljs-comment"># water capacity</span><br>        hl=hr=<span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">while</span> l&lt;=r:<br>            <span class="hljs-comment"># 指针相向移动，互为最高柱子</span><br>            hl=<span class="hljs-built_in">max</span>(hl,height[l])<br>            hr=<span class="hljs-built_in">max</span>(hr,height[r])<br><br>            <span class="hljs-keyword">if</span> hl&lt;hr: <span class="hljs-comment"># 此时最高点肯定在该点右侧，水位等于该点以及左侧柱子高度的最大值</span><br>                cap+=hl-height[l]<br>                l+=<span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                cap+=hr-height[r]<br>                r-=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> cap<br></code></pre></td></tr></table></figure><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>善于利用分支之间的互斥关系和优先级</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> :<br><span class="hljs-keyword">elif</span>:<br>...<br><span class="hljs-keyword">else</span>:<br></code></pre></td></tr></table></figure><h3 id="多数问题"><a href="#多数问题" class="headerlink" title="多数问题"></a>多数问题</h3><p>例题169</p><h4 id="摩尔投票"><a href="#摩尔投票" class="headerlink" title="摩尔投票"></a>摩尔投票</h4><p>参考 如何理解摩尔投票算法？ - 喝七喜的回答 - 知乎<br><a href="https://www.zhihu.com/question/49973163/answer/235921864">https://www.zhihu.com/question/49973163/answer/235921864</a></p><p>摩尔投票算法是基于这个事实：每次从序列里选择两个不相同的数字删除掉（或称为“抵消”），最后剩下一个数字或几个相同的数字，就是出现次数大于总数一半的那个。</p><p>实现的算法从第一个数开始扫描整个数组，有两个变量(参考第一答题者的变量名)major和count。其实这两个变量想表达的是一个“隐形的数组”array，array存储的是“当前暂时无法删除的数字”，我们先不要管major和count，只考虑这个array，同时再维护一个结果数组result，result里面存储的是每次删除一对元素之后的当前结果。</p><p>实现的算法从第一个数开始扫描整个数组，有两个变量(参考第一答题者的变量名)major和count。其实这两个变量想表达的是一个“隐形的数组”array，array存储的是“当前暂时无法删除的数字”，我们先不要管major和count，只考虑这个array，同时再维护一个结果数组result，result里面存储的是每次删除一对元素之后的当前结果。</p><h3 id="跳跃问题"><a href="#跳跃问题" class="headerlink" title="跳跃问题"></a>跳跃问题</h3><p>跳跃游戏55</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">canJump</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">bool</span>:<br>        maxJump=<span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i,jump <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>            <span class="hljs-keyword">if</span> maxJump&lt;i:<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>            maxJump=<span class="hljs-built_in">max</span>(jump+i,maxJump) <br>        <br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure><p>跳跃游戏45</p><p>参考灵茶山艾府<br>链接：<a href="https://leetcode.cn/problems/jump-game-ii/solutions/2926993/tu-jie-yi-zhang-tu-miao-dong-tiao-yue-yo-h2d4/">https://leetcode.cn/problems/jump-game-ii/solutions/2926993/tu-jie-yi-zhang-tu-miao-dong-tiao-yue-yo-h2d4/</a></p><p><img src="/images/posts/leetcode/1-array&string/%E8%B7%B3%E8%B7%83%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A1%A5%E7%90%86%E8%A7%A3%E5%9B%BE%E7%A4%BA.png" alt="alt text"></p><p>注意：不是在无路可走的那个位置造桥，而是当发现无路可走的时候，时光倒流到能跳到最远点的那个位置造桥。换句话说，在无路可走之前，我们只是在默默地收集信息。当发现无路可走的时候，才从收集到的信息中，选择最远点造桥。所建造的这座桥的左端点（起跳位置）可能在我们当前走的这座桥的中间。</p><p>也可以理解成，当发现无路可走的时候，往回跳，选择合适的位置造桥。我们可以在最终算账的时候，把往回跳的情况擦掉，只保留往右跳，也能到达终点。所以往回跳不计入跳跃次数。</p><p>答疑<br>问：为什么代码只遍历到 n−2？</p><p>答：这题 n−1 是终点，nums[n−1] 这个数没有任何意义，完全可以把这个数删了，在长为 n−1 的数组上跑这个算法。或者说，遍历到 nums[n−2] 时，要么已经可以到达终点，要么需要造最后一座桥。n−1 已经是终点了，不需要造桥。</p><p>问：如果题目没有保证一定能到达 n−1，代码要怎么改？</p><p>答：见 1326. 灌溉花园的最少水龙头数目，我的题解。</p><h3 id="加油站问题"><a href="#加油站问题" class="headerlink" title="加油站问题"></a>加油站问题</h3><p>参考灵茶山艾府<br>链接：<a href="https://leetcode.cn/problems/gas-station/solutions/2933132/yong-zhe-xian-tu-zhi-guan-li-jie-pythonj-qccr/">https://leetcode.cn/problems/gas-station/solutions/2933132/yong-zhe-xian-tu-zhi-guan-li-jie-pythonj-qccr/</a></p><p>核心思路：“已经在谷底了，怎么走都是向上。”</p><p>可以有多个解但只需返回一个，于是找到最低点是最能保证一定能走完一圈的。</p><p><img src="/images/posts/leetcode/1-array&string/%E5%8A%A0%E6%B2%B9%E7%AB%99%E9%97%AE%E9%A2%98%E6%8A%98%E7%BA%BF%E5%9B%BE%E8%A7%A3.png" alt="alt text"></p><p>注意：gas 之和减去 cost 之和，对应图中复制的折线图的初始油量。如果不是负数，那么复制后的折线图的最小值，不会比第一段的最小值还小。如果是负数，那么复制后的折线图的最小值，比第一段的最小值还小，这会导致从第一段的最小值出发，行驶过程中油量会变成负数。</p><p>答疑<br>问：下面的代码，是否有可能算出 ans&#x3D;n？</p><p>答：不会，如果最后一轮循环 s&lt;minS，那么 s 必然小于 0，这会导致最终返回 −1。</p><h2 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h2><p>什么时候使用<strong>哈希法</strong>，当我们需要查询一个元素是否出现过，或者一个元素是否在集合里的时候，就要第一时间想到哈希法。</p><p>做哈希法的各种数据结构及优缺点：</p><ol><li>数组的大小是受限制的，而且如果元素很少，而哈希值太大会造成内存空间的浪费。</li><li>set是一个集合，里面放的元素只能是一个key，而两数之和这道题目，不仅要判断y是否存在而且还要记录y的下标位置，因为要返回x 和 y的下标。所以set 也不能用。<br>此时就要选择另一种数据结构：map ，map是一种key value的存储结构，可以用key保存数值，用value在保存数值所在的下标。</li></ol><h3 id="时间复杂度O-1"><a href="#时间复杂度O-1" class="headerlink" title="时间复杂度O(1)"></a>时间复杂度O(1)</h3><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>string，同数组处理，用下标索引s[i]</p><p>同样可相加, s1+s2，完成字符串拼接</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>快速全面了解大语言模型</title>
+      <link href="/2026/03/24/2026-03-25-%E5%BF%AB%E9%80%9F%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
+      <url>/2026/03/24/2026-03-25-%E5%BF%AB%E9%80%9F%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<p>q</p><h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><img src="/images/posts/LLM_QuickStart/midterm-question.png" alt="alt text"><br>5题答对4题，3题分析正确</p><p><strong>GPTs</strong>: 打造AI应有只要一瞬间</p><p>我立刻10min创建了一个zebrafish expert<br><img src="/images/posts/LLM_QuickStart/zebrafish-expert.png" alt="alt text"></p><ul><li>“chatGPT真正做的事-文字接龙”</li></ul><p><strong>Token</strong><br>计价方式；开发者先设定好的，可通过对应平台查询，例如<a href="https://platform.openai.com/tokenizer">openAI tokenizer平台</a></p><h3 id="GPT的发展史"><a href="#GPT的发展史" class="headerlink" title="GPT的发展史"></a>GPT的发展史</h3><p>GPT: Generative Pre-trained Transformer</p><ul><li>GPT-1(2018) 117M, 1GB data</li><li>GPT-2(2019) 1542M, 20GB data，可以回答问题<br><img src="/images/posts/LLM_QuickStart/gpt2-Q&A.png" alt="alt text"></li><li>GPT-3(2020) 175B, 580GB（哈利波特全集约100,0000 words, 以UTF-8编码，一个英文字母一个字节，估算共6e6 Byte；则580e9&#x2F;6e6约100,000遍，远超一个人100年全部时间所能阅读的文字量）</li></ul><h3 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h3><p>Pre-train -&gt; Supervised training -&gt; Reforcement learning&#x2F;RLHF</p><p><img src="/images/posts/LLM_QuickStart/GPT2chatGPT.png" alt="alt text"></p><p><img src="/images/posts/LLM_QuickStart/SupervisedLearning2RL.png" alt="alt text"></p><p>监督式学习的重要性：<br><img src="/images/posts/LLM_QuickStart/instructGPT.png" alt="alt text"></p><p>有预训练后，监督式学习不用大量资料<br><img src="/images/posts/LLM_QuickStart/pretrain-effect.png" alt="alt text"></p><h3 id="PROMPT"><a href="#PROMPT" class="headerlink" title="PROMPT"></a>PROMPT</h3><ol><li>把需求写清楚</li><li>提供资讯给ChatGPT</li><li>提供范例</li><li>鼓励GPT想一想(chain of thought)</li><li>神奇咒语</li><li>上传档案</li><li>ChatGPT可以使用其他工具</li><li>拆解任务</li><li>自主进行规划</li><li>会反省</li><li>跟真实环境互动</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LLM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode刷题方法</title>
+      <link href="/2026/03/19/2026-03-20-%E6%97%A5%E8%AE%B00-%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
+      <url>/2026/03/19/2026-03-20-%E6%97%A5%E8%AE%B00-%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a>，一位本科不算太好但自己奋发图强大佬写的刷题手册</p><h1 id="hot100"><a href="#hot100" class="headerlink" title="hot100"></a>hot100</h1><p>Hot100 真正耗时的不是“做完”，而是：</p><ol><li>理解题型</li><li>建立模板</li><li>能独立写出</li><li>一周后还能做出来</li></ol><p>很多人第一次“过一遍”只需要几周，但实际上并没有形成能力。</p><p>对你这种理工科研背景、代码能力不弱的人，如果认真投入：</p><ul><li><p>每天 3～5 题：</p><ul><li>约 1.5～2 个月</li></ul></li><li><p>每天 1～2 题并总结：</p><ul><li>约 3 个月</li></ul></li><li><p>如果同时还在做科研：</p><ul><li>更现实的是 3～4 个月</li></ul></li></ul><p>建议不要按“数量”推进，而按“题型”推进。</p><p>推荐顺序：</p><ol><li>数组 &#x2F; 双指针</li><li>哈希</li><li>滑动窗口</li><li>二叉树基础</li><li>二分</li><li>栈 &#x2F; 单调栈</li><li>链表</li><li>回溯</li><li>DFS&#x2F;BFS</li><li>动态规划</li><li>贪心</li><li>图</li></ol><p>第一次刷 Hot100 的核心目标：</p><ul><li>见过主流套路：抽象（算法）+数据结构+先验知识+内置函数</li><li>能识别题型</li><li>能自己写出 60%～70%</li><li>建立自己的代码模板库</li></ul><p>不是追求“一次全会”，比较正常的过程是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">第一遍：看不懂 → 模仿<br>第二遍：知道思路 → 能写一半<br>第三遍：独立完成 → 控制错误<br></code></pre></td></tr></table></figure><p>如果你未来想申请 AI&#x2F;ML&#x2F;算法相关实习，Hot100 基本是最低门槛，不算“进阶”。真正有竞争力通常还需要：</p><ul><li>高频公司题</li><li>图论&#x2F;DP强化</li><li>系统设计（后期）</li><li>项目与科研结合</li><li>代码熟练度</li></ul><p>你现在的阶段，更重要的是：</p><ul><li>建立稳定刷题习惯</li><li>总结模板</li><li>形成“看到题 → 匹配套路”的能力</li></ul><p>而不是追求天数。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2026-03-2-力扣刷题日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>grid cells analysis</title>
+      <link href="/2026/03/01/2026-03-02-grid%20cells%20analysis/"/>
+      <url>/2026/03/01/2026-03-02-grid%20cells%20analysis/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算神经 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>colab使用</title>
+      <link href="/2026/02/25/2026-02-26-colab%E4%BD%BF%E7%94%A8/"/>
+      <url>/2026/02/25/2026-02-26-colab%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>Google Colab 是一个基于云端的 Jupyter Notebook 环境，可以免费使用 GPU&#x2F;TPU，非常适合深度学习和科研原型开发。</p><p>但很多初学者一开始都会踩一些坑，本文总结常见问题和入门方法。</p><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>1、理解 Colab 的本质</p><p>Colab ≠ 本地电脑，它本质上是Google 提供的临时云端 Linux 虚拟机。当你运行 notebook 时，其实是在远程服务器执行代码。</p><p>2、为什么路径是 &#x2F;content？</p><p>很多人会疑惑：我的文件在 OneDrive，本地明明有，为什么 Colab 里是 &#x2F;content？原因是：&#x2F;content 是 Colab 虚拟机的工作目录，你的本地文件默认不会自动同步，每次重启 runtime，&#x2F;content 会被清空。可以用：<br><code>!pwd</code> 或 <code>!ls</code>查看当前目录。</p><p>3、!cd 为什么不生效？</p><p>! 调用的是 shell 子进程，每一行都是独立 shell，所以 cd 不会被保留。正确做法是<code>%cd annotated-transformer</code><br>或<code>!cd annotated-transformer &amp;&amp; pip install -r requirements.txt</code></p><p>4、如何访问本地文件？</p><p>Colab 访问本地文件有三种方式。</p><p>方法 1：手动上传</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-built_in">from</span> google.colab import <span class="hljs-built_in">files</span><br><span class="hljs-built_in">files</span>.upload()<br></code></pre></td></tr></table></figure><p>适合小文件。</p><p>方法 2：挂载 Google Drive</p><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clean"><span class="hljs-keyword">from</span> google.colab <span class="hljs-keyword">import</span> drive<br>drive.mount(<span class="hljs-string">&#x27;/content/drive&#x27;</span>)<br></code></pre></td></tr></table></figure><p>然后：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">!<span class="hljs-built_in">ls</span> /content/drive/MyDrive<br></code></pre></td></tr></table></figure><p><strong>适合科研数据。</strong></p><p>方法 3：从 GitHub 拉取</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">!git <span class="hljs-built_in">clone</span> https://github.com/your_repo.git<br>%<span class="hljs-built_in">cd</span> your_repo<br>!pip install -r requirements.txt<br></code></pre></td></tr></table></figure><p>科研项目推荐这种方式。</p><h2 id="入门方法"><a href="#入门方法" class="headerlink" title="入门方法"></a>入门方法</h2><p>由于Colab 的生命周期有以下重要特性：</p><ul><li>运行时间有限（空闲会断开）</li><li>重启后 &#x2F;content 清空</li><li>GPU 资源共享</li></ul><p>因此建议：</p><ul><li>代码放 GitHub</li><li>数据放 Google Drive</li><li>不要依赖 &#x2F;content</li></ul><p>推荐的科研使用结构</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">GitHub (代码)<br>        ↓<br>Colab <span class="hljs-keyword">clone</span><br>        <span class="hljs-title">↓</span><br><span class="hljs-title">Google</span> Drive (数据)<br></code></pre></td></tr></table></figure><p>典型初始化模板：</p><ol><li><p>挂载 Drive<br>from google.colab import drive<br>drive.mount(‘&#x2F;content&#x2F;drive’)</p></li><li><p>克隆代码<br>!git clone <a href="https://github.com/xxx/project.git">https://github.com/xxx/project.git</a><br>%cd project</p></li><li><p>安装依赖<br>!pip install -r requirements.txt</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>transformer精读</title>
+      <link href="/2026/02/24/2026-02-25-transformer%E7%B2%BE%E8%AF%BB/"/>
+      <url>/2026/02/24/2026-02-25-transformer%E7%B2%BE%E8%AF%BB/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/images/posts/attentionPaper/Attention_paper_title.png" alt="alt text"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>知识图谱/虚假共识效应</title>
+      <link href="/2026/02/07/2026-02-08-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+      <url>/2026/02/07/2026-02-08-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="知识图谱"><a href="#知识图谱" class="headerlink" title="知识图谱"></a>知识图谱</h2><h2 id="虚假共识效应"><a href="#虚假共识效应" class="headerlink" title="虚假共识效应"></a>虚假共识效应</h2><p>指社会生活中的人们受到统一的教育或舆论影响，误认为大家拥有某个共识，误认为大家都是这样的。但是事实上，人和人之间的感受和认知相差非常大。</p><p>很多时候事情不是我们所认为的那样，问题或许不是问题，至少不是你认为的那个问题。</p><p>本科期间困扰我最大的问题就是自己到底喜欢什么，擅长什么。现在我知道，我朝哪个方向努力，我就擅长什么，因为我的天赋不是某个特定的学科，而是是自省和高敏感。这让我有较强的适应能力和学习能力，以及对自我的严格要求，不断push我进步。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 随笔杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vibe coding</title>
+      <link href="/2026/02/03/2026-02-04-agent/"/>
+      <url>/2026/02/03/2026-02-04-agent/</url>
+      
+        <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>ChatGPT Plus &#x3D; ChatGPT 里用 GPT<br>Copilot Plus&#x2F;Pro+ &#x3D; IDE 里用 Copilot<br>OpenAI API &#x3D; 自己写代码调模型，单独充值&#x2F;绑定付款<br>Claude Code &#x3D; 用 Claude，不吃 OpenAI API 额度</p><p>入门例子<br><a href="https://articles.zsxq.com/id_fqi4mrr6ztd5.html">Claude Code+Obsidian自动读论文教程</a></p><p>阅读”D:\迅雷下载\evil-read-arxiv-main\evil-read-arxiv-main\README.md”和evil-read-arxivquickstart.md，帮我在我的电脑上配置这个自动读论文的工具，把我未来的论文笔记写在”D:\Data\obisitian\paper-reading”路径下，我的研究方向是物理AI&#x2F;世界模型，我只关注这方面的论文。配置过程中要用到Semantic Scholar的api key，API是s2k-YO0PsOm5CuWw8FWD84V6oRHWsRYxdfSMALTdNNmk。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vibe coding</title>
+      <link href="/2026/02/03/2026-02-04-vibe-coding/"/>
+      <url>/2026/02/03/2026-02-04-vibe-coding/</url>
+      
+        <content type="html"><![CDATA[<h2 id="claude-code"><a href="#claude-code" class="headerlink" title="claude code"></a>claude code</h2><p>安装 Claude Code CLI(command line interface)，进入claude ai homepage按命令安装即可。</p><p>安装完成后命令行运行claude，按步骤登录并完成基础设置。（直接运行vscode里的插件似乎不行，虽然也有登录的提示但是会报api错误:<br><code>Invalid API key · Please run /login</code></p><p>安装完后输入<code>claude</code>，按步骤登录并完成基础设置。</p><p>可以Claude订阅账号登录，<br>Claude Pro - 个人专业版，约150人民币一个月<br>Claude Max - 最高级别订阅，约900一个月<br>Claude Teams - 团队版<br>Claude Enterprise - 企业版</p><p>也可以Claude Console账号（API 访问账号），但目前看不适合，太贵了，一次深度coding就花费约5磅，token消耗量太大了</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>vibe coding必须要做的：</p><ol><li>建git仓库：确定现在要做的项目（不能太大，大项目要拆分成小项目），针对项目建git仓库</li><li>建plan.md：有思路就写好思路，分阶段分点，每一步都清楚。</li><li>建rule.md：没有思路就建立一个rule.md放prompt，把数据说明和需求写清楚，越细节越好</li><li>读取plan&#x2F;rule.md：每次AI生成都让AI先读一遍rule和plan，避免因太长的上下文而遗忘</li><li>根据AI的表现现给予反馈，修改rule和plan。（可以问AI：我给你什么指令，你能更快的解决那个问题？）</li><li>版本和文件管理（多commit和手动梳理，不能偷懒）</li></ol><p><img src="/images/posts/vibe_coding/prompt_engineer.png" alt="alt text"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计学学习</title>
+      <link href="/2026/01/27/2026-01-28-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2026/01/27/2026-01-28-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="杂谈-引子"><a href="#杂谈-引子" class="headerlink" title="杂谈&#x2F;引子"></a>杂谈&#x2F;引子</h2><p>在知乎上看到一张很有意思的图：</p><figure><img src="/images/posts/statistic/iceberge.png"><figcaption>统计学知识冰山</figcaption></figure><p>好奇为什么generalized linear model在冰川下这么深，凭我在数据分析中的使用，似乎并没有什么深奥的地方。</p><h3 id="Fisher"><a href="#Fisher" class="headerlink" title="Fisher"></a>Fisher</h3><p>如果要选一位对现代统计学影响最大的人，几乎无法绕开 Ronald A. Fisher。<br>极大似然估计、方差分析（ANOVA）、实验设计、充分统计量、F<br>分布……很多今天”默认存在”的工具，源头都可以追溯到他。<br><img src="/images/posts/statistic/Fisher.png" alt="alt text"></p><p>他奠定的是一个方法论体系：</p><ul><li>统计建模 &#x3D; 概率模型 + 参数推断</li><li>实验设计 &#x3D; 随机化 + 重复 + 局部控制</li><li>推断逻辑 &#x3D; 似然函数 + 信息量</li></ul><p>在这个体系下，线性模型和 GLM 才真正有统一的理论基础。</p><hr><h3 id="Linear-Model"><a href="#Linear-Model" class="headerlink" title="Linear Model"></a>Linear Model</h3><ol><li>Ordinary Linear Model</li></ol><p>最基本形式：</p><p>y &#x3D; Xβ + ε</p><p>假设：</p><ul><li>误差项 ε ~ N(0, σ²I)</li><li>条件期望 E[y|X] &#x3D; Xβ</li></ul><p>核心特征：</p><ul><li>响应变量是连续的</li><li>误差服从正态分布</li><li>用最小二乘（等价于正态下的 MLE）</li></ul><hr><ol start="2"><li>General Linear Model</li></ol><p>General Linear Model 是对普通线性模型的矩阵推广：</p><p>Y &#x3D; Xβ + ε</p><p>可以包含：</p><ul><li>ANOVA</li><li>ANCOVA</li><li>多元线性回归</li><li>对比编码设计</li></ul><p>但仍然假设误差为正态分布。</p><hr><p>2、Generalized Linear Model（GLM）</p><p>由 Nelder 和 Wedderburn 在 1972 年提出。</p><p>GLM 包含三部分：</p><p>(1) 随机成分</p><p>响应变量来自指数族分布：</p><ul><li>正态分布</li><li>二项分布</li><li>泊松分布</li><li>Gamma 分布</li></ul><p>(2) 系统成分</p><p>η &#x3D; Xβ</p><p>(3) 链接函数</p><p>g(μ) &#x3D; Xβ</p><p>其中 μ &#x3D; E[y|X]</p><p>即：不是直接建模 y，而是建模其期望的某个函数。</p><hr><p>3、General Linear vs Generalized Linear</p><p>  特征       General Linear Model   Generalized Linear Model</p><hr><p>  响应变量   连续                   连续 &#x2F; 二分类 &#x2F; 计数<br>  分布假设   正态                   指数族<br>  链接函数   恒等                   可选（logit &#x2F; log 等）<br>  估计方法   OLS                    MLE（迭代加权最小二乘）</p><hr><p>4、为什么名字看起来”反直觉”？</p><ul><li>General Linear Model：结构更一般，但仍然正态</li><li>Generalized Linear Model：在概率分布层面推广</li></ul><p>“Generalized”指的是对线性模型概率结构的推广，而不是简单”更 general”。</p><hr><p>5、Fisher 的统一视角</p><p>GLM 本质是：</p><p>最大化指数族分布下的似然函数。</p><p>普通线性回归只是正态分布下的特例。</p><p>从这个角度：</p><ul><li>OLS 是 MLE 的特殊情况</li><li>Logistic regression 是二项分布下的 MLE</li><li>Poisson regression 是计数数据的 MLE</li></ul><p>全部统一在：</p><p>指数族 + 链接函数 + 似然框架</p><hr><p>许多机器学习模型都可以写成 GLM 形式：</p><ul><li>Logistic regression</li><li>Softmax classifier</li><li>Poisson regression</li></ul><p>GLM 是统计学通向深度学习的桥梁。</p><h2 id="分析工具"><a href="#分析工具" class="headerlink" title="分析工具"></a>分析工具</h2><p><img src="/images/posts/statistic/pythonVsR.png" alt="alt text"></p><p>python是开源解释语言，不断更新版本，官网可查看其各种版本的维护状态,。<br><img src="/images/posts/statistic/python%20release.png" alt="alt text"><br>更通用，功能更多，下面都以python语言学习</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Data anaysis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tensorflow</title>
+      <link href="/2026/01/23/2026-01-14-tensorflow/"/>
+      <url>/2026/01/23/2026-01-14-tensorflow/</url>
+      
+        <content type="html"><![CDATA[<h1 id="tf1-极简教程"><a href="#tf1-极简教程" class="headerlink" title="tf1 极简教程"></a>tf1 极简教程</h1><p>来源：<a href="https://gist.github.com/jisungk/6e3a111aff72f8e00ec0bb987bf258a4">dead simple tf1 tutorial:Training a feedforward neural network</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> absolute_import<br><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> division<br><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function<br><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf<br></code></pre></td></tr></table></figure><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>TensorFlow is a unique computation framework: it is used for defining<br><strong>computational graphs</strong> and running these graphs. TensorFlow was originally designed for constructing and manipulating deep neural networks.<br>TensorFlow is special in that it does not dynamically compute the values<br>of the outputs of operations. This is in contrast with standard Python which<br>dynamically computes the outputs of operations. In TensorFlow, we have to<br>instead  specify a static computational graph using tensors, and then explicitly<br>run the graph (through a <code>tf.Session()</code> object).</p><figure class="highlight plaintext"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs typical">x = 5<br>y = x + 5<br>print(y)  # prints 10<br></code></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs TensorFlow">import tensorflow as tf<br>x = tf.constant(5)  # a tensor<br>y = x + 5  # equivalent to tf.add(x, 5)<br>print(y)  # doesn&#x27;t print the actual value because graph has not been run<br>sess = tf.Session()<br>print(sess.run(y))  # prints 10<br></code></pre></td></tr></table></figure><p>In this tutorial, we define a simple feedforward neural network with TensorFlow.<br>This particular neural network takes in as input a placeholder tensor called<br>x_placeholder of shape (batch_size, dim_input) and outputs a tensor of<br>shape (batch_size, dim_output). The batch_size represents the number of<br>instances in a single batch of samples run through the graph. We often use<br>placeholders which represent empty tensors through which we can pass in<br>arbitrary data. Of course, the actual data fed in through the placeholders<br>must match the shape of the placeholders.<br>We then compute the mean squared error between the network outputs (estimated<br>target) and the true target values (which we feed in through the placeholder<br><code>y_placeholder</code>). We minimize this error to train the neural network; training<br>involves adjusting the tunable parameters within the neural network model<br>(here, specifically the weight and bias variables inside the <code>dense</code> layers)<br>using gradient descent. </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><code class="hljs python">dim_input = <span class="hljs-number">3</span>  <span class="hljs-comment"># arbitrarily chosen for this example script</span><br>dim_output = <span class="hljs-number">1</span><br><br><span class="hljs-comment"># define placeholders for inputs</span><br><span class="hljs-comment"># We specify the batch_size dimension as None which let&#x27;s it be variable even</span><br><span class="hljs-comment"># though the `dim_input` and `dim_output` dimensions are fixed.</span><br>x_placeholder = tf.placeholder(  <span class="hljs-comment"># input features placeholder</span><br>    <span class="hljs-string">&#x27;float&#x27;</span>, shape=[<span class="hljs-literal">None</span>, dim_input])<br>y_placeholder = tf.placeholder(  <span class="hljs-comment"># input true target placeholder</span><br>    <span class="hljs-string">&#x27;float&#x27;</span>, shape=[<span class="hljs-literal">None</span>, dim_output])<br><br><span class="hljs-comment"># Define the neural network which consists of two dense (fully connected)</span><br><span class="hljs-comment"># layers (which comprise simple matrix multiplication and addition operations).</span><br><span class="hljs-comment"># These &quot;layers&quot; are all TensorFlow operations which can be explicitly run.</span><br><br><span class="hljs-comment"># The input to the first layer is the input features (given via</span><br><span class="hljs-comment"># `x_placeholder`).</span><br>intermediate_layer = tf.layers.dense(x_placeholder, <span class="hljs-number">12</span>)  <span class="hljs-comment"># operation</span><br><span class="hljs-comment"># We pass the outputs of the first layer as inputs to the second, final layer</span><br><span class="hljs-comment"># which outputs the estimated target.</span><br>final_layer = tf.layers.dense(intermediate_layer, dim_output)  <span class="hljs-comment"># operation</span><br>estimated_targets = final_layer  <span class="hljs-comment"># just a different name for clarity</span><br><br><span class="hljs-comment"># We define the `loss` (error) function which we minimize to train our neural</span><br><span class="hljs-comment"># network. The following loss operation is equivalent to calling the helper</span><br><span class="hljs-comment"># `tf.losses.mean_squared_error(y_placeholder, estimated_targets)` which also</span><br><span class="hljs-comment"># returns an operation.</span><br>loss = tf.square(tf.subtract(y_placeholder, estimated_targets))  <span class="hljs-comment"># operation</span><br><br><span class="hljs-comment"># We use the Adam optimizer which is an object which provides functions</span><br><span class="hljs-comment"># to optimize (minimize) the loss using a variant of gradient descent.</span><br>optimizer = tf.train.AdamOptimizer()   <span class="hljs-comment"># object</span><br><br>train_op = optimizer.minimize(loss)  <span class="hljs-comment"># operation, from the AdamOptimizer object</span><br><br><span class="hljs-comment"># We also define the initialization operation which is needed to initialize</span><br><span class="hljs-comment"># the starting values of the variables in our computational graph.</span><br>init_op = tf.global_variables_initializer()  <span class="hljs-comment"># operation</span><br><br><br><span class="hljs-string">&quot;&quot;&quot;Now that we&#x27;ve defined our graph and various operations involving the graph, </span><br><span class="hljs-string">we are going to run the operations to train our neural network.&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># A Session is an abstract environment in which we run our graph and perform</span><br><span class="hljs-comment"># calculations. It provides a common function `run()` for running operations.</span><br>session = tf.Session()  <span class="hljs-comment"># abstract environment</span><br><br><span class="hljs-comment"># Run the initialization operation; no `feed_dict` needed as it has not</span><br><span class="hljs-comment"># dependencies (covered later). Generally needed for most TensorFlow scripts.</span><br>session.run(init_op)<br><br><span class="hljs-comment"># Repeatedly train the neural network for `num_epoch` times</span><br>num_epoch = <span class="hljs-number">2000</span><br>batch_size = <span class="hljs-number">500</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_epoch):<br>  <span class="hljs-comment"># Define input training data. `x_data` represents the training data features</span><br>  <span class="hljs-comment"># which are 0 or 1; these are the input data to the neural network.</span><br>  <span class="hljs-comment"># `y_data` represents the training data &quot;true&quot; targets; `y_data` is just</span><br>  <span class="hljs-comment"># the outputs of the function y = 5 * sum(x) applied to the data batch.</span><br>  <span class="hljs-comment"># We are trying to learn this function (mapping from x to y) with our</span><br>  <span class="hljs-comment"># neural network. Neural networks are general function estimators.</span><br><br>  <span class="hljs-comment"># generate random binary np.array with shape (batch_size, 3)</span><br>  x_data = np.random.randint(<span class="hljs-number">2</span>, size=(batch_size, dim_input))<br>  <span class="hljs-comment"># calculate targets from feature array</span><br>  y_data = <span class="hljs-number">5</span> * np.<span class="hljs-built_in">sum</span>(x_data, axis=-<span class="hljs-number">1</span>).reshape((-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))<br>  <span class="hljs-comment"># reshape to match `y_placeholder` shape which has a last dimension of 1</span><br>  y_data = y_data.reshape((-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))<br><br>  <span class="hljs-comment"># We specify what values we need to feed into our placeholders via `feed_dict`.</span><br>  <span class="hljs-comment"># We need to pass values into both `x_placeholder` and `y_placeholder` which</span><br>  <span class="hljs-comment"># are dependencies for the training op: 1) compute `estimated_targets` using</span><br>  <span class="hljs-comment"># `x_placeholder`, 2) compute the error `loss` compared to the true targets</span><br>  <span class="hljs-comment"># given by `y_placeholder`.</span><br>  feed_dict = &#123;<br>      x_placeholder: x_data,<br>      y_placeholder: y_data,<br>  &#125;<br><br>  <span class="hljs-comment"># Run the training operation defined earlier.</span><br>  session.run(train_op, feed_dict=feed_dict)<br><br><br><span class="hljs-string">&quot;&quot;&quot;After we finished training our neural network (NN), we are going to use it</span><br><span class="hljs-string">with new test data. &quot;Using&quot; the neural network is just running new values</span><br><span class="hljs-string">through the computational graph that the NN represents. Again, we keep in mind</span><br><span class="hljs-string">a neural network is just a function which transforms some inputs to outputs.&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># We get new test data, again using the random numpy generation function.</span><br>x_data_test = np.random.randint(<span class="hljs-number">2</span>, size=(<span class="hljs-number">5</span>, dim_input))<br><br><span class="hljs-comment"># To see what estimates we get for our test data, we only need to feed in</span><br><span class="hljs-comment"># values for `x_placeholder`, since the operation `estimated_targets` depends</span><br><span class="hljs-comment"># ONLY on `x_placeholder`, and not on `y_placeholder`. We remember that</span><br><span class="hljs-comment"># `y_placeholder` is only used to define the error/loss term and subsequently</span><br><span class="hljs-comment"># in training.</span><br>feed_dict = &#123;<br>    x_placeholder: x_data_test<br>&#125;<br>y_estimate_test = session.run(estimated_targets, feed_dict=feed_dict)<br><br><span class="hljs-comment"># Examine test data.</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x_data_test&#x27;</span>)<br><span class="hljs-built_in">print</span>(x_data_test)<br><span class="hljs-built_in">print</span>()<br><br><span class="hljs-comment"># Are the estimates of the target from the NN close to what we expected?</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;y_estimate_test&#x27;</span>)<br><span class="hljs-built_in">print</span>(y_estimate_test)<br><span class="hljs-built_in">print</span>()<br><br><span class="hljs-comment"># We could also measure the error for the test_data but we would have to specify</span><br><span class="hljs-comment"># the true target values for the test data and then pass it through `y_placeholder`</span><br><span class="hljs-comment"># in the `feed_dict`. We could run the `loss` operation to compute the</span><br><span class="hljs-comment"># test error.</span><br><br><span class="hljs-comment"># This is left empty as an exercise to the reader.</span><br></code></pre></td></tr></table></figure><h2 id="dataloader"><a href="#dataloader" class="headerlink" title="dataloader"></a>dataloader</h2><p>读取数量：reader.read_up_to(…, num_records&#x3D;64) 表示一次最多读取 $N$ 条数据（$N \le 64$）。<br>序列长度：seq_len &#x3D; 100。</p><p>以下是 tf.parse_example 解析后，各变量的具体 Tensor 形状：</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>神经-行为关系的分析方法</title>
+      <link href="/2026/01/22/2026-01-05-%E7%A5%9E%E7%BB%8F-%E8%A1%8C%E4%B8%BA%E5%85%B3%E7%B3%BB%E7%9A%84%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/"/>
+      <url>/2026/01/22/2026-01-05-%E7%A5%9E%E7%BB%8F-%E8%A1%8C%E4%B8%BA%E5%85%B3%E7%B3%BB%E7%9A%84%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>从单神经元的相关性到更复杂的群体编码</p><h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><p>相关不意味着因果，但是可以缩小范围后续做光遗传实验</p><h2 id="Identify-cell-type"><a href="#Identify-cell-type" class="headerlink" title="Identify cell type"></a>Identify cell type</h2><p>一、GLM</p><ol><li>计算神经元对多个regressor的响应强度beta</li><li>对单条鱼、单个regressor，提取beta大于阈值的神经元 </li><li>用collocalization验证分类结果是否有跨被试的一致性，找出空间上特定的神经环路</li></ol><p>二、shuffle</p><h3 id="GLM"><a href="#GLM" class="headerlink" title="GLM"></a>GLM</h3><p>General Linear Model</p><ol><li>定义“钙指示剂的脉冲响应” (IRF)</li></ol><p>• f, p0, irf, h: 这几行代码定义了一个数学函数，用于模拟 GCaMP6s 指示剂的典型响应曲线。<br>• h &#x3D; irf(xx): h 现在是一个短向量，代表当神经元瞬时激活一次后，荧光信号在接下来几秒内的“先上升再缓慢下降”的标准形状。这在功能磁共振（fMRI）中被称为血氧响应函数 (HRF)，在这里它就是钙响应函数 (CRF&#x2F;IRF)。</p><ol start="2"><li>卷积：从“事件”到“预测的信号”</li></ol><p>• X &#x3D; np.array([np.convolve(x, h, ‘full’)[:len(x)] for x in X.values()]).T<br>• 这是最关键的一步。np.convolve(x, h)（卷积）操作，就是将你的<strong>“事件”时间序列</strong>（x，比如一个0和1组成的序列，1代表事件发生）与上面计算出的<strong>“标准响应”</strong>（h）进行计算。<br>• 结果：X（注意，变量名被覆盖了）不再是原始的0&#x2F;1事件，而是变成了<strong>“预测的荧光信号”</strong>。它模拟了如果只有X中的事件发生，Y中的荧光信号随时间变化的完整曲线。</p><ol start="3"><li>构建“基线” (Baseline)</li></ol><ul><li>poly &#x3D; 0</li><li>B &#x3D; np.array([…]): 这部分代码用于去除数据中的缓慢漂移。<br>• 在实验中，荧光信号可能会因为光漂白（photobleaching）或设备不稳定而缓慢下降或上升。<br>• B（Baseline）就是用来捕捉这种与实验事件无关的缓慢变化。<br>• 因为 poly &#x3D; 0，这里 B 实际上只包含一个常数项（截距，intercept），用于模拟信号的平均基线。如果 poly 设为1或2，它还会加入线性和二次项来拟合更复杂的漂移。</li></ul><ol start="4"><li>组合：完整的“设计矩阵”</li></ol><p>• G &#x3D; np.c_[X, B]: 这一步将<strong>“预测的信号”（X）和“基线漂移”</strong>（B）并排放在一个矩阵G中。<br>• G 现在是你的完整模型（“Design Matrix”）。</p><ol start="5"><li>求解GLM</li></ol><p>• beta &#x3D; np.linalg.pinv(G) @ Y<br>• 这是GLM的核心求解步骤。它在寻找一组最佳权重（beta），使得 G 乘以 beta 的结果，能与<strong>“真实观测数据”</strong>（Y）尽可能地接近。<br>• np.linalg.pinv(G) 计算 G 的<a href="https://www.google.com/search?q=https://zh.wikipedia.org/wiki/%25E5%25A6%2582%25E9%2580%2586">伪逆</a>，这是在数学上求解线性方程组 $Y &#x3D; G\beta$ 的标准方法（最小二乘法）。</p><h3 id="预期神经元的特点"><a href="#预期神经元的特点" class="headerlink" title="预期神经元的特点"></a>预期神经元的特点</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LSTM 学习</title>
+      <link href="/2026/01/21/2026-01-12-LSTM%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2026/01/21/2026-01-12-LSTM%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="〇、总则"><a href="#〇、总则" class="headerlink" title="〇、总则"></a>〇、总则</h2><p>基于<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/2017-spring.php">李宏毅2017机器学习课程</a></p><h3 id="Multiple-layer-LSTM-Structure"><a href="#Multiple-layer-LSTM-Structure" class="headerlink" title="Multiple-layer LSTM Structure"></a>Multiple-layer LSTM Structure</h3><p>回顾RNN的结构</p><p><img src="/images/posts/LSTM_img/RNN.png" alt="alt text"></p><p>Long short-term memory结构如下：We can see that 同等数量units 参数量是RNN的4倍(一个很重要的点)</p><p><img src="/images/posts/LSTM_img/LSTM.png" alt="alt text"></p><p>LSTM网络则是将每一个<strong>隐藏层单元</strong>替换为一个LSTM unit。<br>多层LSTM网络结构如下：除了**输入序列$x^t$<strong>，</strong>隐藏层输出$h^{t-1}$**，使用Extension <strong>“peephole”，memory cell输出$c^{t-1}$</strong> 也作为下一时刻的输入</p><p><img src="/images/posts/LSTM_img/multiLayerLSTM.png" alt="alt text"></p><h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>BPTT(backpropagation through time)，考虑时间信息</p><p><img src="/images/posts/LSTM_img/BPTT.png" alt="alt text"></p><p>RNN traning比较困难，容易梯度爆炸：</p><p><img src="/images/posts/LSTM_img/gradient_explosion.png" alt="alt text"></p><p>避免梯度爆炸的technique：当梯度大于15时截断（发明人的方法）</p><p><br><br/></p><h2 id="一、实现"><a href="#一、实现" class="headerlink" title="一、实现"></a>一、实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure><h2 id="二、应用"><a href="#二、应用" class="headerlink" title="二、应用"></a>二、应用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">GridCellsRNNCell</span>(snt.RNNCore):<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,target_ensembles,nh_lstm,nh_bottleneck,nh_embed=<span class="hljs-literal">None</span>,...</span><br><span class="hljs-params">dropoutrates_bottleneck=<span class="hljs-literal">None</span></span>):<br><br><br></code></pre></td></tr></table></figure><h3 id="batch-size的影响"><a href="#batch-size的影响" class="headerlink" title="batch size的影响"></a>batch size的影响</h3><p>loss function is across entropy:</p><p>$-\sum_i^{NPC} P(y_i)logP(\hat y_i)-\sum_j^{NHDC} P(z_j)P(\hat z_j)$</p><p>NPC&#x3D;256, NHDC&#x3D;32. This will cause loss pc </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

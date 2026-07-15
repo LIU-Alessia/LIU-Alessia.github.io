@@ -5,7 +5,8 @@ date: 2026-02-04T00:00:00.000Z
 author: Alessia
 tags:
   - 技术随笔
-categories: []
+categories:
+  - 技术实践
 cover: img/the-first.png
 ---
 

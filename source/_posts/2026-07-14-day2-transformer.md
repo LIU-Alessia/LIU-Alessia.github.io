@@ -6,7 +6,7 @@ author: Alessia
 tags:
   - 学习资料
 categories:
-  - 2026-07-13-LLM知识体系搭建
+  - LLM知识体系搭建
 cover: img/post-bg-attention.png
 ---
 

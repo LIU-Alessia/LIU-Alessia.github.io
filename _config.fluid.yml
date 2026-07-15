@@ -630,7 +630,7 @@ post:
     # 格式参照 ISO-8601 日期格式化
     # ISO-8601 date format
     # See: http://momentjs.cn/docs/#/parsing/string-format/
-    date_format: "LL a"
+    date_format: "YYYY-MM-DD"
 
     # 是否使用相对时间表示，比如："3 天前"
     # If true, it will be a relative time, such as: "3 days ago"

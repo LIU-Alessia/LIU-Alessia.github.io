@@ -27,7 +27,7 @@
 <meta property="og:description" content="ChatGPT Plus &#x3D; ChatGPT 里用 GPTCopilot Plus&#x2F;Pro+ &#x3D; IDE 里用 CopilotOpenAI API &#x3D; 自己写代码调模型，单独充值&#x2F;绑定付款Claude Code &#x3D; 用 Claude，不吃 OpenAI API 额度 入门例子Claude Code+Obsidian自动读论文教程 阅读”D">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-15T03:20:29.049Z">
+<meta property="article:modified_time" content="2026-07-15T07:51:48.585Z">
 <meta property="article:author" content="Alessia">
 <meta property="article:tag" content="技术随笔">
 <meta name="twitter:card" content="summary_large_image">
@@ -524,6 +524,12 @@
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -778,6 +784,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

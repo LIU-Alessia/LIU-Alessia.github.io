@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#RRGGBBAA",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -194,8 +194,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "88bc7e1f916d1c08",
+  "active": "ca0588120646784a",
   "lastOpenFiles": [
+    "node_modules/prismjs/CHANGELOG.md",
+    "source/_posts/2026-07-13-股票投资顾问Agent.md",
+    "source/_posts/2026-02-08-知识图谱.md",
+    "source/_posts/2026-02-04-vibe-coding.md",
+    "source/_posts/2026-02-04-agent.md",
+    "source/_posts/2026-01-28-统计学学习.md",
+    "未命名.canvas",
+    "source/_posts/2026-01-05-神经-行为关系的分析方法.md",
+    "source/_posts/2026-01-12-LSTM学习.md",
+    "source/_posts/2026-01-14-tensorflow.md",
+    "source/_posts/2026-06-19-字节.md",
+    "source_posts/2026-07-13-股票投资顾问Agent.md.tmp.48508.2eb2b87b3fbd",
+    "source_posts",
     "source/images/background.png",
     "source/images/yeji_concert.jpg",
     "source/images/【哲风壁纸】云朵-儿童-六代机.png"

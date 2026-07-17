@@ -10,8 +10,6 @@ categories:
 cover: img/the-first.png
 ---
 
-
-
 ## claude code
 
 安装 Claude Code CLI(command line interface)，进入claude ai homepage按命令安装即可。

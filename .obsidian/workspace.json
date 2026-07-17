@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 242.5
+    "width": 230.5
   },
   "right": {
     "id": "3e280940af13162b",
@@ -194,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ca0588120646784a",
+  "active": "88bc7e1f916d1c08",
   "lastOpenFiles": [
     "node_modules/prismjs/CHANGELOG.md",
     "source/_posts/2026-07-13-股票投资顾问Agent.md",

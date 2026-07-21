@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/2026-07-13-股票投资顾问Agent.md",
+                "file": "source/_posts/2026-07-21-zotero+obsidian文献工作流.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-13-股票投资顾问Agent"
+              "title": "2026-07-21-zotero+obsidian文献工作流"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/2026-07-13-股票投资顾问Agent.md",
+                "file": "source/_posts/2026-07-21-zotero+obsidian文献工作流.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-07-13-股票投资顾问Agent 的大纲"
+              "title": "2026-07-21-zotero+obsidian文献工作流 的大纲"
             }
           },
           {
@@ -211,11 +211,13 @@
   },
   "active": "ea7de347197414c2",
   "lastOpenFiles": [
+    "source/_posts/2026-02-26-colab使用.md",
+    "source/_posts/2026-07-21-zotero+obsidian文献工作流.md",
+    "source/_posts/2026-07-18-股票Agent实践.md",
+    "source/_posts/2026-07-13-股票投资顾问Agent.md",
     "source/_posts/2026-07-14-day2-transformer copy.md",
     "source.tar",
-    "source/_posts/2026-07-18-股票Agent实践.md",
     "source/_posts/2026-07-13-day1-self-attention.md",
-    "source/_posts/2026-07-13-股票投资顾问Agent.md",
     "2026-07-13.md",
     "未命名.md",
     "source_posts/2026-07-13-股票投资顾问Agent.md",

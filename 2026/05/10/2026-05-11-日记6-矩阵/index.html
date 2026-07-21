@@ -27,7 +27,7 @@
 <meta property="og:description" content="写此系列博客的榜样来自：leetcode cookbook 空间复杂度m*n的矩阵不要新开一个一样大小的矩阵来储存结果，可以用用第一行或第一列储存(m+n)，或者新建表">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-17T08:07:05.363Z">
+<meta property="article:modified_time" content="2026-07-21T02:39:36.412Z">
 <meta property="article:author" content="Alessia">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary_large_image">
@@ -864,5 +864,20 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
 <meta property="og:description" content="Google Colab 是一个基于云端的 Jupyter Notebook 环境，可以免费使用 GPU&#x2F;TPU，非常适合深度学习和科研原型开发。 但很多初学者一开始都会踩一些坑，本文总结常见问题和入门方法。 常见问题1、理解 Colab 的本质 Colab ≠ 本地电脑，它本质上是Google 提供的临时云端 Linux 虚拟机。当你运行 notebook 时，其实是在远程服务器执行代">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-17T08:07:05.363Z">
+<meta property="article:modified_time" content="2026-07-21T02:39:36.412Z">
 <meta property="article:author" content="Alessia">
 <meta property="article:tag" content="技术随笔">
 <meta name="twitter:card" content="summary_large_image">
@@ -906,5 +906,20 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

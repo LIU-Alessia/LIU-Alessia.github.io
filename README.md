@@ -33,6 +33,25 @@ hexo deploy
 hexo clean && hexo g -d
 ```
 
+## 文章组织
+
+`source/_posts` 现在按文章 front matter 中的一级分类分目录存放，例如：
+
+```text
+source/_posts/
+├── LLM知识体系搭建/
+├── 力扣刷题日记/
+├── 技术实践/
+├── 数据分析/
+├── 计算机基础/
+├── 计算神经科学/
+├── 金融AI/
+├── 随笔杂谈/
+└── 面试手撕准备/
+```
+
+Hexo 会递归读取 `source/_posts` 下的文章，分类页、标签页和文章永久链接仍然由 front matter 与站点配置决定，不依赖 Markdown 文件所在目录。
+
 ## 项目结构
 
 ```

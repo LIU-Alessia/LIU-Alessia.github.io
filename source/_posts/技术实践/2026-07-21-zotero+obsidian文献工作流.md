@@ -15,4 +15,6 @@ cover: img/post-bg-coffee.jpg
 
 按类别访问
 
-如何只保存一份PDF？文献阅读标注在zotero，笔记/AI带读在obsidian。PDF是放入
+文献阅读标注在zotero，笔记/AI解析在obsidian。那么PDF不能移动到zotero
+
+zotero字段名用的{{citekey}}-{{shortTitle}}

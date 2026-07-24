@@ -23,7 +23,10 @@ cover: img/post-bg-coffee.jpg
 待完成：
 * 文献收录在zotero，复制想要AI阅读的文献PDF到obsidian pdf目录下
 * AI根据关键字调研并获取文献
-* 
+
+## 文件架构
+
+![[文件架构.png]]
 ## obsidian、zotero协同
 1. 在Zotero导入文献
 2. PDF进入知识库

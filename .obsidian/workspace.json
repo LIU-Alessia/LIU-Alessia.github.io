@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
-                "mode": "preview",
+                "file": "source/about/index.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-21-zotero+obsidian文献工作流"
+              "title": "index"
             }
           }
         ],
@@ -91,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 249.5
   },
   "right": {
     "id": "3e280940af13162b",
@@ -209,9 +209,9 @@
   },
   "active": "25cf4f326e108cf3",
   "lastOpenFiles": [
+    "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
     "source/images/posts/zotero+obsidian/系统架构.png",
     "source/images/posts/zotero+obsidian/文件架构.png",
-    "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
     "source/images/posts/zotero+obsidian",
     "source/_posts/LLM知识体系搭建/2026-07-26-day3-LoRA.md",
     "source/_posts/找工/2026-06-19-面试手撕.md",

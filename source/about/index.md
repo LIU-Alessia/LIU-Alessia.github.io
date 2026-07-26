@@ -11,6 +11,7 @@ layout: about
 ## 简介
 
 "I'm a slow walker, but I never look backward"
+能力比较弱，必须在一个领域深耕，坚持坚持再坚持
 
 ## 联系方式
 

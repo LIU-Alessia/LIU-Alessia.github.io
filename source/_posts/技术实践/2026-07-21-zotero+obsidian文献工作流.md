@@ -12,7 +12,7 @@ cover: img/post-bg-coffee.jpg
 参考[使用 ZotLit 插件和模板连接 Zotero 和 Obsidian](https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/)
 
 ## 系统架构
-![[系统架构.png]]
+![[source/images/posts/zotero+obsidian/系统架构.png]]
 已完成：
 * AI读取PDF全文，一句指令生成结构化文献笔记并自动归类
 * 文献量增长后仍能快速检索——自动索引按标签多维度筛选
@@ -26,7 +26,7 @@ cover: img/post-bg-coffee.jpg
 
 ## 文件架构
 
-![[文件架构.png]]
+![[source/images/posts/zotero+obsidian/文件架构.png]]
 ## obsidian、zotero协同
 1. 在Zotero导入文献
 2. PDF进入知识库

@@ -11,17 +11,30 @@
             "id": "c9b0e5d8e2a87864",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "source/images/posts/zotero+obsidian/文件架构.png"
+              },
+              "icon": "lucide-image",
+              "title": "文件架构"
+            }
+          },
+          {
+            "id": "25cf4f326e108cf3",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/找工/2026-06-19-面试手撕.md",
-                "mode": "source",
+                "file": "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-06-19-面试手撕"
+              "title": "2026-07-21-zotero+obsidian文献工作流"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -78,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 252.5
+    "width": 307.5
   },
   "right": {
     "id": "3e280940af13162b",
@@ -194,13 +207,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c9b0e5d8e2a87864",
+  "active": "25cf4f326e108cf3",
   "lastOpenFiles": [
+    "source/images/posts/zotero+obsidian/系统架构.png",
+    "source/images/posts/zotero+obsidian/文件架构.png",
     "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
-    "source/images/文件架构.png",
-    "source/images/系统架构.png",
-    "source/_posts/技术实践/2026-02-04-vibe-coding.md",
+    "source/images/posts/zotero+obsidian",
+    "source/_posts/LLM知识体系搭建/2026-07-26-day3-LoRA.md",
     "source/_posts/找工/2026-06-19-面试手撕.md",
+    "source/_posts/技术实践/2026-02-04-vibe-coding.md",
     "source/_posts/找工",
     "source/_posts/项目实践/2026-07-18-股票Agent实践.md",
     "source/_posts/项目实践/2026-07-13-股票投资顾问Agent.md",
@@ -214,7 +229,6 @@
     "public/2026/05/15/2026-05-14-日记7-回溯/index.html",
     "public/2026/07/13/2026-07-13-股票投资顾问Agent/index.html",
     "public/2026/07/14/2026-07-14-day2-transformer/index.html",
-    "public/2026/07/21/2026-07-21-zotero+obsidian文献工作流/index.html",
     "public/images/background.png",
     "source/_posts/力扣刷题日记/2026-05-15-日记8-动态规划.md",
     "source/_posts/力扣刷题日记/2026-05-14-日记7-回溯.md",
@@ -226,7 +240,6 @@
     "source/_posts/力扣刷题日记/2026-03-27-日记1-数组和字符串.md",
     "source/_posts/力扣刷题日记/2026-03-20-日记0-刷题方法.md",
     "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer.md",
-    "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer copy.md",
     "source/_posts/LLM知识体系搭建/2026-07-13-day1-self-attention.md",
     "source/_posts/LLM知识体系搭建/2026-04-05-图解transformer.md",
     "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",

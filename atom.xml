@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, Alessia</rights>
   <subtitle>Alessia's funny place</subtitle>
   <title>Alessia's Blog</title>
-  <updated>2026-07-27T03:45:31.029Z</updated>
+  <updated>2026-07-27T04:04:54.915Z</updated>
   <entry>
     <author>
       <name>Alessia</name>
@@ -27,7 +27,7 @@
       <![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Ob]]>
     </summary>
     <title>zotero+obsidian文献工作流</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -59,14 +59,14 @@
     <content>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]>
     </content>
-    <id>https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/</id>
-    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/"/>
+    <id>https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</id>
+    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
     <published>2026-07-13T16:00:00.000Z</published>
     <summary>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
-    <title>transformer</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <title>day3-模型微调</title>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
   <entry>
     <author>
@@ -77,14 +77,14 @@
     <content>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]>
     </content>
-    <id>https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-LoRA/</id>
-    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-LoRA/"/>
+    <id>https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/</id>
+    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/"/>
     <published>2026-07-13T16:00:00.000Z</published>
     <summary>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
-    <title>transformer</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <title>day2-transformer</title>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
   <entry>
     <author>
@@ -101,8 +101,8 @@
     <summary>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
-    <title>self-attention</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <title>day1-self-attention</title>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
   <entry>
     <author>
@@ -141,26 +141,7 @@
       <![CDATA[<h1 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h1><h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id]]>
     </summary>
     <title>面试手撕准备</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Alessia</name>
-    </author>
-    <category term="力扣刷题日记" scheme="https://liu-alessia.github.io/categories/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/"/>
-    <category term="leetcode" scheme="https://liu-alessia.github.io/tags/leetcode/"/>
-    <content>
-      <![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="思考方式"><a href="#思考方式" class="headerlink" title="思考方式"></a>思考方式</h1><p>萌新三步：思考回溯怎么写；改成记忆化搜索；1：1翻译成递推。</p><p>以下以打家劫舍为例，说明思考方式</p><ol><li><p>回溯：<br><img src="/images/posts/leetcode/8-dp/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="alt text"></p></li><li><p>把递归的计算结果保存下来，<br><img src="/images/posts/leetcode/8-dp/%E8%AE%B0%E5%BF%86%E5%8C%96%E5%AD%98%E5%82%A8.png" alt="alt text"></p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    cache=[-<span class="hljs-number">1</span>]*n<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">i</span>):<br>        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> cache[i]!=-<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> cache[i]<br>        res=<span class="hljs-built_in">max</span>(dfs(i-<span class="hljs-number">1</span>),dfs(i-<span class="hljs-number">2</span>)+nums[i])<br>        cache[i]=res<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-keyword">return</span> dfs(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><ol start="3"><li>改为递推<br>自底向上计算<br><img src="/images/posts/leetcode/8-dp/%E9%80%92%E6%8E%A8%E5%92%8C%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96.png" alt="alt text"></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    f=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">for</span> i,x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>        f[i+<span class="hljs-number">2</span>]=<span class="hljs-built_in">max</span>(f[i+<span class="hljs-number">1</span>],f[i]+x)<br></code></pre></td></tr></table></figure><p>空间优化：</p><h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><h2 id="一般问题"><a href="#一般问题" class="headerlink" title="一般问题"></a>一般问题</h2><p>我们有 $n$ 件物品和一个容量（capacity）为 $C$ 的背包，记第 $i$ 件物品的重量（weight）为 $w_i$，价值（value）为 $v_i$，求将哪些物品装入背包可使价值总和最大。</p><blockquote><h3 id="0-1-背包"><a href="#0-1-背包" class="headerlink" title="0-1 背包"></a>0-1 背包</h3><p>如果限定每件物品最多只能选取 $1$ 次（即 $0$ 或 $1$ 次），则问题称为 <strong>0-1 背包问题</strong>。</p></blockquote><blockquote><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>如果每件物品最多可以选取无限次，则问题称为 <strong>完全背包问题</strong>。</p></blockquote><p>假设放入背包中的物品 $i$ 的数目为 $k_i$，则上述背包问题在数学上可表达为：</p><p>$$<br>\max \sum_{i&#x3D;0}^{n-1} k_i \cdot v_i<br>$$</p><p>约束条件（subject to, s.t.）：</p><p>$$<br>\sum_{i&#x3D;0}^{n-1} k_i \cdot w_i \le C<br>$$</p><p>并且：</p><p>$$<br>\begin{cases}<br>k_i \in {0,1} &amp; \text{0-1 背包问题} \\<br>k_i \in {0,1,2,\dots,+\infty} &amp; \text{完全背包问题}<br>\end{cases}<br>$$</p>]]>
-    </content>
-    <id>https://liu-alessia.github.io/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
-    <link href="https://liu-alessia.github.io/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    <published>2026-05-14T16:00:00.000Z</published>
-    <summary>
-      <![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p>
-<h1 id="思考方式"><a href="#思考方式" class="headerlink" tit]]>
-    </summary>
-    <title>动态规划</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -179,7 +160,26 @@
 <h1 id="套路"><a href="#套路" class="headerlink" title="]]>
     </summary>
     <title>回溯</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Alessia</name>
+    </author>
+    <category term="力扣刷题日记" scheme="https://liu-alessia.github.io/categories/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/"/>
+    <category term="leetcode" scheme="https://liu-alessia.github.io/tags/leetcode/"/>
+    <content>
+      <![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="思考方式"><a href="#思考方式" class="headerlink" title="思考方式"></a>思考方式</h1><p>萌新三步：思考回溯怎么写；改成记忆化搜索；1：1翻译成递推。</p><p>以下以打家劫舍为例，说明思考方式</p><ol><li><p>回溯：<br><img src="/images/posts/leetcode/8-dp/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="alt text"></p></li><li><p>把递归的计算结果保存下来，<br><img src="/images/posts/leetcode/8-dp/%E8%AE%B0%E5%BF%86%E5%8C%96%E5%AD%98%E5%82%A8.png" alt="alt text"></p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    cache=[-<span class="hljs-number">1</span>]*n<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">i</span>):<br>        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> cache[i]!=-<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> cache[i]<br>        res=<span class="hljs-built_in">max</span>(dfs(i-<span class="hljs-number">1</span>),dfs(i-<span class="hljs-number">2</span>)+nums[i])<br>        cache[i]=res<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-keyword">return</span> dfs(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><ol start="3"><li>改为递推<br>自底向上计算<br><img src="/images/posts/leetcode/8-dp/%E9%80%92%E6%8E%A8%E5%92%8C%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96.png" alt="alt text"></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    f=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">for</span> i,x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>        f[i+<span class="hljs-number">2</span>]=<span class="hljs-built_in">max</span>(f[i+<span class="hljs-number">1</span>],f[i]+x)<br></code></pre></td></tr></table></figure><p>空间优化：</p><h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><h2 id="一般问题"><a href="#一般问题" class="headerlink" title="一般问题"></a>一般问题</h2><p>我们有 $n$ 件物品和一个容量（capacity）为 $C$ 的背包，记第 $i$ 件物品的重量（weight）为 $w_i$，价值（value）为 $v_i$，求将哪些物品装入背包可使价值总和最大。</p><blockquote><h3 id="0-1-背包"><a href="#0-1-背包" class="headerlink" title="0-1 背包"></a>0-1 背包</h3><p>如果限定每件物品最多只能选取 $1$ 次（即 $0$ 或 $1$ 次），则问题称为 <strong>0-1 背包问题</strong>。</p></blockquote><blockquote><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>如果每件物品最多可以选取无限次，则问题称为 <strong>完全背包问题</strong>。</p></blockquote><p>假设放入背包中的物品 $i$ 的数目为 $k_i$，则上述背包问题在数学上可表达为：</p><p>$$<br>\max \sum_{i&#x3D;0}^{n-1} k_i \cdot v_i<br>$$</p><p>约束条件（subject to, s.t.）：</p><p>$$<br>\sum_{i&#x3D;0}^{n-1} k_i \cdot w_i \le C<br>$$</p><p>并且：</p><p>$$<br>\begin{cases}<br>k_i \in {0,1} &amp; \text{0-1 背包问题} \\<br>k_i \in {0,1,2,\dots,+\infty} &amp; \text{完全背包问题}<br>\end{cases}<br>$$</p>]]>
+    </content>
+    <id>https://liu-alessia.github.io/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
+    <link href="https://liu-alessia.github.io/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <published>2026-05-14T16:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p>
+<h1 id="思考方式"><a href="#思考方式" class="headerlink" tit]]>
+    </summary>
+    <title>动态规划</title>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -198,7 +198,7 @@
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" t]]>
     </summary>
     <title>矩阵</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -217,7 +217,7 @@
 <h2 id="双指针"><a href="#双指针" class="headerlink" title]]>
     </summary>
     <title>链表</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -236,7 +236,7 @@
 <h1 id="递归"><a href="#递归" class="headerlink" title="]]>
     </summary>
     <title>binary tree</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -255,7 +255,7 @@
 <h1 id="单调栈"><a href="#单调栈" class="headerlink" title]]>
     </summary>
     <title>stack</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -274,7 +274,7 @@
 <h1 id="内置函数"><a href="#内置函数" class="headerlink" tit]]>
     </summary>
     <title>python</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -293,7 +293,7 @@
 <p>矢量显示系统，节省空间；char]]>
     </summary>
     <title>计算机基础</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -305,7 +305,7 @@
     <link href="https://liu-alessia.github.io/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/"/>
     <published>2026-04-04T16:00:00.000Z</published>
     <title>图解transformer</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
   <entry>
     <author>
@@ -323,7 +323,7 @@
       <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>参考<a href="https://github.com/datawhalechina/learn-nlp-with-transforme]]>
     </summary>
     <title>transformer相关原理</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
   <entry>
     <author>
@@ -344,7 +344,7 @@
     <title>
       <![CDATA[Array & string]]>
     </title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.915Z</updated>
   </entry>
   <entry>
     <author>
@@ -362,7 +362,7 @@
       <![CDATA[<h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><im]]>
     </summary>
     <title>快速全面了解大语言模型</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
   <entry>
     <author>
@@ -381,6 +381,6 @@
 <h1 id="hot100"><a href="#ho]]>
     </summary>
     <title>leetcode刷题方法</title>
-    <updated>2026-07-27T03:45:31.029Z</updated>
+    <updated>2026-07-27T04:04:54.914Z</updated>
   </entry>
 </feed>

@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, Alessia</rights>
   <subtitle>Alessia's funny place</subtitle>
   <title>Alessia's Blog</title>
-  <updated>2026-07-27T04:04:54.915Z</updated>
+  <updated>2026-07-27T06:45:03.501Z</updated>
   <entry>
     <author>
       <name>Alessia</name>
@@ -27,7 +27,19 @@
       <![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Ob]]>
     </summary>
     <title>zotero+obsidian文献工作流</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.501Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Alessia</name>
+    </author>
+    <category term="技术实践" scheme="https://liu-alessia.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="技术随笔" scheme="https://liu-alessia.github.io/tags/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/"/>
+    <id>https://liu-alessia.github.io/2026/07/20/2026-07-27-google-analytics-tool/</id>
+    <link href="https://liu-alessia.github.io/2026/07/20/2026-07-27-google-analytics-tool/"/>
+    <published>2026-07-20T16:00:00.000Z</published>
+    <title>google-analytics-tool</title>
+    <updated>2026-07-27T06:45:03.501Z</updated>
   </entry>
   <entry>
     <author>
@@ -59,14 +71,14 @@
     <content>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]>
     </content>
-    <id>https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</id>
-    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
+    <id>https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/</id>
+    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/"/>
     <published>2026-07-13T16:00:00.000Z</published>
     <summary>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
-    <title>day3-模型微调</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
+    <title>day2-transformer</title>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -77,14 +89,14 @@
     <content>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]>
     </content>
-    <id>https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/</id>
-    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-14-day2-transformer/"/>
+    <id>https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</id>
+    <link href="https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
     <published>2026-07-13T16:00:00.000Z</published>
     <summary>
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
-    <title>day2-transformer</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
+    <title>day3-模型微调</title>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -102,7 +114,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day1-self-attention</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -141,7 +153,7 @@
       <![CDATA[<h1 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h1><h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id]]>
     </summary>
     <title>面试手撕准备</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -160,7 +172,7 @@
 <h1 id="套路"><a href="#套路" class="headerlink" title="]]>
     </summary>
     <title>回溯</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -179,7 +191,7 @@
 <h1 id="思考方式"><a href="#思考方式" class="headerlink" tit]]>
     </summary>
     <title>动态规划</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -198,7 +210,7 @@
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" t]]>
     </summary>
     <title>矩阵</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -217,7 +229,7 @@
 <h2 id="双指针"><a href="#双指针" class="headerlink" title]]>
     </summary>
     <title>链表</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -236,7 +248,7 @@
 <h1 id="递归"><a href="#递归" class="headerlink" title="]]>
     </summary>
     <title>binary tree</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -255,7 +267,7 @@
 <h1 id="单调栈"><a href="#单调栈" class="headerlink" title]]>
     </summary>
     <title>stack</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -274,7 +286,7 @@
 <h1 id="内置函数"><a href="#内置函数" class="headerlink" tit]]>
     </summary>
     <title>python</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -293,7 +305,7 @@
 <p>矢量显示系统，节省空间；char]]>
     </summary>
     <title>计算机基础</title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.501Z</updated>
   </entry>
   <entry>
     <author>
@@ -305,7 +317,7 @@
     <link href="https://liu-alessia.github.io/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/"/>
     <published>2026-04-04T16:00:00.000Z</published>
     <title>图解transformer</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -323,7 +335,7 @@
       <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>参考<a href="https://github.com/datawhalechina/learn-nlp-with-transforme]]>
     </summary>
     <title>transformer相关原理</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -344,7 +356,7 @@
     <title>
       <![CDATA[Array & string]]>
     </title>
-    <updated>2026-07-27T04:04:54.915Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
   <entry>
     <author>
@@ -362,25 +374,6 @@
       <![CDATA[<h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><im]]>
     </summary>
     <title>快速全面了解大语言模型</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Alessia</name>
-    </author>
-    <category term="力扣刷题日记" scheme="https://liu-alessia.github.io/categories/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/"/>
-    <category term="leetcode" scheme="https://liu-alessia.github.io/tags/leetcode/"/>
-    <content>
-      <![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a>，一位本科不算太好但自己奋发图强大佬写的刷题手册</p><h1 id="hot100"><a href="#hot100" class="headerlink" title="hot100"></a>hot100</h1><p>Hot100 真正耗时的不是“做完”，而是：</p><ol><li>理解题型</li><li>建立模板</li><li>能独立写出</li><li>一周后还能做出来</li></ol><p>很多人第一次“过一遍”只需要几周，但实际上并没有形成能力。</p><p>对你这种理工科研背景、代码能力不弱的人，如果认真投入：</p><ul><li><p>每天 3～5 题：</p><ul><li>约 1.5～2 个月</li></ul></li><li><p>每天 1～2 题并总结：</p><ul><li>约 3 个月</li></ul></li><li><p>如果同时还在做科研：</p><ul><li>更现实的是 3～4 个月</li></ul></li></ul><p>建议不要按“数量”推进，而按“题型”推进。</p><p>推荐顺序：</p><ol><li>数组 &#x2F; 双指针</li><li>哈希</li><li>滑动窗口</li><li>二叉树基础</li><li>二分</li><li>栈 &#x2F; 单调栈</li><li>链表</li><li>回溯</li><li>DFS&#x2F;BFS</li><li>动态规划</li><li>贪心</li><li>图</li></ol><p>第一次刷 Hot100 的核心目标：</p><ul><li>见过主流套路：抽象（算法）+数据结构+先验知识+内置函数</li><li>能识别题型</li><li>能自己写出 60%～70%</li><li>建立自己的代码模板库</li></ul><p>不是追求“一次全会”，比较正常的过程是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">第一遍：看不懂 → 模仿<br>第二遍：知道思路 → 能写一半<br>第三遍：独立完成 → 控制错误<br></code></pre></td></tr></table></figure><p>如果你未来想申请 AI&#x2F;ML&#x2F;算法相关实习，Hot100 基本是最低门槛，不算“进阶”。真正有竞争力通常还需要：</p><ul><li>高频公司题</li><li>图论&#x2F;DP强化</li><li>系统设计（后期）</li><li>项目与科研结合</li><li>代码熟练度</li></ul><p>你现在的阶段，更重要的是：</p><ul><li>建立稳定刷题习惯</li><li>总结模板</li><li>形成“看到题 → 匹配套路”的能力</li></ul><p>而不是追求天数。</p>]]>
-    </content>
-    <id>https://liu-alessia.github.io/2026/03/19/2026-03-20-%E6%97%A5%E8%AE%B00-%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/</id>
-    <link href="https://liu-alessia.github.io/2026/03/19/2026-03-20-%E6%97%A5%E8%AE%B00-%E5%88%B7%E9%A2%98%E6%96%B9%E6%B3%95/"/>
-    <published>2026-03-19T16:00:00.000Z</published>
-    <summary>
-      <![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a>，一位本科不算太好但自己奋发图强大佬写的刷题手册</p>
-<h1 id="hot100"><a href="#ho]]>
-    </summary>
-    <title>leetcode刷题方法</title>
-    <updated>2026-07-27T04:04:54.914Z</updated>
+    <updated>2026-07-27T06:45:03.500Z</updated>
   </entry>
 </feed>

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
+                "file": "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-21-zotero+obsidian文献工作流"
+              "title": "2026-07-26-day3-模型微调"
             }
           },
           {
@@ -210,9 +210,14 @@
   },
   "active": "c9b0e5d8e2a87864",
   "lastOpenFiles": [
+    "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer.md",
+    "source/_posts/LLM知识体系搭建/2026-07-13-day1-self-attention.md",
+    "source/_posts/LLM知识体系搭建/2026-04-05-图解transformer.md",
+    "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
-    "scripts/obsidian-image-embeds.js",
+    "source/_posts/LLM知识体系搭建/2026-02-25-transformer精读.md",
     "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
+    "scripts/obsidian-image-embeds.js",
     "images/posts/zotero+obsidian/系统架构.png.md",
     "images/posts/zotero+obsidian",
     "images/posts",
@@ -229,7 +234,7 @@
     "public/categories/项目实践",
     "source/privacy/index.md",
     "source/images/posts/zotero+obsidian/系统架构.png",
-    "source/_posts/LLM知识体系搭建/2026-07-26-day3-LoRA.md",
+    "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
     "source/_posts/找工/2026-06-19-面试手撕.md",
     "source/_posts/技术实践/2026-02-04-vibe-coding.md",
     "source/_posts/项目实践/2026-07-18-股票Agent实践.md",
@@ -246,10 +251,6 @@
     "source/_posts/力扣刷题日记/2026-04-22-日记2-python.md",
     "source/_posts/力扣刷题日记/2026-03-27-日记1-数组和字符串.md",
     "source/_posts/力扣刷题日记/2026-03-20-日记0-刷题方法.md",
-    "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer.md",
-    "source/_posts/LLM知识体系搭建/2026-07-13-day1-self-attention.md",
-    "source/_posts/LLM知识体系搭建/2026-04-05-图解transformer.md",
-    "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",
     "未命名.canvas",
     "source/images/background.png",
     "source/images/yeji_concert.jpg",

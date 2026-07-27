@@ -1,5 +1,5 @@
 ---
-title: self-attention
+title: day1-self-attention
 subtitle: ""
 date: 2026-07-13
 author: Alessia

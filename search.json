@@ -8,7 +8,7 @@
     <link href="/2026/07/20/2026-07-21-zotero+obsidian%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     <url>/2026/07/20/2026-07-21-zotero+obsidian%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E6%B5%81/</url>
     
-    <content type="html"><![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Obsidian</a></p><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>![[source&#x2F;images&#x2F;posts&#x2F;zotero+obsidian&#x2F;系统架构.png]]<br>已完成：</p><ul><li>AI读取PDF全文，一句指令生成结构化文献笔记并自动归类</li><li>文献量增长后仍能快速检索——自动索引按标签多维度筛选</li><li>写论文草稿时引用自己读过的文献，引用格式可直接编译为word&#x2F;pdf</li><li>文献之间自动建立关联网络，在obsidian图谱中可视化研究脉络</li><li>设计实验时结合已有文献给出具体参数建议</li></ul><p>待完成：</p><ul><li>文献收录在zotero，复制想要AI阅读的文献PDF到obsidian pdf目录下</li><li>AI根据关键字调研并获取文献</li></ul><h2 id="文件架构"><a href="#文件架构" class="headerlink" title="文件架构"></a>文件架构</h2><p>![[source&#x2F;images&#x2F;posts&#x2F;zotero+obsidian&#x2F;文件架构.png]]</p><h2 id="obsidian、zotero协同"><a href="#obsidian、zotero协同" class="headerlink" title="obsidian、zotero协同"></a>obsidian、zotero协同</h2><ol><li>在Zotero导入文献</li><li>PDF进入知识库</li><li>用obsidian生成笔记骨架</li><li>codex填充笔记内容</li><li>在obsidian里验证</li></ol><p>按类别访问</p><p>文献阅读标注在zotero，笔记&#x2F;AI解析在obsidian。那么PDF不能移动到zotero</p><p>zotero字段名用的<code>&#123;&#123;citekey&#125;&#125;-&#123;&#123;shortTitle&#125;&#125;</code></p>]]></content>
+    <content type="html"><![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Obsidian</a></p><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><img src="/images/posts/zotero+obsidian/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.png" alt="系统架构"><br>已完成：</p><ul><li>AI读取PDF全文，一句指令生成结构化文献笔记并自动归类</li><li>文献量增长后仍能快速检索——自动索引按标签多维度筛选</li><li>写论文草稿时引用自己读过的文献，引用格式可直接编译为word&#x2F;pdf</li><li>文献之间自动建立关联网络，在obsidian图谱中可视化研究脉络</li><li>设计实验时结合已有文献给出具体参数建议</li></ul><p>待完成：</p><ul><li>文献收录在zotero，复制想要AI阅读的文献PDF到obsidian pdf目录下</li><li>AI根据关键字调研并获取文献</li></ul><h2 id="文件架构"><a href="#文件架构" class="headerlink" title="文件架构"></a>文件架构</h2><p><img src="/images/posts/zotero+obsidian/%E6%96%87%E4%BB%B6%E6%9E%B6%E6%9E%84.png" alt="文件架构"></p><h2 id="obsidian、zotero协同"><a href="#obsidian、zotero协同" class="headerlink" title="obsidian、zotero协同"></a>obsidian、zotero协同</h2><ol><li>在Zotero导入文献</li><li>PDF进入知识库</li><li>用obsidian生成笔记骨架</li><li>codex填充笔记内容</li><li>在obsidian里验证</li></ol><p>按类别访问</p><p>文献阅读标注在zotero，笔记&#x2F;AI解析在obsidian。那么PDF不能移动到zotero</p><p>zotero字段名用的<code>&#123;&#123;citekey&#125;&#125;-&#123;&#123;shortTitle&#125;&#125;</code></p>]]></content>
     
     
     <categories>
@@ -61,8 +61,8 @@
   
   <entry>
     <title>transformer</title>
-    <link href="/2026/07/13/2026-07-26-day3-LoRA/"/>
-    <url>/2026/07/13/2026-07-26-day3-LoRA/</url>
+    <link href="/2026/07/13/2026-07-14-day2-transformer/"/>
+    <url>/2026/07/13/2026-07-14-day2-transformer/</url>
     
     <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]></content>
     
@@ -86,8 +86,8 @@
   
   <entry>
     <title>transformer</title>
-    <link href="/2026/07/13/2026-07-14-day2-transformer/"/>
-    <url>/2026/07/13/2026-07-14-day2-transformer/</url>
+    <link href="/2026/07/13/2026-07-26-day3-LoRA/"/>
+    <url>/2026/07/13/2026-07-26-day3-LoRA/</url>
     
     <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]></content>
     
@@ -191,11 +191,11 @@
   
   
   <entry>
-    <title>回溯</title>
-    <link href="/2026/05/14/2026-05-14-%E6%97%A5%E8%AE%B07-%E5%9B%9E%E6%BA%AF/"/>
-    <url>/2026/05/14/2026-05-14-%E6%97%A5%E8%AE%B07-%E5%9B%9E%E6%BA%AF/</url>
+    <title>动态规划</title>
+    <link href="/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <url>/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
     
-    <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="套路"><a href="#套路" class="headerlink" title="套路"></a>套路</h1><p>增量构建答案的过程，通常由递归实现</p><h2 id="回溯三问："><a href="#回溯三问：" class="headerlink" title="回溯三问："></a>回溯三问：</h2><ol><li>当前操作？枚举path[i]要填入的字母</li><li>子问题？</li><li>下一个子问题</li></ol><p>先写二叉树回溯,再做的通用回溯。二叉树型回溯和多叉树(通用型)回溯的区别就是 通用型要写for loop，而二叉树只有2个选择，所以没有for loop，直接执行dfs(node.left)和dfs(node.right).</p><p>从写代码的角度对比,几乎完全一样:</p><p>确定递归函数的意义：</p><p>1.1 def dfs(node):从上到下遍历树的每一个node<br>1.2 def dfs(i):从index 0开始构造这条路径</p><p>确定base case：</p><p>2.1 if node is None 所有该遍历的节点已经遍历完了(node是叶子节点的时候，就是最后一片要遍历的叶子）<br>2.2 if i &#x3D;&#x3D; n 这条路径已经被填满了(i&#x3D;n-1的时候，就是最后要处理的一个path格子)</p><p>确定单层递归的当前操作:</p><p>3.1 加入pathpath.append(str(node.val)) 且 进行下层递归dfs(node.left) dfs(node.right) 且恢复现场path.pop()<br>3.2 在for loop下加入path在for loop下: path.append(c) 且 进行下一层递归dfs(i + 1) 且恢复现场path.pop</p><h1 id="子集型回溯"><a href="#子集型回溯" class="headerlink" title="子集型回溯"></a>子集型回溯</h1><ol><li>当前操作？</li><li>子问题？</li><li>下一个子问题</li></ol><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+    <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="思考方式"><a href="#思考方式" class="headerlink" title="思考方式"></a>思考方式</h1><p>萌新三步：思考回溯怎么写；改成记忆化搜索；1：1翻译成递推。</p><p>以下以打家劫舍为例，说明思考方式</p><ol><li><p>回溯：<br><img src="/images/posts/leetcode/8-dp/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="alt text"></p></li><li><p>把递归的计算结果保存下来，<br><img src="/images/posts/leetcode/8-dp/%E8%AE%B0%E5%BF%86%E5%8C%96%E5%AD%98%E5%82%A8.png" alt="alt text"></p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    cache=[-<span class="hljs-number">1</span>]*n<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">i</span>):<br>        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> cache[i]!=-<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> cache[i]<br>        res=<span class="hljs-built_in">max</span>(dfs(i-<span class="hljs-number">1</span>),dfs(i-<span class="hljs-number">2</span>)+nums[i])<br>        cache[i]=res<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-keyword">return</span> dfs(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><ol start="3"><li>改为递推<br>自底向上计算<br><img src="/images/posts/leetcode/8-dp/%E9%80%92%E6%8E%A8%E5%92%8C%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96.png" alt="alt text"></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    f=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">for</span> i,x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>        f[i+<span class="hljs-number">2</span>]=<span class="hljs-built_in">max</span>(f[i+<span class="hljs-number">1</span>],f[i]+x)<br></code></pre></td></tr></table></figure><p>空间优化：</p><h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><h2 id="一般问题"><a href="#一般问题" class="headerlink" title="一般问题"></a>一般问题</h2><p>我们有 $n$ 件物品和一个容量（capacity）为 $C$ 的背包，记第 $i$ 件物品的重量（weight）为 $w_i$，价值（value）为 $v_i$，求将哪些物品装入背包可使价值总和最大。</p><blockquote><h3 id="0-1-背包"><a href="#0-1-背包" class="headerlink" title="0-1 背包"></a>0-1 背包</h3><p>如果限定每件物品最多只能选取 $1$ 次（即 $0$ 或 $1$ 次），则问题称为 <strong>0-1 背包问题</strong>。</p></blockquote><blockquote><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>如果每件物品最多可以选取无限次，则问题称为 <strong>完全背包问题</strong>。</p></blockquote><p>假设放入背包中的物品 $i$ 的数目为 $k_i$，则上述背包问题在数学上可表达为：</p><p>$$<br>\max \sum_{i&#x3D;0}^{n-1} k_i \cdot v_i<br>$$</p><p>约束条件（subject to, s.t.）：</p><p>$$<br>\sum_{i&#x3D;0}^{n-1} k_i \cdot w_i \le C<br>$$</p><p>并且：</p><p>$$<br>\begin{cases}<br>k_i \in {0,1} &amp; \text{0-1 背包问题} \\<br>k_i \in {0,1,2,\dots,+\infty} &amp; \text{完全背包问题}<br>\end{cases}<br>$$</p>]]></content>
     
     
     <categories>
@@ -216,11 +216,11 @@
   
   
   <entry>
-    <title>动态规划</title>
-    <link href="/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    <url>/2026/05/14/2026-05-15-%E6%97%A5%E8%AE%B08-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+    <title>回溯</title>
+    <link href="/2026/05/14/2026-05-14-%E6%97%A5%E8%AE%B07-%E5%9B%9E%E6%BA%AF/"/>
+    <url>/2026/05/14/2026-05-14-%E6%97%A5%E8%AE%B07-%E5%9B%9E%E6%BA%AF/</url>
     
-    <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="思考方式"><a href="#思考方式" class="headerlink" title="思考方式"></a>思考方式</h1><p>萌新三步：思考回溯怎么写；改成记忆化搜索；1：1翻译成递推。</p><p>以下以打家劫舍为例，说明思考方式</p><ol><li><p>回溯：<br><img src="/images/posts/leetcode/8-dp/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="alt text"></p></li><li><p>把递归的计算结果保存下来，<br><img src="/images/posts/leetcode/8-dp/%E8%AE%B0%E5%BF%86%E5%8C%96%E5%AD%98%E5%82%A8.png" alt="alt text"></p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    cache=[-<span class="hljs-number">1</span>]*n<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">i</span>):<br>        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> cache[i]!=-<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> cache[i]<br>        res=<span class="hljs-built_in">max</span>(dfs(i-<span class="hljs-number">1</span>),dfs(i-<span class="hljs-number">2</span>)+nums[i])<br>        cache[i]=res<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-keyword">return</span> dfs(n-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure><ol start="3"><li>改为递推<br>自底向上计算<br><img src="/images/posts/leetcode/8-dp/%E9%80%92%E6%8E%A8%E5%92%8C%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96.png" alt="alt text"></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>():<br>    n=<span class="hljs-built_in">len</span>(nums)<br>    f=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">for</span> i,x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>        f[i+<span class="hljs-number">2</span>]=<span class="hljs-built_in">max</span>(f[i+<span class="hljs-number">1</span>],f[i]+x)<br></code></pre></td></tr></table></figure><p>空间优化：</p><h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><h2 id="一般问题"><a href="#一般问题" class="headerlink" title="一般问题"></a>一般问题</h2><p>我们有 $n$ 件物品和一个容量（capacity）为 $C$ 的背包，记第 $i$ 件物品的重量（weight）为 $w_i$，价值（value）为 $v_i$，求将哪些物品装入背包可使价值总和最大。</p><blockquote><h3 id="0-1-背包"><a href="#0-1-背包" class="headerlink" title="0-1 背包"></a>0-1 背包</h3><p>如果限定每件物品最多只能选取 $1$ 次（即 $0$ 或 $1$ 次），则问题称为 <strong>0-1 背包问题</strong>。</p></blockquote><blockquote><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>如果每件物品最多可以选取无限次，则问题称为 <strong>完全背包问题</strong>。</p></blockquote><p>假设放入背包中的物品 $i$ 的数目为 $k_i$，则上述背包问题在数学上可表达为：</p><p>$$<br>\max \sum_{i&#x3D;0}^{n-1} k_i \cdot v_i<br>$$</p><p>约束条件（subject to, s.t.）：</p><p>$$<br>\sum_{i&#x3D;0}^{n-1} k_i \cdot w_i \le C<br>$$</p><p>并且：</p><p>$$<br>\begin{cases}<br>k_i \in {0,1} &amp; \text{0-1 背包问题} \\<br>k_i \in {0,1,2,\dots,+\infty} &amp; \text{完全背包问题}<br>\end{cases}<br>$$</p>]]></content>
+    <content type="html"><![CDATA[<p>写此系列博客的榜样来自：<a href="https://books.halfrost.com/leetcode/">leetcode cookbook</a></p><h1 id="套路"><a href="#套路" class="headerlink" title="套路"></a>套路</h1><p>增量构建答案的过程，通常由递归实现</p><h2 id="回溯三问："><a href="#回溯三问：" class="headerlink" title="回溯三问："></a>回溯三问：</h2><ol><li>当前操作？枚举path[i]要填入的字母</li><li>子问题？</li><li>下一个子问题</li></ol><p>先写二叉树回溯,再做的通用回溯。二叉树型回溯和多叉树(通用型)回溯的区别就是 通用型要写for loop，而二叉树只有2个选择，所以没有for loop，直接执行dfs(node.left)和dfs(node.right).</p><p>从写代码的角度对比,几乎完全一样:</p><p>确定递归函数的意义：</p><p>1.1 def dfs(node):从上到下遍历树的每一个node<br>1.2 def dfs(i):从index 0开始构造这条路径</p><p>确定base case：</p><p>2.1 if node is None 所有该遍历的节点已经遍历完了(node是叶子节点的时候，就是最后一片要遍历的叶子）<br>2.2 if i &#x3D;&#x3D; n 这条路径已经被填满了(i&#x3D;n-1的时候，就是最后要处理的一个path格子)</p><p>确定单层递归的当前操作:</p><p>3.1 加入pathpath.append(str(node.val)) 且 进行下层递归dfs(node.left) dfs(node.right) 且恢复现场path.pop()<br>3.2 在for loop下加入path在for loop下: path.append(c) 且 进行下一层递归dfs(i + 1) 且恢复现场path.pop</p><h1 id="子集型回溯"><a href="#子集型回溯" class="headerlink" title="子集型回溯"></a>子集型回溯</h1><ol><li>当前操作？</li><li>子问题？</li><li>下一个子问题</li></ol><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
     
     
     <categories>
@@ -470,7 +470,7 @@
     <link href="/2026/03/24/2026-03-25-%E5%BF%AB%E9%80%9F%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
     <url>/2026/03/24/2026-03-25-%E5%BF%AB%E9%80%9F%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/</url>
     
-    <content type="html"><![CDATA[<p>q</p><h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><img src="/images/posts/LLM_QuickStart/midterm-question.png" alt="alt text"><br>5题答对4题，3题分析正确</p><p><strong>GPTs</strong>: 打造AI应有只要一瞬间</p><p>我立刻10min创建了一个zebrafish expert<br><img src="/images/posts/LLM_QuickStart/zebrafish-expert.png" alt="alt text"></p><ul><li>“chatGPT真正做的事-文字接龙”</li></ul><p><strong>Token</strong><br>计价方式；开发者先设定好的，可通过对应平台查询，例如<a href="https://platform.openai.com/tokenizer">openAI tokenizer平台</a></p><h3 id="GPT的发展史"><a href="#GPT的发展史" class="headerlink" title="GPT的发展史"></a>GPT的发展史</h3><p>GPT: Generative Pre-trained Transformer</p><ul><li>GPT-1(2018) 117M, 1GB data</li><li>GPT-2(2019) 1542M, 20GB data，可以回答问题<br><img src="/images/posts/LLM_QuickStart/gpt2-Q&A.png" alt="alt text"></li><li>GPT-3(2020) 175B, 580GB（哈利波特全集约100,0000 words, 以UTF-8编码，一个英文字母一个字节，估算共6e6 Byte；则580e9&#x2F;6e6约100,000遍，远超一个人100年全部时间所能阅读的文字量）</li></ul><h3 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h3><p>Pre-train -&gt; Supervised training -&gt; Reforcement learning&#x2F;RLHF</p><p><img src="/images/posts/LLM_QuickStart/GPT2chatGPT.png" alt="alt text"></p><p><img src="/images/posts/LLM_QuickStart/SupervisedLearning2RL.png" alt="alt text"></p><p>监督式学习的重要性：<br><img src="/images/posts/LLM_QuickStart/instructGPT.png" alt="alt text"></p><p>有预训练后，监督式学习不用大量资料<br><img src="/images/posts/LLM_QuickStart/pretrain-effect.png" alt="alt text"></p><h3 id="PROMPT"><a href="#PROMPT" class="headerlink" title="PROMPT"></a>PROMPT</h3><ol><li>把需求写清楚</li><li>提供资讯给ChatGPT</li><li>提供范例</li><li>鼓励GPT想一想(chain of thought)</li><li>神奇咒语</li><li>上传档案</li><li>ChatGPT可以使用其他工具</li><li>拆解任务</li><li>自主进行规划</li><li>会反省</li><li>跟真实环境互动</li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><img src="/images/posts/LLM_QuickStart/midterm-question.png" alt="alt text"><br>5题答对4题，3题分析正确</p><p><strong>GPTs</strong>: 打造AI应有只要一瞬间</p><p>我立刻10min创建了一个zebrafish expert<br><img src="/images/posts/LLM_QuickStart/zebrafish-expert.png" alt="alt text"></p><ul><li>“chatGPT真正做的事-文字接龙”</li></ul><p><strong>Token</strong><br>计价方式；开发者先设定好的，可通过对应平台查询，例如<a href="https://platform.openai.com/tokenizer">openAI tokenizer平台</a></p><h3 id="GPT的发展史"><a href="#GPT的发展史" class="headerlink" title="GPT的发展史"></a>GPT的发展史</h3><p>GPT: Generative Pre-trained Transformer</p><ul><li>GPT-1(2018) 117M, 1GB data</li><li>GPT-2(2019) 1542M, 20GB data，可以回答问题<br><img src="/images/posts/LLM_QuickStart/gpt2-Q&A.png" alt="alt text"></li><li>GPT-3(2020) 175B, 580GB（哈利波特全集约100,0000 words, 以UTF-8编码，一个英文字母一个字节，估算共6e6 Byte；则580e9&#x2F;6e6约100,000遍，远超一个人100年全部时间所能阅读的文字量）</li></ul><h3 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h3><p>Pre-train -&gt; Supervised training -&gt; Reforcement learning&#x2F;RLHF</p><p><img src="/images/posts/LLM_QuickStart/GPT2chatGPT.png" alt="alt text"></p><p><img src="/images/posts/LLM_QuickStart/SupervisedLearning2RL.png" alt="alt text"></p><p>监督式学习的重要性：<br><img src="/images/posts/LLM_QuickStart/instructGPT.png" alt="alt text"></p><p>有预训练后，监督式学习不用大量资料<br><img src="/images/posts/LLM_QuickStart/pretrain-effect.png" alt="alt text"></p><h3 id="PROMPT"><a href="#PROMPT" class="headerlink" title="PROMPT"></a>PROMPT</h3><ol><li>把需求写清楚</li><li>提供资讯给ChatGPT</li><li>提供范例</li><li>鼓励GPT想一想(chain of thought)</li><li>神奇咒语</li><li>上传档案</li><li>ChatGPT可以使用其他工具</li><li>拆解任务</li><li>自主进行规划</li><li>会反省</li><li>跟真实环境互动</li></ol>]]></content>
     
     
     <categories>
@@ -617,31 +617,6 @@
   
   <entry>
     <title>vibe coding</title>
-    <link href="/2026/02/03/2026-02-04-agent/"/>
-    <url>/2026/02/03/2026-02-04-agent/</url>
-    
-    <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>ChatGPT Plus &#x3D; ChatGPT 里用 GPT<br>Copilot Plus&#x2F;Pro+ &#x3D; IDE 里用 Copilot<br>OpenAI API &#x3D; 自己写代码调模型，单独充值&#x2F;绑定付款<br>Claude Code &#x3D; 用 Claude，不吃 OpenAI API 额度</p><p>入门例子<br><a href="https://articles.zsxq.com/id_fqi4mrr6ztd5.html">Claude Code+Obsidian自动读论文教程</a></p><p>阅读”D:\迅雷下载\evil-read-arxiv-main\evil-read-arxiv-main\README.md”和evil-read-arxivquickstart.md，帮我在我的电脑上配置这个自动读论文的工具，把我未来的论文笔记写在”D:\Data\obisitian\paper-reading”路径下，我的研究方向是物理AI&#x2F;世界模型，我只关注这方面的论文。配置过程中要用到Semantic Scholar的api key，API是s2k-YO0PsOm5CuWw8FWD84V6oRHWsRYxdfSMALTdNNmk。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术实践</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Agent</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>vibe coding</title>
     <link href="/2026/02/03/2026-02-04-vibe-coding/"/>
     <url>/2026/02/03/2026-02-04-vibe-coding/</url>
     
@@ -658,6 +633,31 @@
     <tags>
       
       <tag>技术随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vibe coding</title>
+    <link href="/2026/02/03/2026-02-04-agent/"/>
+    <url>/2026/02/03/2026-02-04-agent/</url>
+    
+    <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>ChatGPT Plus &#x3D; ChatGPT 里用 GPT<br>Copilot Plus&#x2F;Pro+ &#x3D; IDE 里用 Copilot<br>OpenAI API &#x3D; 自己写代码调模型，单独充值&#x2F;绑定付款<br>Claude Code &#x3D; 用 Claude，不吃 OpenAI API 额度</p><p>入门例子<br><a href="https://articles.zsxq.com/id_fqi4mrr6ztd5.html">Claude Code+Obsidian自动读论文教程</a></p><p>阅读”D:\迅雷下载\evil-read-arxiv-main\evil-read-arxiv-main\README.md”和evil-read-arxivquickstart.md，帮我在我的电脑上配置这个自动读论文的工具，把我未来的论文笔记写在”D:\Data\obisitian\paper-reading”路径下，我的研究方向是物理AI&#x2F;世界模型，我只关注这方面的论文。配置过程中要用到Semantic Scholar的api key，API是s2k-YO0PsOm5CuWw8FWD84V6oRHWsRYxdfSMALTdNNmk。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术实践</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Agent</tag>
       
     </tags>
     

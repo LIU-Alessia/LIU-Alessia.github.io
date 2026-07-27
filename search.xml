@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>zotero+obsidian文献工作流</title>
-      <link href="/2026/07/20/2026-07-21-zotero+obsidian%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
-      <url>/2026/07/20/2026-07-21-zotero+obsidian%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E6%B5%81/</url>
+      <title>google-analytics-tool</title>
+      <link href="/2026/07/26/2026-07-27-google-analytics-tool/"/>
+      <url>/2026/07/26/2026-07-27-google-analytics-tool/</url>
       
-        <content type="html"><![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Obsidian</a></p><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><img src="/images/posts/zotero+obsidian/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.png" alt="系统架构"><br>已完成：</p><ul><li>AI读取PDF全文，一句指令生成结构化文献笔记并自动归类</li><li>文献量增长后仍能快速检索——自动索引按标签多维度筛选</li><li>写论文草稿时引用自己读过的文献，引用格式可直接编译为word&#x2F;pdf</li><li>文献之间自动建立关联网络，在obsidian图谱中可视化研究脉络</li><li>设计实验时结合已有文献给出具体参数建议</li></ul><p>待完成：</p><ul><li>文献收录在zotero，复制想要AI阅读的文献PDF到obsidian pdf目录下</li><li>AI根据关键字调研并获取文献</li></ul><h2 id="文件架构"><a href="#文件架构" class="headerlink" title="文件架构"></a>文件架构</h2><p><img src="/images/posts/zotero+obsidian/%E6%96%87%E4%BB%B6%E6%9E%B6%E6%9E%84.png" alt="文件架构"></p><h2 id="obsidian、zotero协同"><a href="#obsidian、zotero协同" class="headerlink" title="obsidian、zotero协同"></a>obsidian、zotero协同</h2><ol><li>在Zotero导入文献</li><li>PDF进入知识库</li><li>用obsidian生成笔记骨架</li><li>codex填充笔记内容</li><li>在obsidian里验证</li></ol><p>按类别访问</p><p>文献阅读标注在zotero，笔记&#x2F;AI解析在obsidian。那么PDF不能移动到zotero</p><p>zotero字段名用的<code>&#123;&#123;citekey&#125;&#125;-&#123;&#123;shortTitle&#125;&#125;</code></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>google-analytics-tool</title>
-      <link href="/2026/07/20/2026-07-27-google-analytics-tool/"/>
-      <url>/2026/07/20/2026-07-27-google-analytics-tool/</url>
+      <title>zotero+obsidian文献工作流</title>
+      <link href="/2026/07/20/2026-07-21-zotero+obsidian%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
+      <url>/2026/07/20/2026-07-21-zotero+obsidian%E6%96%87%E7%8C%AE%E5%B7%A5%E4%BD%9C%E6%B5%81/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Obsidian</a></p><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p><img src="/images/posts/zotero+obsidian/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.png" alt="系统架构"><br>已完成：</p><ul><li>AI读取PDF全文，一句指令生成结构化文献笔记并自动归类</li><li>文献量增长后仍能快速检索——自动索引按标签多维度筛选</li><li>写论文草稿时引用自己读过的文献，引用格式可直接编译为word&#x2F;pdf</li><li>文献之间自动建立关联网络，在obsidian图谱中可视化研究脉络</li><li>设计实验时结合已有文献给出具体参数建议</li></ul><p>待完成：</p><ul><li>文献收录在zotero，复制想要AI阅读的文献PDF到obsidian pdf目录下</li><li>AI根据关键字调研并获取文献</li></ul><h2 id="文件架构"><a href="#文件架构" class="headerlink" title="文件架构"></a>文件架构</h2><p><img src="/images/posts/zotero+obsidian/%E6%96%87%E4%BB%B6%E6%9E%B6%E6%9E%84.png" alt="文件架构"></p><h2 id="obsidian、zotero协同"><a href="#obsidian、zotero协同" class="headerlink" title="obsidian、zotero协同"></a>obsidian、zotero协同</h2><ol><li>在Zotero导入文献</li><li>PDF进入知识库</li><li>用obsidian生成笔记骨架</li><li>codex填充笔记内容</li><li>在obsidian里验证</li></ol><p>按类别访问</p><p>文献阅读标注在zotero，笔记&#x2F;AI解析在obsidian。那么PDF不能移动到zotero</p><p>zotero字段名用的<code>&#123;&#123;citekey&#125;&#125;-&#123;&#123;shortTitle&#125;&#125;</code></p>]]></content>
       
       
       <categories>

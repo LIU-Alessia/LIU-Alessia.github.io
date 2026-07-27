@@ -10,7 +10,19 @@
   <rights>All rights reserved 2026, Alessia</rights>
   <subtitle>Alessia's funny place</subtitle>
   <title>Alessia's Blog</title>
-  <updated>2026-07-27T06:49:41.020Z</updated>
+  <updated>2026-07-27T06:54:34.092Z</updated>
+  <entry>
+    <author>
+      <name>Alessia</name>
+    </author>
+    <category term="技术实践" scheme="https://liu-alessia.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="技术随笔" scheme="https://liu-alessia.github.io/tags/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/"/>
+    <id>https://liu-alessia.github.io/2026/07/26/2026-07-27-google-analytics-tool/</id>
+    <link href="https://liu-alessia.github.io/2026/07/26/2026-07-27-google-analytics-tool/"/>
+    <published>2026-07-26T16:00:00.000Z</published>
+    <title>google-analytics-tool</title>
+    <updated>2026-07-27T06:54:34.092Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Alessia</name>
@@ -27,19 +39,7 @@
       <![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Ob]]>
     </summary>
     <title>zotero+obsidian文献工作流</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Alessia</name>
-    </author>
-    <category term="技术实践" scheme="https://liu-alessia.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
-    <category term="技术随笔" scheme="https://liu-alessia.github.io/tags/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/"/>
-    <id>https://liu-alessia.github.io/2026/07/20/2026-07-27-google-analytics-tool/</id>
-    <link href="https://liu-alessia.github.io/2026/07/20/2026-07-27-google-analytics-tool/"/>
-    <published>2026-07-20T16:00:00.000Z</published>
-    <title>google-analytics-tool</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.092Z</updated>
   </entry>
   <entry>
     <author>
@@ -78,7 +78,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day2-transformer</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -96,7 +96,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day3-模型微调</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -114,7 +114,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day1-self-attention</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -153,7 +153,7 @@
       <![CDATA[<h1 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h1><h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id]]>
     </summary>
     <title>面试手撕准备</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -172,7 +172,7 @@
 <h1 id="套路"><a href="#套路" class="headerlink" title="]]>
     </summary>
     <title>回溯</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -191,7 +191,7 @@
 <h1 id="思考方式"><a href="#思考方式" class="headerlink" tit]]>
     </summary>
     <title>动态规划</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -210,7 +210,7 @@
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" t]]>
     </summary>
     <title>矩阵</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -229,7 +229,7 @@
 <h2 id="双指针"><a href="#双指针" class="headerlink" title]]>
     </summary>
     <title>链表</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -248,7 +248,7 @@
 <h1 id="递归"><a href="#递归" class="headerlink" title="]]>
     </summary>
     <title>binary tree</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -267,7 +267,7 @@
 <h1 id="单调栈"><a href="#单调栈" class="headerlink" title]]>
     </summary>
     <title>stack</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -286,7 +286,7 @@
 <h1 id="内置函数"><a href="#内置函数" class="headerlink" tit]]>
     </summary>
     <title>python</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -305,7 +305,7 @@
 <p>矢量显示系统，节省空间；char]]>
     </summary>
     <title>计算机基础</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.092Z</updated>
   </entry>
   <entry>
     <author>
@@ -317,7 +317,7 @@
     <link href="https://liu-alessia.github.io/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/"/>
     <published>2026-04-04T16:00:00.000Z</published>
     <title>图解transformer</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -335,7 +335,7 @@
       <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>参考<a href="https://github.com/datawhalechina/learn-nlp-with-transforme]]>
     </summary>
     <title>transformer相关原理</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -356,7 +356,7 @@
     <title>
       <![CDATA[Array & string]]>
     </title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -374,6 +374,6 @@
       <![CDATA[<h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><im]]>
     </summary>
     <title>快速全面了解大语言模型</title>
-    <updated>2026-07-27T06:49:41.020Z</updated>
+    <updated>2026-07-27T06:54:34.091Z</updated>
   </entry>
 </feed>

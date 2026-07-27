@@ -26,6 +26,8 @@ jobs:
           npm install
 
       - name: Generate site
+        env:
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: hexo generate
 
       - name: Deploy to GitHub Pages

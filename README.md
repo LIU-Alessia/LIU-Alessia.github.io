@@ -106,7 +106,40 @@ gitalk:
   createIssueManually: true
 ```
 
-### 2. 部署配置
+### 2. 访客次数与地点统计
+
+站点已启用两类访客统计：
+
+- 不蒜子：在页脚显示站点 PV/UV，并在文章页显示单篇浏览量，无需账号。
+- Google Analytics 4：在后台记录访问量以及访客的大致国家、地区和城市；不采集 GPS 精确位置。未配置测量 ID 时不会加载 Google Analytics。
+
+启用地点统计：
+
+1. 在 [Google Analytics](https://analytics.google.com/) 创建 GA4 媒体资源和 Web 数据流，网站地址填写 `https://liu-alessia.github.io`。
+2. 复制以 `G-` 开头的 Measurement ID。
+3. 打开 GitHub 仓库的 `Settings → Secrets and variables → Actions → Variables`。
+4. 新建仓库变量：
+
+```text
+Name:  GA_MEASUREMENT_ID
+Value: G-XXXXXXXXXX
+```
+
+5. 推送到 `source` 分支，GitHub Actions 会在构建时自动启用 GA4。部署后可在 GA4 的“实时”报告中验证访问记录。
+
+本地验证时，可在 PowerShell 中临时设置测量 ID：
+
+```powershell
+$env:GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'
+npm run build
+```
+
+访客统计遵循浏览器的 “Do Not Track” 设置。站点的 `/privacy/` 页面说明了收集范围。
+
+- Google Analytics 的 Measurement ID 不是密钥，但使用仓库变量便于更换和区分环境。
+- GA4 的地点是根据网络地址推断的近似位置，城市级结果可能存在误差。
+
+### 3. 部署配置
 
 #### 方案 A：GitHub Actions 自动部署
 

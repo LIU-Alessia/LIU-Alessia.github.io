@@ -11,30 +11,17 @@
             "id": "c9b0e5d8e2a87864",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "source/images/posts/zotero+obsidian/文件架构.png"
-              },
-              "icon": "lucide-image",
-              "title": "文件架构"
-            }
-          },
-          {
-            "id": "25cf4f326e108cf3",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "source/about/index.md",
+                "file": "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "2026-07-21-zotero+obsidian文献工作流"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -207,28 +194,32 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "25cf4f326e108cf3",
+  "active": "c9b0e5d8e2a87864",
   "lastOpenFiles": [
+    "source/images/posts/zotero+obsidian/文件架构.png",
+    "source/about/index.md",
+    "public/images/posts/zotero+obsidian/系统架构.png",
+    "public/images/posts/zotero+obsidian/文件架构.png",
+    "public/images/posts/zotero+obsidian",
+    "public/privacy/index.html",
+    "public/categories/找工/index.html",
+    "public/categories/找工",
+    "public/categories/项目实践/index.html",
+    "public/categories/项目实践",
+    "public/2026/06/19/2026-06-19-面试手撕/index.html",
+    "public/2026/06/19/2026-06-19-面试手撕",
+    "public/2026/07/14/2026-07-26-day3-LoRA/index.html",
+    "public/2026/07/14/2026-07-26-day3-LoRA",
+    "source/privacy/index.md",
     "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
     "source/images/posts/zotero+obsidian/系统架构.png",
-    "source/images/posts/zotero+obsidian/文件架构.png",
-    "source/images/posts/zotero+obsidian",
     "source/_posts/LLM知识体系搭建/2026-07-26-day3-LoRA.md",
     "source/_posts/找工/2026-06-19-面试手撕.md",
     "source/_posts/技术实践/2026-02-04-vibe-coding.md",
-    "source/_posts/找工",
     "source/_posts/项目实践/2026-07-18-股票Agent实践.md",
     "source/_posts/项目实践/2026-07-13-股票投资顾问Agent.md",
-    "source/_posts/项目实践",
     "source/_posts/金融AI/2026-07-18-股票Agent实践.md",
     "source/_posts/金融AI/2026-07-13-股票投资顾问Agent.md",
-    "source/_posts/金融AI",
-    "public/2026/05/11/2026-05-11-日记6-矩阵/index.html",
-    "public/2026/05/15/2026-05-15-日记8-动态规划/index.html",
-    "public/2026/06/19/2026-06-19-字节/index.html",
-    "public/2026/05/15/2026-05-14-日记7-回溯/index.html",
-    "public/2026/07/13/2026-07-13-股票投资顾问Agent/index.html",
-    "public/2026/07/14/2026-07-14-day2-transformer/index.html",
     "public/images/background.png",
     "source/_posts/力扣刷题日记/2026-05-15-日记8-动态规划.md",
     "source/_posts/力扣刷题日记/2026-05-14-日记7-回溯.md",
@@ -245,8 +236,6 @@
     "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
     "source/_posts/LLM知识体系搭建/2026-02-25-transformer精读.md",
-    "source/_posts/随笔杂谈/2026-02-08-知识图谱.md",
-    "source/_posts/数据分析/2026-01-28-统计学学习.md",
     "未命名.canvas",
     "source/images/background.png",
     "source/images/yeji_concert.jpg",

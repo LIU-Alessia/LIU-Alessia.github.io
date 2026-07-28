@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/技术实践/2026-07-27-google-analytics-tool.md",
+                "file": "source/about/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-27-google-analytics-tool"
+              "title": "index"
             }
           },
           {
@@ -34,8 +34,23 @@
               "icon": "lucide-file",
               "title": "2026-03-25-快速全面了解大语言模型"
             }
+          },
+          {
+            "id": "fe240170a18fca30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/找工/2026-07-27-基于网格状细胞的矢量导航.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-07-27-基于网格状细胞的矢量导航"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -102,25 +117,6 @@
         "id": "d7495fd0f5549e87",
         "type": "tabs",
         "children": [
-          {
-            "id": "be2c2da73696e479",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "source/_posts/2026-07-13-股票投资顾问Agent.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "2026-07-13-股票投资顾问Agent 的反向链接列表"
-            }
-          },
           {
             "id": "8447bde88358f43f",
             "type": "leaf",
@@ -190,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -208,12 +204,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c9b0e5d8e2a87864",
+  "active": "fe240170a18fca30",
   "lastOpenFiles": [
-    "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
-    "2026-07-21.md",
+    "source/images/posts/gridcell-navigation/gridcell-agent架构.png",
+    "source/about/index.md",
+    "source/_posts/找工/2026-07-27-基于网格状细胞的矢量导航.md",
+    "images/posts/zotero+obsidian/系统架构.png.md",
+    "source/images/posts/gridcell-navigation",
+    "source/_posts/找工/2026-06-19-面试手撕.md",
     "source/_posts/技术实践/2026-07-27-google-analytics-tool.md",
+    "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
+    "2026-07-21.md",
     "source/_posts/技术实践/2026-01-14-tensorflow.md",
     "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
     "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer.md",
@@ -222,12 +224,10 @@
     "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",
     "source/_posts/LLM知识体系搭建/2026-02-25-transformer精读.md",
     "scripts/obsidian-image-embeds.js",
-    "images/posts/zotero+obsidian/系统架构.png.md",
     "images/posts/zotero+obsidian",
     "images/posts",
     "images",
     "source/images/posts/zotero+obsidian/文件架构.png",
-    "source/about/index.md",
     "public/images/posts/zotero+obsidian/系统架构.png",
     "public/images/posts/zotero+obsidian/文件架构.png",
     "public/images/posts/zotero+obsidian",
@@ -235,10 +235,8 @@
     "public/categories/找工/index.html",
     "public/categories/找工",
     "public/categories/项目实践/index.html",
-    "public/categories/项目实践",
     "source/privacy/index.md",
     "source/images/posts/zotero+obsidian/系统架构.png",
-    "source/_posts/找工/2026-06-19-面试手撕.md",
     "source/_posts/技术实践/2026-02-04-vibe-coding.md",
     "source/_posts/项目实践/2026-07-18-股票Agent实践.md",
     "source/_posts/项目实践/2026-07-13-股票投资顾问Agent.md",
@@ -249,8 +247,6 @@
     "source/_posts/力扣刷题日记/2026-05-14-日记7-回溯.md",
     "source/_posts/力扣刷题日记/2026-05-11-日记6-矩阵.md",
     "source/_posts/力扣刷题日记/2026-05-10-日记5-链表.md",
-    "source/_posts/力扣刷题日记/2026-05-09-日记4-二叉树.md",
-    "source/_posts/力扣刷题日记/2026-05-06-日记3-stack.md",
     "未命名.canvas",
     "source/images/background.png",
     "source/images/yeji_concert.jpg",

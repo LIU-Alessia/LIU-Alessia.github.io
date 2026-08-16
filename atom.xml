@@ -10,7 +10,27 @@
   <rights>All rights reserved 2026, Alessia</rights>
   <subtitle>Alessia's funny place</subtitle>
   <title>Alessia's Blog</title>
-  <updated>2026-07-27T06:54:34.092Z</updated>
+  <updated>2026-08-16T13:55:54.173Z</updated>
+  <entry>
+    <author>
+      <name>Alessia</name>
+    </author>
+    <category term="找工" scheme="https://liu-alessia.github.io/categories/%E6%89%BE%E5%B7%A5/"/>
+    <category term="计算神经" scheme="https://liu-alessia.github.io/tags/%E8%AE%A1%E7%AE%97%E7%A5%9E%E7%BB%8F/"/>
+    <category term="Agent" scheme="https://liu-alessia.github.io/tags/Agent/"/>
+    <category term="强化学习" scheme="https://liu-alessia.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    <content>
+      <![CDATA[<p><strong>路径积分与空间表征：</strong><br>基于 LSTM 处理线速度和角速度序列，预测位置细胞与头方向细胞编码，在隐层中涌现网格细胞、边界细胞等空间表征；采用 BPTT、RMSProp、Dropout 和梯度裁剪训练，训练后模型15秒定位误差由91cm降至16cm。</p><p><strong>强化学习导航架构：</strong><br>基于 CNN、Grid LSTM 和 A3C Actor-Critic 搭建端到端 Agent，融合视觉特征、当前&#x2F;目标网格编码、历史动作与奖励，实现稀疏奖励下的一次目标学习和向量导航。<br>![[gridcell-agent架构.png]]</p><p><strong>评测与可解释性分析：</strong><br>在开放场地、程序化多房间、随机门和捷径环境中训练，使用 Ridge Regression 解码目标距离与方向，并通过移除目标编码、屏蔽高 Gridness 单元等消融实验验证空间表征作用。</p><p><strong>项目成果</strong></p><p>l 网格样单元占比达 25.2%，100 次随机初始化实验中平均占比为 23% ± 2.8%。</p><p>l 在带噪速度、无真实坐标输入条件下，将 15 秒自定位误差由 88 cm 降至 12 cm。</p><p>l 导航性能超过 A3C、位置细胞 Agent、NavMemNet、DNC 等基线及人类专家，并可零微调泛化至更大地图、利用未见捷径完成最短路径规划。</p>]]>
+    </content>
+    <id>https://liu-alessia.github.io/2026/07/26/2026-07-27-%E5%9F%BA%E4%BA%8E%E7%BD%91%E6%A0%BC%E7%8A%B6%E7%BB%86%E8%83%9E%E7%9A%84%E7%9F%A2%E9%87%8F%E5%AF%BC%E8%88%AA/</id>
+    <link href="https://liu-alessia.github.io/2026/07/26/2026-07-27-%E5%9F%BA%E4%BA%8E%E7%BD%91%E6%A0%BC%E7%8A%B6%E7%BB%86%E8%83%9E%E7%9A%84%E7%9F%A2%E9%87%8F%E5%AF%BC%E8%88%AA/"/>
+    <published>2026-07-26T16:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p><strong>路径积分与空间表征：</strong><br>基于 LSTM 处理线速度和角速度序列，预测位置细胞与头方向细胞编码，在隐层中涌现网格细胞、边界细胞等空间表征；采用 BPTT、RMSProp、Dropout 和梯度裁剪训练，训练后模型15秒定位误差由91cm降]]>
+    </summary>
+    <title>基于网格状细胞的矢量导航</title>
+    <updated>2026-08-16T13:55:54.173Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Alessia</name>
@@ -21,7 +41,7 @@
     <link href="https://liu-alessia.github.io/2026/07/26/2026-07-27-google-analytics-tool/"/>
     <published>2026-07-26T16:00:00.000Z</published>
     <title>google-analytics-tool</title>
-    <updated>2026-07-27T06:54:34.092Z</updated>
+    <updated>2026-08-16T13:55:54.174Z</updated>
   </entry>
   <entry>
     <author>
@@ -39,7 +59,7 @@
       <![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Ob]]>
     </summary>
     <title>zotero+obsidian文献工作流</title>
-    <updated>2026-07-27T06:54:34.092Z</updated>
+    <updated>2026-08-16T13:55:54.174Z</updated>
   </entry>
   <entry>
     <author>
@@ -78,7 +98,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day2-transformer</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -87,7 +107,7 @@
     <category term="LLM知识体系搭建" scheme="https://liu-alessia.github.io/categories/LLM%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%90%AD%E5%BB%BA/"/>
     <category term="学习资料" scheme="https://liu-alessia.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
     <content>
-      <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]>
+      <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://www.bilibili.com/video/BV1PvwYzxE9D/?spm_id_from=333.788.recommend_more_video.-1&trackid=web_related_0.router-related-2479604-tdxs9.1786885403228.791&vd_source=e829fda6ffe593dd9c2083114e4800c0">隔壁的程序员老王B站视频【什么是LoRA 大模型微调是怎么回事】</a></p><p>![[Pasted image 20260816214844.png]]</p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p>论文主图<br>![[Pasted image 20260816210345.png]]</p><p>![[Pasted image 20260816210353.png]]</p>]]>
     </content>
     <id>https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</id>
     <link href="https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
@@ -96,7 +116,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day3-模型微调</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -114,7 +134,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day1-self-attention</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -153,7 +173,7 @@
       <![CDATA[<h1 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h1><h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id]]>
     </summary>
     <title>面试手撕准备</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -172,7 +192,7 @@
 <h1 id="套路"><a href="#套路" class="headerlink" title="]]>
     </summary>
     <title>回溯</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -191,7 +211,7 @@
 <h1 id="思考方式"><a href="#思考方式" class="headerlink" tit]]>
     </summary>
     <title>动态规划</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -210,7 +230,7 @@
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" t]]>
     </summary>
     <title>矩阵</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -229,7 +249,7 @@
 <h2 id="双指针"><a href="#双指针" class="headerlink" title]]>
     </summary>
     <title>链表</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -248,7 +268,7 @@
 <h1 id="递归"><a href="#递归" class="headerlink" title="]]>
     </summary>
     <title>binary tree</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -267,7 +287,7 @@
 <h1 id="单调栈"><a href="#单调栈" class="headerlink" title]]>
     </summary>
     <title>stack</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -286,7 +306,7 @@
 <h1 id="内置函数"><a href="#内置函数" class="headerlink" tit]]>
     </summary>
     <title>python</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -305,7 +325,7 @@
 <p>矢量显示系统，节省空间；char]]>
     </summary>
     <title>计算机基础</title>
-    <updated>2026-07-27T06:54:34.092Z</updated>
+    <updated>2026-08-16T13:55:54.174Z</updated>
   </entry>
   <entry>
     <author>
@@ -317,7 +337,7 @@
     <link href="https://liu-alessia.github.io/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/"/>
     <published>2026-04-04T16:00:00.000Z</published>
     <title>图解transformer</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -335,7 +355,7 @@
       <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>参考<a href="https://github.com/datawhalechina/learn-nlp-with-transforme]]>
     </summary>
     <title>transformer相关原理</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -356,24 +376,6 @@
     <title>
       <![CDATA[Array & string]]>
     </title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Alessia</name>
-    </author>
-    <category term="LLM知识体系搭建" scheme="https://liu-alessia.github.io/categories/LLM%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%90%AD%E5%BB%BA/"/>
-    <category term="LLM" scheme="https://liu-alessia.github.io/tags/LLM/"/>
-    <content>
-      <![CDATA[<h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><img src="/images/posts/LLM_QuickStart/midterm-question.png" alt="alt text"><br>5题答对4题，3题分析正确</p><p><strong>GPTs</strong>: 打造AI应有只要一瞬间</p><p>我立刻10min创建了一个zebrafish expert<br><img src="/images/posts/LLM_QuickStart/zebrafish-expert.png" alt="alt text"></p><ul><li>“chatGPT真正做的事-文字接龙”</li></ul><p><strong>Token</strong><br>计价方式；开发者先设定好的，可通过对应平台查询，例如<a href="https://platform.openai.com/tokenizer">openAI tokenizer平台</a></p><h3 id="GPT的发展史"><a href="#GPT的发展史" class="headerlink" title="GPT的发展史"></a>GPT的发展史</h3><p>GPT: Generative Pre-trained Transformer</p><ul><li>GPT-1(2018) 117M, 1GB data</li><li>GPT-2(2019) 1542M, 20GB data，可以回答问题<br><img src="/images/posts/LLM_QuickStart/gpt2-Q&A.png" alt="alt text"></li><li>GPT-3(2020) 175B, 580GB（哈利波特全集约100,0000 words, 以UTF-8编码，一个英文字母一个字节，估算共6e6 Byte；则580e9&#x2F;6e6约100,000遍，远超一个人100年全部时间所能阅读的文字量）</li></ul><h3 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h3><p>Pre-train -&gt; Supervised training -&gt; Reforcement learning&#x2F;RLHF</p><p><img src="/images/posts/LLM_QuickStart/GPT2chatGPT.png" alt="alt text"></p><p><img src="/images/posts/LLM_QuickStart/SupervisedLearning2RL.png" alt="alt text"></p><p>监督式学习的重要性：<br><img src="/images/posts/LLM_QuickStart/instructGPT.png" alt="alt text"></p><p>有预训练后，监督式学习不用大量资料<br><img src="/images/posts/LLM_QuickStart/pretrain-effect.png" alt="alt text"></p><h3 id="PROMPT"><a href="#PROMPT" class="headerlink" title="PROMPT"></a>PROMPT</h3><ol><li>把需求写清楚</li><li>提供资讯给ChatGPT</li><li>提供范例</li><li>鼓励GPT想一想(chain of thought)</li><li>神奇咒语</li><li>上传档案</li><li>ChatGPT可以使用其他工具</li><li>拆解任务</li><li>自主进行规划</li><li>会反省</li><li>跟真实环境互动</li></ol>]]>
-    </content>
-    <id>https://liu-alessia.github.io/2026/03/24/2026-03-25-%E5%BF%AB%E9%80%9F%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/</id>
-    <link href="https://liu-alessia.github.io/2026/03/24/2026-03-25-%E5%BF%AB%E9%80%9F%E5%85%A8%E9%9D%A2%E4%BA%86%E8%A7%A3%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
-    <published>2026-03-24T16:00:00.000Z</published>
-    <summary>
-      <![CDATA[<h3 id="GPT-4-Ability"><a href="#GPT-4-Ability" class="headerlink" title="GPT-4 Ability"></a>GPT-4 Ability</h3><p>linear algebra test<br><im]]>
-    </summary>
-    <title>快速全面了解大语言模型</title>
-    <updated>2026-07-27T06:54:34.091Z</updated>
+    <updated>2026-08-16T13:55:54.173Z</updated>
   </entry>
 </feed>

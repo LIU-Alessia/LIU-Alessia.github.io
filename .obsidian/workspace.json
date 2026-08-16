@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/找工/2026-07-27-基于网格状细胞的矢量导航.md",
+                "file": "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-27-基于网格状细胞的矢量导航"
+              "title": "2026-07-26-day3-模型微调"
             }
           }
         ],
@@ -70,7 +70,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -107,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 307
   },
   "right": {
     "id": "3e280940af13162b",
@@ -184,6 +186,25 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "2a1a5642ace5f0a7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "source/_posts/找工/2026-07-27-基于网格状细胞的矢量导航.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2026-07-27-基于网格状细胞的矢量导航 的反向链接列表"
+            }
           }
         ],
         "currentTab": 4
@@ -206,10 +227,16 @@
   },
   "active": "fe240170a18fca30",
   "lastOpenFiles": [
+    "Pasted image 20260816214844.png",
+    "隔壁的程序员老王.md",
+    "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
+    "Pasted image 20260816214512.png",
+    "source/_posts/找工/2026-07-27-基于网格状细胞的矢量导航.md",
+    "Pasted image 20260816210353.png",
+    "Pasted image 20260816210345.png",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
     "source/images/posts/gridcell-navigation/gridcell-agent架构.png",
     "source/about/index.md",
-    "source/_posts/找工/2026-07-27-基于网格状细胞的矢量导航.md",
     "images/posts/zotero+obsidian/系统架构.png.md",
     "source/images/posts/gridcell-navigation",
     "source/_posts/找工/2026-06-19-面试手撕.md",
@@ -217,7 +244,6 @@
     "source/_posts/技术实践/2026-07-21-zotero+obsidian文献工作流.md",
     "2026-07-21.md",
     "source/_posts/技术实践/2026-01-14-tensorflow.md",
-    "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
     "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer.md",
     "source/_posts/LLM知识体系搭建/2026-07-13-day1-self-attention.md",
     "source/_posts/LLM知识体系搭建/2026-04-05-图解transformer.md",
@@ -246,10 +272,7 @@
     "source/_posts/力扣刷题日记/2026-05-15-日记8-动态规划.md",
     "source/_posts/力扣刷题日记/2026-05-14-日记7-回溯.md",
     "source/_posts/力扣刷题日记/2026-05-11-日记6-矩阵.md",
-    "source/_posts/力扣刷题日记/2026-05-10-日记5-链表.md",
     "未命名.canvas",
-    "source/images/background.png",
-    "source/images/yeji_concert.jpg",
-    "source/images/【哲风壁纸】云朵-儿童-六代机.png"
+    "source/images/background.png"
   ]
 }

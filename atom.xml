@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, Alessia</rights>
   <subtitle>Alessia's funny place</subtitle>
   <title>Alessia's Blog</title>
-  <updated>2026-08-16T13:55:54.173Z</updated>
+  <updated>2026-08-16T14:05:51.808Z</updated>
   <entry>
     <author>
       <name>Alessia</name>
@@ -29,7 +29,7 @@
       <![CDATA[<p><strong>路径积分与空间表征：</strong><br>基于 LSTM 处理线速度和角速度序列，预测位置细胞与头方向细胞编码，在隐层中涌现网格细胞、边界细胞等空间表征；采用 BPTT、RMSProp、Dropout 和梯度裁剪训练，训练后模型15秒定位误差由91cm降]]>
     </summary>
     <title>基于网格状细胞的矢量导航</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -41,7 +41,7 @@
     <link href="https://liu-alessia.github.io/2026/07/26/2026-07-27-google-analytics-tool/"/>
     <published>2026-07-26T16:00:00.000Z</published>
     <title>google-analytics-tool</title>
-    <updated>2026-08-16T13:55:54.174Z</updated>
+    <updated>2026-08-16T14:05:51.809Z</updated>
   </entry>
   <entry>
     <author>
@@ -59,7 +59,7 @@
       <![CDATA[<p>参考<a href="https://effortlessacademic.com/connecting-zotero-and-obsidian-with-the-zotlit-plugin-templates/">使用 ZotLit 插件和模板连接 Zotero 和 Ob]]>
     </summary>
     <title>zotero+obsidian文献工作流</title>
-    <updated>2026-08-16T13:55:54.174Z</updated>
+    <updated>2026-08-16T14:05:51.809Z</updated>
   </entry>
   <entry>
     <author>
@@ -98,7 +98,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day2-transformer</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -107,7 +107,7 @@
     <category term="LLM知识体系搭建" scheme="https://liu-alessia.github.io/categories/LLM%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%90%AD%E5%BB%BA/"/>
     <category term="学习资料" scheme="https://liu-alessia.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
     <content>
-      <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://www.bilibili.com/video/BV1PvwYzxE9D/?spm_id_from=333.788.recommend_more_video.-1&trackid=web_related_0.router-related-2479604-tdxs9.1786885403228.791&vd_source=e829fda6ffe593dd9c2083114e4800c0">隔壁的程序员老王B站视频【什么是LoRA 大模型微调是怎么回事】</a></p><p>![[Pasted image 20260816214844.png]]</p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p>论文主图<br>![[Pasted image 20260816210345.png]]</p><p>![[Pasted image 20260816210353.png]]</p>]]>
+      <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://www.bilibili.com/video/BV1PvwYzxE9D/?spm_id_from=333.788.recommend_more_video.-1&trackid=web_related_0.router-related-2479604-tdxs9.1786885403228.791&vd_source=e829fda6ffe593dd9c2083114e4800c0">隔壁的程序员老王B站视频【什么是LoRA 大模型微调是怎么回事】</a></p><p><img src="/source/images/posts/LLM_QuickStart/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%98%BE%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90.png" alt="alt text"></p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p>论文主图<br>![[LORA-重参数化主图.png]]</p>]]>
     </content>
     <id>https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</id>
     <link href="https://liu-alessia.github.io/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
@@ -116,7 +116,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day3-模型微调</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -134,7 +134,7 @@
       <![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/d]]>
     </summary>
     <title>day1-self-attention</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -173,7 +173,7 @@
       <![CDATA[<h1 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h1><h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id]]>
     </summary>
     <title>面试手撕准备</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -192,7 +192,7 @@
 <h1 id="套路"><a href="#套路" class="headerlink" title="]]>
     </summary>
     <title>回溯</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -211,7 +211,7 @@
 <h1 id="思考方式"><a href="#思考方式" class="headerlink" tit]]>
     </summary>
     <title>动态规划</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -230,7 +230,7 @@
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" t]]>
     </summary>
     <title>矩阵</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -249,7 +249,7 @@
 <h2 id="双指针"><a href="#双指针" class="headerlink" title]]>
     </summary>
     <title>链表</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -268,7 +268,7 @@
 <h1 id="递归"><a href="#递归" class="headerlink" title="]]>
     </summary>
     <title>binary tree</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -287,7 +287,7 @@
 <h1 id="单调栈"><a href="#单调栈" class="headerlink" title]]>
     </summary>
     <title>stack</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -306,7 +306,7 @@
 <h1 id="内置函数"><a href="#内置函数" class="headerlink" tit]]>
     </summary>
     <title>python</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -325,7 +325,7 @@
 <p>矢量显示系统，节省空间；char]]>
     </summary>
     <title>计算机基础</title>
-    <updated>2026-08-16T13:55:54.174Z</updated>
+    <updated>2026-08-16T14:05:51.809Z</updated>
   </entry>
   <entry>
     <author>
@@ -337,7 +337,7 @@
     <link href="https://liu-alessia.github.io/2026/04/04/2026-04-05-%E5%9B%BE%E8%A7%A3transformer/"/>
     <published>2026-04-04T16:00:00.000Z</published>
     <title>图解transformer</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -355,7 +355,7 @@
       <![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>参考<a href="https://github.com/datawhalechina/learn-nlp-with-transforme]]>
     </summary>
     <title>transformer相关原理</title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
   <entry>
     <author>
@@ -376,6 +376,6 @@
     <title>
       <![CDATA[Array & string]]>
     </title>
-    <updated>2026-08-16T13:55:54.173Z</updated>
+    <updated>2026-08-16T14:05:51.808Z</updated>
   </entry>
 </feed>

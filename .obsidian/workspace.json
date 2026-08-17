@@ -237,12 +237,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d6afb14f82cc41dd",
+  "active": "c8a4999bf7b5009c",
   "lastOpenFiles": [
-    "source/images/posts/LLM_QuickStart/LORA-重参数化主图.png",
+    "Pasted image 20260816221203.png",
+    "source/images/posts/LLM_QuickStart/模型微调显存占用分析.png",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
-    "Pasted image 20260816210353.png",
+    "source/images/posts/LLM_QuickStart/模型微调显存占用分析 1.png",
     "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
+    "source/images/posts/LLM_QuickStart/LORA-重参数化主图.png",
+    "Pasted image 20260816210353.png",
     "Pasted image 20260816214512.png",
     "images/posts/LLM_QuickStart/模型.md",
     "images/posts/LLM_QuickStart",
@@ -250,7 +253,6 @@
     "images/posts/LLM_QuickStart.md",
     "images/posts",
     "images",
-    "source/images/posts/LLM_QuickStart/模型微调显存占用分析.png",
     "隔壁的程序员老王.md",
     "source/_posts/LLM知识体系搭建/2026-07-13-day1-self-attention.md",
     "source/_posts/LLM知识体系搭建/2026-07-14-day2-transformer.md",
@@ -283,7 +285,6 @@
     "source/_posts/项目实践/2026-07-13-股票投资顾问Agent.md",
     "source/_posts/金融AI/2026-07-18-股票Agent实践.md",
     "source/_posts/金融AI/2026-07-13-股票投资顾问Agent.md",
-    "public/images/background.png",
     "未命名.canvas"
   ]
 }

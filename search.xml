@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>day3-RAG</title>
-      <link href="/2026/08/17/2026-08-17-day4-RAG/"/>
-      <url>/2026/08/17/2026-08-17-day4-RAG/</url>
+      <title>day4-RAG</title>
+      <link href="/2026/08/27/2026-08-14-day4-RAG/"/>
+      <url>/2026/08/27/2026-08-14-day4-RAG/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="RAG"><a href="#RAG" class="headerlink" title="RAG"></a>RAG</h1><p>Retrieval Augmented Generation</p><h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><p>RAG的整体流程<br>![[RAG的整体流程.png]]</p>]]></content>
       
       
       <categories>
@@ -21,6 +21,56 @@
         <tags>
             
             <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>day5-ReAct</title>
+      <link href="/2026/08/27/2026-08-17-day5-ReAct/"/>
+      <url>/2026/08/27/2026-08-17-day5-ReAct/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ReAct"><a href="#ReAct" class="headerlink" title="ReAct"></a>ReAct</h1><p>Reasoning and Acting</p><h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><p>![[主流agent的技术架构.png]]</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LLM知识体系搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>存储</title>
+      <link href="/2026/08/16/2026-08-17-%E5%AD%98%E5%82%A8/"/>
+      <url>/2026/08/16/2026-08-17-%E5%AD%98%E5%82%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="内存、固态硬盘与机械硬盘"><a href="#内存、固态硬盘与机械硬盘" class="headerlink" title="内存、固态硬盘与机械硬盘"></a>内存、固态硬盘与机械硬盘</h1><p>计算机中的“存储”大致分为两类：内存用于暂存正在运行的数据，断电后通常丢失；固态硬盘和机械硬盘用于长期保存数据，断电后仍能保留内容。三者在原理、接口和性能上各不相同。</p><h2 id="一、内存（RAM）"><a href="#一、内存（RAM）" class="headerlink" title="一、内存（RAM）"></a>一、内存（RAM）</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>内存是 CPU 直接访问的工作空间，主要使用 DRAM（动态随机存取存储器）。一个 DRAM 单元通常由一个电容和一个晶体管组成，电容是否带电表示 0 或 1。由于电荷会逐渐泄漏，DRAM 需要周期性刷新。</p><p>常见的 DDR SDRAM 在时钟信号的上升沿和下降沿都传输数据，因此可以在较低时钟频率下获得更高的数据传输率。内存具有较低延迟和较高带宽，但断电后数据会消失。</p><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><ul><li><strong>DIMM</strong>：台式机常用的内存条接口。</li><li><strong>SO-DIMM</strong>：笔记本电脑常用的短尺寸接口。</li><li><strong>DDR 标准</strong>：DDR、DDR2、DDR3、DDR4、DDR5 逐代提高传输速率，并改善电压、容量和电源管理。</li><li><strong>内存总线</strong>：连接 CPU 内存控制器与内存模块，传输地址、数据和控制信号。</li></ul><h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><p>早期计算机使用磁芯存储器，后来逐渐发展为半导体 RAM。20 世纪 70 年代，DRAM 开始普及；随后 SDRAM、DDR SDRAM 相继成为个人计算机的主流。现代 DDR5 通过更高传输速率、分组结构和片上电源管理提升了带宽与能效。</p><h2 id="二、固态硬盘（SSD）"><a href="#二、固态硬盘（SSD）" class="headerlink" title="二、固态硬盘（SSD）"></a>二、固态硬盘（SSD）</h2><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>SSD 使用 NAND Flash 闪存保存数据。闪存单元通过控制栅极中的电荷量表示数据，写入时改变电荷状态，读取时检测电压。它没有机械运动部件，因此访问延迟低、抗震性好。</p><p>SSD 不能像 RAM 一样直接覆盖任意位置。控制器需要进行地址映射、磨损均衡、垃圾回收和坏块管理；操作系统看到的逻辑地址，实际由闪存转换层映射到 NAND 物理位置。NAND 通常按页读写、按块擦除。</p><h3 id="接口-1"><a href="#接口-1" class="headerlink" title="接口"></a>接口</h3><ul><li><strong>SATA</strong>：常见于 2.5 英寸 SSD，使用 SATA 连接器，接口带宽限制了最高速度。</li><li><strong>M.2</strong>：一种外形规格，不等于某一种协议。M.2 SSD 可以使用 SATA，也可以使用 PCIe。</li><li><strong>PCIe + NVMe</strong>：NVMe 针对非易失性存储设计，利用 PCIe 通道并支持多队列，延迟和并发性能通常优于 SATA。</li><li><strong>U.2、U.3</strong>：主要用于服务器和企业级设备，通常也使用 PCIe&#x2F;NVMe 协议。</li></ul><h3 id="发展历史-1"><a href="#发展历史-1" class="headerlink" title="发展历史"></a>发展历史</h3><p>早期闪存主要用于数码相机、U 盘和嵌入式设备。随着 NAND Flash 成本下降，SSD 从高价产品逐渐进入个人电脑。接口也从 SATA 逐步发展到 PCIe，协议从传统 AHCI 转向 NVMe，性能瓶颈从接口带宽进一步转移到 NAND、控制器和散热。</p><h2 id="三、机械硬盘（HDD）"><a href="#三、机械硬盘（HDD）" class="headerlink" title="三、机械硬盘（HDD）"></a>三、机械硬盘（HDD）</h2><h3 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h3><p>HDD 使用高速旋转的磁盘片保存数据。磁头在盘片表面上方移动，通过改变磁性材料的磁化方向写入数据，再根据磁场变化读取数据。数据通常按照磁道和扇区组织。</p><p>HDD 的访问时间包括磁头寻道时间、盘片旋转等待时间和数据传输时间。由于存在电机和磁头等运动部件，它的随机访问延迟高于 SSD，但单位容量价格低，适合大容量归档和备份。</p><h3 id="接口-2"><a href="#接口-2" class="headerlink" title="接口"></a>接口</h3><ul><li><strong>IDE&#x2F;PATA</strong>：早期个人电脑常见的并行接口，排线较宽。</li><li><strong>SATA</strong>：目前个人电脑中最常见的 HDD 接口，使用串行传输。</li><li><strong>SAS</strong>：服务器和存储阵列常用接口，通常具有更好的可靠性和扩展能力。</li></ul><h3 id="发展历史-2"><a href="#发展历史-2" class="headerlink" title="发展历史"></a>发展历史</h3><p>1956 年，IBM 推出了世界上第一台磁盘存储系统 RAMAC。早期硬盘体积庞大、容量有限，后来随着磁记录密度提高，硬盘逐渐进入个人电脑和数据中心。垂直磁记录、叠瓦式磁记录等技术不断提高容量，但机械结构决定了其随机访问延迟难以达到 SSD 的水平。</p><h2 id="四、三者对比"><a href="#四、三者对比" class="headerlink" title="四、三者对比"></a>四、三者对比</h2><table><thead><tr><th>类型</th><th>主要用途</th><th>断电后数据</th><th>访问特点</th><th>常见接口</th></tr></thead><tbody><tr><td>内存（RAM）</td><td>运行程序、暂存数据</td><td>丢失</td><td>延迟低、带宽高</td><td>DIMM、SO-DIMM、DDR</td></tr><tr><td>SSD</td><td>系统盘、应用和文件存储</td><td>保留</td><td>随机访问快、无机械部件</td><td>SATA、M.2、PCIe&#x2F;NVMe</td></tr><tr><td>HDD</td><td>大容量存储、备份和归档</td><td>保留</td><td>顺序访问经济，随机访问较慢</td><td>SATA、SAS、PATA</td></tr></tbody></table><p>简单来说，内存解决“程序运行时放在哪里”，SSD 和 HDD 解决“数据长期保存在哪里”。SSD 速度快但成本较高，HDD 容量大且便宜；实际设备通常会组合使用三者，以平衡速度、容量和成本。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔杂谈 </tag>
             
         </tags>
       
@@ -139,11 +189,11 @@
     
     
     <entry>
-      <title>day2-transformer</title>
-      <link href="/2026/07/13/2026-07-14-day2-transformer/"/>
-      <url>/2026/07/13/2026-07-14-day2-transformer/</url>
+      <title>day3-模型微调</title>
+      <link href="/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
+      <url>/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</url>
       
-        <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]></content>
+        <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://www.bilibili.com/video/BV1PvwYzxE9D/?spm_id_from=333.788.recommend_more_video.-1&trackid=web_related_0.router-related-2479604-tdxs9.1786885403228.791&vd_source=e829fda6ffe593dd9c2083114e4800c0">隔壁的程序员老王B站视频【什么是LoRA 大模型微调是怎么回事】</a></p><p>模型微调所需的显存并不比预训练的少</p><p><img src="/images/posts/LLM_QuickStart/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%98%BE%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90.png" alt="alt text"><br>以约 1.5B 参数模型为例，FP16 权重本身约占 3GB；推理时主要还需要 KV Cache 和临时激活，因此显存需求通常为“模型权重 + KV Cache + 激活”，其中 KV Cache 会随 batch size 和上下文长度增长。训练时除了模型权重外，还需要保存梯度、前向激活以及优化器状态；对于 AdamW，为了保证训练精度，必须保证 FP32 的训练精度，主权重、一阶动量和二阶动量，每项约 6GB，因此仅参数、梯度和优化器状态就可能达到约 24GB，实际训练还要叠加 activation 和临时 buffer。</p><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h2><p>Low Rank Adaption</p><p>论文主图<br><img src="/images/posts/LLM_QuickStart/LORA-%E9%87%8D%E5%8F%82%E6%95%B0%E5%8C%96%E4%B8%BB%E5%9B%BE.png" alt="LoRA 重参数化主图"></p>]]></content>
       
       
       <categories>
@@ -164,11 +214,11 @@
     
     
     <entry>
-      <title>day3-模型微调</title>
-      <link href="/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
-      <url>/2026/07/13/2026-07-26-day3-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</url>
+      <title>day2-transformer</title>
+      <link href="/2026/07/13/2026-07-14-day2-transformer/"/>
+      <url>/2026/07/13/2026-07-14-day2-transformer/</url>
       
-        <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://www.bilibili.com/video/BV1PvwYzxE9D/?spm_id_from=333.788.recommend_more_video.-1&trackid=web_related_0.router-related-2479604-tdxs9.1786885403228.791&vd_source=e829fda6ffe593dd9c2083114e4800c0">隔壁的程序员老王B站视频【什么是LoRA 大模型微调是怎么回事】</a></p><p>模型微调所需的显存并不比预训练的少</p><p><img src="/images/posts/LLM_QuickStart/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83%E6%98%BE%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90.png" alt="alt text"><br>以约 1.5B 参数模型为例，FP16 权重本身约占 3GB；推理时主要还需要 KV Cache 和临时激活，因此显存需求通常为“模型权重 + KV Cache + 激活”，其中 KV Cache 会随 batch size 和上下文长度增长。训练时除了模型权重外，还需要保存梯度、前向激活以及优化器状态；对于 AdamW，为了保证训练精度，必须保证 FP32 的训练精度，主权重、一阶动量和二阶动量，每项约 6GB，因此仅参数、梯度和优化器状态就可能达到约 24GB，实际训练还要叠加 activation 和临时 buffer。</p><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h2><p>Low Rank Adaption</p><p>论文主图<br><img src="/images/posts/LLM_QuickStart/LORA-%E9%87%8D%E5%8F%82%E6%95%B0%E5%8C%96%E4%B8%BB%E5%9B%BE.png" alt="LoRA 重参数化主图"></p>]]></content>
+        <content type="html"><![CDATA[<p>此系列博客记录<a href="https://my.feishu.cn/docx/FAL3d7zlTo6fcCxQzXbcbY2Xnff">居丽叶的大模型自学计划表-算法岗速成版</a>的学习过程，主要参考资料<a href="https://my.feishu.cn/docx/AN61dRfiWoRUiRxhc6ucbmJwnGr">居里叶LLM知识体系搭建</a>。</p><h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><h2 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h2><h2 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h2><h2 id="pre-norm和post-norm"><a href="#pre-norm和post-norm" class="headerlink" title="pre-norm和post-norm"></a>pre-norm和post-norm</h2>]]></content>
       
       
       <categories>
@@ -445,9 +495,9 @@
     
     
     <entry>
-      <title>计算机基础</title>
-      <link href="/2026/04/07/2026-04-08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-      <url>/2026/04/07/2026-04-08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+      <title>显示</title>
+      <link href="/2026/04/07/2026-04-08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <url>/2026/04/07/2026-04-08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</url>
       
         <content type="html"><![CDATA[<h2 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h2><p>CRT，光栅扫描；LCD(liquid crystal display)技术也用到了光栅扫描</p><p>矢量显示系统，节省空间；character generator, screen buffer, </p><p>光笔，人机交互新方式</p><p>位图，bmp(bit map pictures), frame buffer, </p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       

@@ -109,7 +109,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.78576278686523
+    "width": 307.78576278686523,
+    "collapsed": true
   },
   "right": {
     "id": "3e280940af13162b",
@@ -168,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/2026-07-21-zotero+obsidian文献工作流.md",
+                "file": "source/_posts/力扣刷题日记/2026-05-06-日记3-stack.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-07-21-zotero+obsidian文献工作流 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -225,7 +226,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d80832ca0bf71f0f",
+  "active": "ca0588120646784a",
   "lastOpenFiles": [
     "source/images/posts/LLM_QuickStart/LORA-重参数化主图.png",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",

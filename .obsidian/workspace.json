@@ -121,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 200
   },
   "right": {
     "id": "3e280940af13162b",
@@ -237,7 +237,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c8a4999bf7b5009c",
+  "active": "ca0588120646784a",
   "lastOpenFiles": [
     "images/posts/LLM_QuickStart 1.md",
     "images/posts/LLM_QuickStart.md",

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
+                "file": "source/_posts/力扣刷题日记/2026-03-27-日记1-数组和字符串.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-26-day3-模型微调"
+              "title": "2026-03-27-日记1-数组和字符串"
             }
           },
           {
@@ -121,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 307.78576278686523
   },
   "right": {
     "id": "3e280940af13162b",
@@ -237,11 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ca0588120646784a",
+  "active": "c8a4999bf7b5009c",
   "lastOpenFiles": [
+    "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
     "images/posts/LLM_QuickStart 1.md",
     "images/posts/LLM_QuickStart.md",
-    "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
     "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
     "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",
     "public/images/posts/LLM_QuickStart/LORA-重参数化主图.png",

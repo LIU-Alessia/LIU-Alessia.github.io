@@ -36,33 +36,21 @@
             }
           },
           {
-            "id": "54540d72a9ba6926",
+            "id": "d80832ca0bf71f0f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
+                "file": "source/_posts/力扣刷题日记/2026-05-06-日记3-stack.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-03-25-快速全面了解大语言模型"
-            }
-          },
-          {
-            "id": "d80832ca0bf71f0f",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "source/images/posts/LLM_QuickStart/LORA-重参数化主图.png"
-              },
-              "icon": "lucide-image",
-              "title": "LORA-重参数化主图"
+              "title": "2026-05-06-日记3-stack"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -237,13 +225,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c8a4999bf7b5009c",
+  "active": "d80832ca0bf71f0f",
   "lastOpenFiles": [
+    "source/images/posts/LLM_QuickStart/LORA-重参数化主图.png",
+    "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
+    "images/posts/leetcode/3-stack/单调栈原理1.jpeg.md",
+    "images/posts/leetcode/3-stack",
+    "images/posts/leetcode",
+    "source/_posts/力扣刷题日记/2026-05-06-日记3-stack.md",
     "source/_posts/力扣刷题日记/2026-03-27-日记1-数组和字符串.md",
     "source/_posts/LLM知识体系搭建/2026-07-26-day3-模型微调.md",
     "images/posts/LLM_QuickStart 1.md",
     "images/posts/LLM_QuickStart.md",
-    "source/_posts/LLM知识体系搭建/2026-03-25-快速全面了解大语言模型.md",
     "source/_posts/LLM知识体系搭建/2026-04-03-transformer相关原理.md",
     "public/images/posts/LLM_QuickStart/LORA-重参数化主图.png",
     "public/images/posts/gridcell-navigation/gridcell-agent架构.png",
@@ -256,8 +249,6 @@
     "public/images/posts/LLM_QuickStart/模型微调显存占用分析.png",
     "public/2026/08/17/2026-08-17-day4-RAG/index.html",
     "public/2026/08/17/2026-08-17-day4-RAG",
-    "public/2026/08/17",
-    "public/2026/08",
     "images/posts/LLM_QuickStart/LORA-重参数化主图.png",
     "images/posts/LLM_QuickStart/模型微调显存占用分析.png",
     "source/_posts/LLM知识体系搭建/2026-08-17-day4-RAG.md",
@@ -265,7 +256,6 @@
     "Pasted image 20260816221203.png",
     "source/images/posts/LLM_QuickStart/模型微调显存占用分析.png",
     "source/images/posts/LLM_QuickStart/模型微调显存占用分析 1.png",
-    "source/images/posts/LLM_QuickStart/LORA-重参数化主图.png",
     "Pasted image 20260816210353.png",
     "images/posts/LLM_QuickStart/模型.md",
     "隔壁的程序员老王.md",
@@ -282,9 +272,6 @@
     "source/_posts/LLM知识体系搭建/2026-04-05-图解transformer.md",
     "source/_posts/LLM知识体系搭建/2026-02-25-transformer精读.md",
     "source/privacy/index.md",
-    "source/_posts/技术实践/2026-02-04-vibe-coding.md",
-    "source/_posts/项目实践/2026-07-18-股票Agent实践.md",
-    "source/_posts/项目实践/2026-07-13-股票投资顾问Agent.md",
     "未命名.canvas"
   ]
 }
